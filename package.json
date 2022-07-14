@@ -3,19 +3,31 @@
     "license": "Apache-2.0",
     "author": "Kawasaki Shizuku <starsmoe@outlook.com>",
     "scripts": {
+        "build": "next build",
         "dev": "next",
         "prepare": "pnpm husky install"
     },
     "lint-staged": {
         "package.json": "sort-package-json"
     },
+    "dependencies": {
+        "next": "12.1.0",
+        "nextra": "2.0.0-alpha.56",
+        "nextra-theme-docs": "2.0.0-alpha.59",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
     "devDependencies": {
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "@commitlint/types": "^17.0.0",
         "@types/node": "^18.0.4",
+        "@types/react": "^17.0.2",
+        "autoprefixer": "^10.4.7",
         "husky": "^8.0.1",
         "lint-staged": "^13.0.3",
-        "sort-package-json": "^1.57.0"
+        "postcss": "^8.4.14",
+        "sort-package-json": "^1.57.0",
+        "tailwindcss": "^3.1.6"
     }
 }
