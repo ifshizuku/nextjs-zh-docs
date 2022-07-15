@@ -4,7 +4,7 @@
     "routing": "路由",
     "api-routes": "API 路由",
     "going-to-production": "生产环境",
-    "development": "开发环境",
+    "deployment": "部署",
     "authentication": "身份验证",
     "testing": "测试",
     "accessibility": "无障碍",
