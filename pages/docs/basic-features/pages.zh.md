@@ -42,9 +42,8 @@ Next.js 有两种形式的预渲染：**静态生成**和**服务端渲染**。�
 ## 静态生成（推荐）
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-```
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress">WordPress Example</a> (<a href="https://next-blog-wordpress.vercel.app">Demo</a>)</li>
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/blog-starter">Blog Starter using markdown files</a> (<a href="https://next-blog-starter.vercel.app/">Demo</a>)</li>
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/cms-datocms">DatoCMS Example</a> (<a href="https://next-blog-datocms.vercel.app/">Demo</a>)</li>
@@ -63,7 +62,6 @@ Next.js 有两种形式的预渲染：**静态生成**和**服务端渲染**。�
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/cms-builder-io">Builder.io Example</a> (<a href="https://cms-builder-io.vercel.app/">Demo</a>)</li>
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/cms-tina">TinaCMS Example</a> (<a href="https://cms-tina-example.vercel.app/">Demo</a>)</li>
 <li><a href="https://static-tweet.vercel.app/">Static Tweet (Demo)</a></li>
-```
   </ul>
 </details>
 
