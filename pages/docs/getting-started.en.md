@@ -1,7 +1,3 @@
----
-description: Get started with Next.js in the official documentation, and learn more about all our features!
----
-
 # Getting Started
 
 Welcome to the Next.js documentation!
@@ -115,6 +111,6 @@ In addition, any Next.js application is ready for production from the start. Rea
 
 For more information on what to do next, we recommend the following sections:
 
-- [Pages: Learn more about what pages are in Next.js.](/docs/basic-features/pages)
-- [CSS Support: Built-in CSS support to add custom styles to your app.](/docs/basic-features/built-in-css-support)
-- [CLI: Learn more about the Next.js CLI.](/docs/api-reference/cli)
+- [**Pages** / Learn more about what pages are in Next.js.](/docs/basic-features/pages)
+- [**CSS Support** / Built-in CSS support to add custom styles to your app.](/docs/basic-features/built-in-css-support)
+- [**CLI** / Learn more about the Next.js CLI.](/docs/api-reference/cli)

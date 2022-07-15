@@ -259,7 +259,7 @@ export default Page
 
 我们建议你接下来阅读以下章节：
 
-- [**数据获取**：了解更多关于 Next.js 中数据获取的信息](/docs/basic-features/data-fetching/overview)
-- [**预览模式**：了解更多关于 Next.js 的预览模式](/docs/advanced-features/preview-mode)
-- [**路由**：了解更多关于 Next.js 中的路由的信息](/docs/routing/introduction)
-- [**TypeScript**：将 TypeScript 添加到你的页面](/docs/basic-features/typescript#pages)
+- [**数据获取** / 了解更多关于 Next.js 中数据获取的信息](/docs/basic-features/data-fetching/overview)
+- [**预览模式** / 了解更多关于 Next.js 的预览模式](/docs/advanced-features/preview-mode)
+- [**路由** / 了解更多关于 Next.js 中的路由的信息](/docs/routing/introduction)
+- [**TypeScript** / 将 TypeScript 添加到你的页面](/docs/basic-features/typescript#pages)

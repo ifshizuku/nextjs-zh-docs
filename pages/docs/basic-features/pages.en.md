@@ -1,7 +1,3 @@
----
-description: Next.js pages are React Components exported in a file in the pages directory. Learn how they work here.
----
-
 # Pages
 
 > **Note:** We are introducing improved routing support in Next.js. Read the [Layouts RFC](https://nextjs.org/blog/layouts-rfc) for more details and to provide feedback.
@@ -263,7 +259,7 @@ We've discussed two forms of pre-rendering for Next.js.
 
 We recommend you to read the following sections next:
 
-- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)
-- [Preview Mode: Learn more about the preview mode in Next.js.](/docs/advanced-features/preview-mode)
-- [Routing: Learn more about routing in Next.js.](/docs/routing/introduction)
-- [TypeScript: Add TypeScript to your pages.](/docs/basic-features/typescript#pages)
+- [**Data Fetching** / Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)
+- [**Preview Mode** / Learn more about the preview mode in Next.js.](/docs/advanced-features/preview-mode)
+- [**Routing** / Learn more about routing in Next.js.](/docs/routing/introduction)
+- [**TypeScript** / Add TypeScript to your pages.](/docs/basic-features/typescript#pages)

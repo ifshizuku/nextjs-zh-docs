@@ -111,6 +111,6 @@ export default HomePage
 
 关于下一步该做什么的更多信息，我们建议阅读以下章节：
 
-- [页面：了解更多关于 Next.js 中页面的信息](/docs/basic-features/pages)
-- [CSS 支持：内建 CSS 支持，为你的应用程序添加自定义样式](/docs/basic-features/built-in-css-support)
-- [CLI：了解更多有关 Next.js 的命令行工具](/docs/api-reference/cli)
+- [**页面** / 了解更多关于 Next.js 中页面的信息](/docs/basic-features/pages)
+- [**CSS 支持** / 内建 CSS 支持，为你的应用程序添加自定义样式](/docs/basic-features/built-in-css-support)
+- [**CLI** / 了解更多有关 Next.js 的命令行工具](/docs/api-reference/cli)

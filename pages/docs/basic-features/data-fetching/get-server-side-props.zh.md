@@ -1,10 +1,6 @@
----
-description: Fetch data on each request with `getServerSideProps`.
----
-
 # getServerSideProps
 
-If you export a function called `getServerSideProps` (Server-Side Rendering) from a page, Next.js will pre-render this page on each request using the data returned by `getServerSideProps`.
+如果你在一个页面中导出 `getServerSideProps`（服务端渲染），Next.js 将会使用 `getServerSideProps` 返回的数据在每一次请求中预渲染这个页面。
 
 ```js
 export async function getServerSideProps(context) {
@@ -14,49 +10,49 @@ export async function getServerSideProps(context) {
 }
 ```
 
-> Note that irrespective of rendering type, any `props` will be passed to the page component and can be viewed on the client-side in the initial HTML. This is to allow the page to be [hydrated](https://reactjs.org/docs/react-dom.html#hydrate) correctly. Make sure that you don't pass any sensitive information that shouldn't be available on the client in `props`.
+> 请注意，无论渲染方式如何，任何 `props` 都将被传递给页面组件，并且可以在客户端的初始 HTML 中查看。这是为了让页面能够正确地被[水合](https://reactjs.org/docs/react-dom.html#hydrate)。请确保不要在 `props` 中传递任何不应该在客户端出现的敏感信息。
 
-## When does getServerSideProps run
+## getServerSideProps 运行的时间
 
-`getServerSideProps` only runs on server-side and never runs on the browser. If a page uses `getServerSideProps`, then:
+`getServerSideProps` 只会在服务端运行，且永远不会在浏览器中运行。如果一个页面使用了 `getServerSideProps` 那么：
 
-- When you request this page directly, `getServerSideProps` runs at request time, and this page will be pre-rendered with the returned props
-- When you request this page on client-side page transitions through [`next/link`](/docs/api-reference/next/link) or [`next/router`](/docs/api-reference/next/router), Next.js sends an API request to the server, which runs `getServerSideProps`
+- 当你直接请求这个页面时，`getServerSideProps` 在请求时运行，这个页面将用返回的 `props` 进行预渲染
+- 当你通过 [`next/link`](/docs/api-reference/next/link) 或 [`next/router`](/docs/api-reference/next/router) 在客户端页面转换中请求这个页面，Next.js 会向服务器发送一个 API 请求来运行 `getServerSideProps`
 
-`getServerSideProps` returns JSON which will be used to render the page. All this work will be handled automatically by Next.js, so you don’t need to do anything extra as long as you have `getServerSideProps` defined.
+`getServerSideProps` 返回 JSON 数据用于渲染页面。所有这些工作将由 Next.js 自动处理，所以只要你定义了 `getServerSideProps`，就不需要做任何额外的事情。
 
-You can use the [next-code-elimination tool](https://next-code-elimination.vercel.app/) to verify what Next.js eliminates from the client-side bundle.
+你可以使用 [next-code-elimination tool](https://next-code-elimination.vercel.app/) 来验证 Next.js 在客户端的捆绑中移除了什么。
 
-`getServerSideProps` can only be exported from a **page**. You can’t export it from non-page files.
+`getServerSideProps` 只能从一个 **页面**导出，**你不可以在非页面文件中导出它。**
 
-Note that you must export `getServerSideProps` as a standalone function — it will **not** work if you add `getServerSideProps` as a property of the page component.
+注意，你必须将 `getServerSideProps` 作为一个独立的函数导出，如果你将 `getServerSideProps` 作为页面组件的一个属性，那么它将**不会**工作。
 
-The [`getServerSideProps` API reference](/docs/api-reference/data-fetching/get-server-side-props) covers all parameters and props that can be used with `getServerSideProps`.
+[`getServerSideProps` API 参考](/docs/api-reference/data-fetching/get-server-side-props) 包含了所有 `getServerSideProps` 可用的参数和属性。
 
-## When should I use getServerSideProps
+## 什么时候使用 getServerSideProps
 
-You should use `getServerSideProps` only if you need to render a page whose data must be fetched at request time. This could be due to the nature of the data or properties of the request (such as `authorization` headers or geo location). Pages using `getServerSideProps` will be server side rendered at request time and only be cached if [cache-control headers are configured](/docs/going-to-production#caching).
+只有当你需要渲染一个必须在请求时获取数据的页面时，你才应该使用 `getServerSideProps`，这可能是由于数据的性质或请求的属性（如 `身份验证` 标头或地理位置）。使用 `getServerSideProps` 的页面将会在每次请求时通过服务端渲染，只有在[配置缓存控制标头](/docs/going-to-production#caching)的情况下才会被缓存。
 
-If you do not need to render the data during the request, then you should consider fetching data on the [client side](#fetching-data-on-the-client-side) or [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props).
+如果你不需要在请求时渲染数据，那么你应该考虑在[客户端](#fetching-data-on-the-client-side)获取数据或使用 [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props)。
 
-### getServerSideProps or API Routes
+### getServerSideProps 与 API 路由 ？
 
-It can be tempting to reach for an [API Route](/docs/api-routes/introduction) when you want to fetch data from the server, then call that API route from `getServerSideProps`. This is an unnecessary and inefficient approach, as it will cause an extra request to be made due to both `getServerSideProps` and API Routes running on the server.
+当你想从服务器上获取数据时，你可能很想去创建一个 [API 路由](/docs/api-routes/introduction)，然后从 `getServerSideProps` 中调用该 API 路由。这是一个不必要且低效的方法，因为它将导致一个额外的请求，因为 `getServerSideProps` 和 API Routes 都在服务器上运行。
 
-Take the following example. An API route is used to fetch some data from a CMS. That API route is then called directly from `getServerSideProps`. This produces an additional call, reducing performance. Instead, directly import the logic used inside your API Route into `getServerSideProps`. This could mean calling a CMS, database, or other API directly from inside `getServerSideProps`.
+以下面的例子为例，一个 API 路由被用来从一个 CMS 中获取一些数据。然后直接从 `getServerSideProps` 调用该 API 路由，这产生了一个额外的调用，降低了性能。相反，直接将你的 API 路由中使用的逻辑导入到 `getServerSideProps` 中。这可能意味着直接通过 `getServerSideProps` 调用 CMS、数据库或其他 API。
 
-## Fetching data on the client side
+## 在客户端获取数据
 
-If your page contains frequently updating data, and you don’t need to pre-render the data, you can fetch the data on the [client side](/docs/basic-features/data-fetching/client-side). An example of this is user-specific data:
+如果你的页面包含频繁更新的数据，并且你不需要预先渲染数据，你可以在[客户端](/docs/basic-features/data-fetching/client-side)上获取数据，比如获取用户特定的数据：
 
-- First, immediately show the page without data. Parts of the page can be pre-rendered using Static Generation. You can show loading states for missing data
-- Then, fetch the data on the client side and display it when ready
+- 首先，立即显示无数据页面，页面的部分内容可以使用静态生成进行预渲染，你可以为缺失的数据显示加载状态
+- 然后，在客户端获取数据，并在准备好后显示
 
-This approach works well for user dashboard pages, for example. Because a dashboard is a private, user-specific page, SEO is not relevant and the page doesn’t need to be pre-rendered. The data is frequently updated, which requires request-time data fetching.
+这种方法对用户仪表盘页面很有效。因为仪表盘是一个私人的、针对用户的页面，SEO 并不重要，而且页面不需要预先渲染。数据是经常更新的，这就需要在请求时获取数据。
 
-## Using getServerSideProps to fetch data at request time
+## 使用 getServerSideProps 在请求时获取数据
 
-The following example shows how to fetch data at request time and pre-render the result.
+下面的例子显示了如何在请求时获取数据并对结果进行预渲染：
 
 ```jsx
 function Page({ data }) {
@@ -76,9 +72,9 @@ export async function getServerSideProps() {
 export default Page
 ```
 
-## Caching with Server-Side Rendering (SSR)
+## 服务端渲染 （SSR）缓存
 
-You can use caching headers (`Cache-Control`) inside `getServerSideProps` to cache dynamic responses. For example, using [`stale-while-revalidate`](https://web.dev/stale-while-revalidate/).
+你可以在 `getServerSideProps` 中使用缓存标头（`Cache-Control`）来缓存动态的响应。例如，使用 [`stale-while-revalidate`](https://web.dev/stale-while-revalidate/)。
 
 ```jsx
 // This value is considered fresh for ten seconds (s-maxage=10).
@@ -100,15 +96,14 @@ export async function getServerSideProps({ req, res }) {
 }
 ```
 
-Learn more about [caching](/docs/going-to-production).
+了解更多有关[缓存](/docs/going-to-production)的信息
 
-## Does getServerSideProps render an error page
+## getServerSideProps 是否渲染错误页
 
-If an error is thrown inside `getServerSideProps`, it will show the `pages/500.js` file. Check out the documentation for [500 page](/docs/advanced-features/custom-error-page#500-page) to learn more on how to create it. During development this file will not be used and the dev overlay will be shown instead.
+如果 `getServerSideProps` 里抛出一个错误，它将渲染 `pages/500.js` 文件。查看 [500 Page](/docs/advanced-features/custom-error-page#500-page) 的文档，了解如何创建它的信息。在开发（development）过程中，这个文件将不会被使用，而会显示开发提示层。
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们建议阅读以下章节：
 
-- [getServerSideProps: Read the API Reference for getServerSideProps](/docs/api-reference/data-fetching/get-server-side-props)
-s
+- [ **getServerSideProps**：阅读 `getServerSideProps` 的 API 参考](/docs/api-reference/data-fetching/get-server-side-props)
