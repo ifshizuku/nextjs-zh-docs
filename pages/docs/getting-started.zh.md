@@ -71,7 +71,7 @@ pnpm add next react react-dom
 - `dev` - 运行 [`next dev`](/docs/api-reference/cli#development) 启动 Next.js 开发模式
 - `build` - 运行 [`next build`](/docs/api-reference/cli#build) 构建生产环境应用程序
 - `start` - 运行 [`next start`](/docs/api-reference/cli#production) 启动 Next.js 生产环境服务器
-- `lint` - 运行 [`next lint`](/docs/api-reference/cli#lint) 配置 Next.js 内建的ESLint
+- `lint` - 运行 [`next lint`](/docs/api-reference/cli#lint) 配置 Next.js 内建的 ESLint
 
 在你的根目录创建 `pages` 和 `public` 两个文件夹：
 

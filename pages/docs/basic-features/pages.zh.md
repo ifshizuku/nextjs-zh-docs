@@ -1,6 +1,6 @@
 # 页面
 
-> **提示：** 我们正在 Next.js 中引入改进的路由支持。阅读 [Layouts RFC](https://nextjs.org/blog/layouts-rfc) 以了解更多细节并给我们反馈。
+> **提示** ：我们正在 Next.js 中引入改进的路由支持。阅读 [Layouts RFC](https://nextjs.org/blog/layouts-rfc) 以了解更多细节并给我们反馈。
 
 在 Next.js 中，一个页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts` 或 `.tsx` 文件导出的 [React 组件](https://reactjs.org/docs/components-and-props.html)。 每一个页面都通过一个基于它们的文件名的路由访问。
 
@@ -24,24 +24,24 @@ Next.js 支持页面动态路由。例如，如果你创建 `pages/posts/[id].js
 
 默认情况下，Next.js 会**预渲染**每一个页面。这意味着 Next.js 提前为每一个页面生成了 HTML，而不是让这些工作全部通过客户端的 JavaScript 完成。预渲染可以获得更好的性能和 SEO。
 
-每个生成的 HTML 页面都与该页面所需的最小 JavaScript 代码相联系。当一个页面被浏览器加载时，它的 JavaScript 代码就会运行，并使该页面完全交互，这个过程叫做\_水合（hydration）\_。
+每个生成的 HTML 页面都与该页面所需的最小 JavaScript 代码相联系。当一个页面被浏览器加载时，它的 JavaScript 代码就会运行，并使该页面完全交互，这个过程叫做**水合（hydration）**。
 
 ### 预渲染的两种形式
 
-Next.js 有两种形式的预渲染：**静态生成**和**服务端渲染**。它们的区别在于 **何时**为页面生成 HTML。
+Next.js 有两种形式的预渲染：**静态生成**和**服务端渲染**。它们的区别在于**何时**为页面生成 HTML。
 
 - [**静态生成（推荐）**](#static-generation-recommended)：HTML 在**构建时**生成并且将会在每一次请求中复用
 - [**服务端渲染**](#server-side-rendering)：HTML 在**每次请求**时生成
 
 重要的是，Next.js 允许你**选择**你想对每个页面使用的预渲染形式。你可以创建一个“混合” Next.js 应用程序，对大多数页面使用静态生成，对其他页面使用服务器端渲染。
 
-出于性能方面的考虑，我们**建议**使用**静态生成**而不是服务器端渲染。静态生成的页面可以被CDN缓存，不需要额外的配置来提高性能。然而，在某些情况下，服务器端渲染可能是唯一的选择。
+出于性能方面的考虑，我们**建议**使用**静态生成**而不是服务器端渲染。静态生成的页面可以被 CDN 缓存，不需要额外的配置来提高性能。然而，在某些情况下，服务器端渲染可能是唯一的选择。
 
-你也可以在使用静态生成或服务器端渲染的同时使用**客户端渲染**。这意味着一个页面的某些部分可以完全由客户端的JavaScript来渲染。要了解更多，请查看[数据获取](/docs/basic-features/data-fetching/client-side)文档。
+你也可以在使用静态生成或服务器端渲染的同时使用**客户端渲染**。这意味着一个页面的某些部分可以完全由客户端的 JavaScript 来渲染。要了解更多，请查看[数据获取](/docs/basic-features/data-fetching/client-side)文档。
 
 ## 静态生成（推荐）
 
-<details open>
+<details close>
   <summary><b>示例</b></summary>
   <ul>
 <li><a href="https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress">WordPress Example</a> (<a href="https://next-blog-wordpress.vercel.app">Demo</a>)</li>
@@ -67,7 +67,7 @@ Next.js 有两种形式的预渲染：**静态生成**和**服务端渲染**。�
 
 如果一个页面使用了**静态生成**，页面的 HTML 是在**构建时**生成的。这意味着在生产中，页面的HTML是在你运行 `next build` 时生成的。这个 HTML 将在每个请求中被重复使用，它可以被 CDN 缓存。
 
-在Next.js中，你可以静态生成**有或没有数据**的页面。让我们来看看具体情况。
+在 Next.js 中，你可以静态生成**有或没有数据**的页面，让我们来看看具体情况。
 
 ### 无数据静态生成
 
@@ -87,12 +87,12 @@ export default About
 
 有些页面需要获取外部数据来进行预渲染。这有两种情况，一种或两种都可能适用。在每种情况下，你都可以使用 Next.js 提供的这些函数：
 
-1. 你的页面**内容**取决于外部数据。使用 `getStaticProps`。
-2. 你的页面**路径**取决于外部数据。使用 `getStaticPaths`（通常与 `getStaticProps` 配合使用）。
+1. 你的页面**内容**取决于外部数据，使用 `getStaticProps`
+2. 你的页面**路径**取决于外部数据，使用 `getStaticPaths`（通常与 `getStaticProps` 配合使用）
 
 #### 场景1：你的页面**内容**取决于外部数据
 
-**示例：**你的博客页面可能需要从 CMS（内容管理系统）中获取文章的列表。
+**示例**：你的博客页面可能需要从 CMS（内容管理系统）中获取文章的列表。
 
 ```jsx
 // TODO: Need to fetch `posts` (by calling some API endpoint)
@@ -137,7 +137,7 @@ export default Blog
 
 查看[数据获取文档](/docs/basic-features/data-fetching/get-static-props)了解更多有关 `getStaticProps` 的工作。
 
-#### 情景2：你的页面**路径**依赖于外部数据
+#### 场景2：你的页面**路径**依赖于外部数据
 
 Next.js 允许你创建带有**动态路由**的页面。例如，你可以创建 `pages/posts/[id].js` 文件基于 `id` 来展示单个文章。这将使你在访问 `posts/1` 时显示一个 `id: 1` 的文章。
 
@@ -149,7 +149,7 @@ Next.js 允许你创建带有**动态路由**的页面。例如，你可以创�
 
 接着，你可能会添加编号为 `id: 2` 的另一个文章，然后你也想预渲染 `posts/2`。
 
-所以你的页面**路径**的预渲染取决于外部数据。为了处理这个问题，Next.js让你从动态页面（本例中为 `pages/posts/[id].js` ）中 `导出（export）` 一个名为 `getStaticPaths` 的 `异步（async）` 函数。这个函数在构建时被调用，让你指定你想要预渲染的路径。
+所以你的页面**路径**的预渲染取决于外部数据。为了处理这个问题，Next.js 允许你从动态页面（本例中为 `pages/posts/[id].js` ）中 `导出（export）` 一个名为 `getStaticPaths` 的 `异步（async）` 函数。这个函数在构建时被调用，让你指定你想要预渲染的路径。
 
 ```jsx
 // This function gets called at build time
@@ -213,8 +213,8 @@ export default Post
 
 在这样的情况下，你可以采取以下措施之一：
 
-- 使用静态生成与**客户端渲染：**你可以跳过预渲染页面的某些部分，然后使用客户端的 JavaScript 来补充它们。查看[数据获取文档](/docs/basic-features/data-fetching/client-side)以了解更多。
-- 使用**服务器端渲染：** Next.js 在每次请求时都会预渲染一个页面。这将会比较慢，因为页面不能被 CDN 缓存，但预渲染的页面将始终是最新的。我们将在下面讨论这种方法。
+- 使用静态生成与**客户端渲染**：你可以跳过预渲染页面的某些部分，然后使用客户端的 JavaScript 来补充它们。查看[数据获取文档](/docs/basic-features/data-fetching/client-side)以了解更多。
+- 使用**服务器端渲染**：Next.js 在每次请求时都会预渲染一个页面。这将会比较慢，因为页面不能被 CDN 缓存，但预渲染的页面将始终是最新的。我们将在下面讨论这种方法。
 
 ## 服务端渲染
 
@@ -252,14 +252,14 @@ export default Page
 
 我们已经讨论了Next.js的两种形式的预渲染：
 
-- **静态生成（推荐）：**HTML是在**构建时**生成的，并将在每次请求中重复使用。要使一个页面使用静态生成，要么导出页面组件，要么导出 `getStaticProps`（如果需要的话，还有 `getStaticPaths` ）。这对于那些可以在用户请求前预渲染的页面来说是非常好的。你也可以在客户端渲染中使用它来引入额外的数据。
-- **服务器端渲染：**HTML是在**每个请求**中生成的。要使一个页面使用服务器端渲染，请导出 `getServerSideProps`。因为服务器端渲染的性能比静态生成要慢，所以只有在**绝对必要**时才使用。
+- **静态生成（推荐）**：HTML是在**构建时**生成的，并将在每次请求中重复使用。要使一个页面使用静态生成，要么导出页面组件，要么导出 `getStaticProps`（如果需要的话，还有 `getStaticPaths` ）。这对于那些可以在用户请求前预渲染的页面来说是非常好的。你也可以在客户端渲染中使用它来引入额外的数据。
+- **服务器端渲染**：HTML是在**每个请求**中生成的。要使一个页面使用服务器端渲染，请导出 `getServerSideProps`。因为服务器端渲染的性能比静态生成要慢，所以只有在**绝对必要**时才使用。
 
 ## 了解更多
 
 我们建议你接下来阅读以下章节：
 
-- [数据获取：了解更多关于 Next.js 中数据获取的信息 ](/docs/basic-features/data-fetching/overview)
-- [ 预览模式：了解更多关于 Next.js 的预览模式 ](/docs/advanced-features/preview-mode)
-- [ 路由：了解更多关于 Next.js 中的路由的信息 ](/docs/routing/introduction)
-- [ TypeScript：将 TypeScript 添加到你的页面 ](/docs/basic-features/typescript#pages)
+- [**数据获取**：了解更多关于 Next.js 中数据获取的信息](/docs/basic-features/data-fetching/overview)
+- [**预览模式**：了解更多关于 Next.js 的预览模式](/docs/advanced-features/preview-mode)
+- [**路由**：了解更多关于 Next.js 中的路由的信息](/docs/routing/introduction)
+- [**TypeScript**：将 TypeScript 添加到你的页面](/docs/basic-features/typescript#pages)
