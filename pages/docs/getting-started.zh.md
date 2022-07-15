@@ -1,65 +1,61 @@
----
-description: Get started with Next.js in the official documentation, and learn more about all our features!
----
+# 开始
 
-# Getting Started
+欢迎来到 Next.js 文档！
 
-Welcome to the Next.js documentation!
+如果你是第一次使用 Next.js，我们建议你从[学习课程（英文）](https://nextjs.org/learn/basics/create-nextjs-app)开始。
 
-If you're new to Next.js, we recommend starting with the [learn course](https://nextjs.org/learn/basics/create-nextjs-app).
+带有测验的互动课程将指导你学习使用 Next.js 所需的一切知识。
 
-The interactive course with quizzes will guide you through everything you need to know to use Next.js.
+如果你有一些关于 Next.js 的疑问，随时欢迎你在我们的[GitHub Discussions](https://github.com/vercel/next.js/discussions)社区里提问。
 
-If you have questions about anything related to Next.js, you're always welcome to ask our community on [GitHub Discussions](https://github.com/vercel/next.js/discussions).
+#### 系统要求
 
-#### System Requirements
+- [Node.js 12.22.0](https://nodejs.org/) 或者更新版本
+- 支持 macOS、Windows（包括 WSL）和 Linux
 
-- [Node.js 12.22.0](https://nodejs.org/) or later
-- MacOS, Windows (including WSL), and Linux are supported
+## 自动配置（安装）
 
-## Automatic Setup
-
-We recommend creating a new Next.js app using `create-next-app`, which sets up everything automatically for you. To create a project, run:
+我们建议使用`create-next-app`来创建一个新的 Next.js 应用程序，它将为你自动设置好目前需要的一切。创建一个项目，执行：
 
 ```bash
 npx create-next-app@latest
-# or
+# 或
 yarn create next-app
-# or
+# 或
 pnpm create next-app
 ```
 
-If you want to start with a TypeScript project you can use the `--typescript` flag:
+如果你想以一个 TypeScript 项目开始，你可以加上`--typescript`标识：
 
 ```bash
 npx create-next-app@latest --typescript
-# or
+# 或
 yarn create next-app --typescript
-# or
+# 或
 pnpm create next-app --typescript
 ```
 
-After the installation is complete:
+在安装完成之后：
 
-- Run `npm run dev` or `yarn dev` or `pnpm dev` to start the development server on `http://localhost:3000`
-- Visit `http://localhost:3000` to view your application
-- Edit `pages/index.js` and see the updated result in your browser
+- 运行`npm run dev`或`yarn dev`或`pnpm dev`在`http://localhost:3000`上启动一个开发服务器
+- 访问`http://localhost:3000`查看你的应用程序
+- 编辑`pages/index.js`并在浏览器中看到更新的结果
 
-For more information on how to use `create-next-app`, you can review the [`create-next-app` documentation](/docs/api-reference/create-next-app).
+了解`create-next-app`的更多信息，你可以查看[`create-next-app` 文档](/docs/api-reference/create-next-app)。
 
-## Manual Setup
+## 手动设置（安装）
 
-Install `next`, `react` and `react-dom` in your project:
+在你的项目中安装`next`、`react`、`react-dom`：
 
 ```bash
 npm install next react react-dom
-# or
+# 或
 yarn add next react react-dom
-# or
+# 或
 pnpm add next react react-dom
 ```
 
-Open `package.json` and add the following `scripts`:
+打开`package.json`并将如下内容添加进`scripts`：
 
 ```json
 "scripts": {
@@ -70,23 +66,23 @@ Open `package.json` and add the following `scripts`:
 }
 ```
 
-These scripts refer to the different stages of developing an application:
+这些命令代表了开发一个应用程序的不同阶段：
 
-- `dev` - Runs [`next dev`](/docs/api-reference/cli#development) to start Next.js in development mode
-- `build` - Runs [`next build`](/docs/api-reference/cli#build) to build the application for production usage
-- `start` - Runs [`next start`](/docs/api-reference/cli#production) to start a Next.js production server
-- `lint` - Runs [`next lint`](/docs/api-reference/cli#lint) to set up Next.js' built-in ESLint configuration
+- `dev` - 运行[`next dev`](/docs/api-reference/cli#development)启动 Next.js 开发模式
+- `build` - 运行[`next build`](/docs/api-reference/cli#build)构建生产环境应用程序
+- `start` - 运行[`next start`](/docs/api-reference/cli#production)启动 Next.js 生产环境服务器
+- `lint` - 运行[`next lint`](/docs/api-reference/cli#lint)配置 Next.js 内建的ESLint
 
-Create two directories `pages` and `public` at the root of your application:
+在你的根目录创建`pages`和`public`两个文件夹：
 
-- `pages` - Associated with a route based on their file name. For example `pages/about.js` is mapped to `/about`
-- `public` - Stores static assets such as images, fonts, etc. Files inside `public` directory can then be referenced by your code starting from the base URL (`/`).
+- `pages` - 通过它们的文件名与路由相关联。如文件`pages/about.js` 会被映射到`/about`
+- `public` - 存放类似图片、字体等静态资源。`public`文件夹中的文件可以被代码从根 URL（`/`）直接引用
 
-Next.js is built around the concept of [pages](/docs/basic-features/pages). A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the `pages` directory. You can even add [dynamic route](/docs/routing/dynamic-routes) parameters with the filename.
+Next.js 是围绕[页面](/docs/basic-features/pages)的概念建立的。一个页面是从`pages`目录中的`.js`、`.jsx`、`.ts`或`.tsx`文件导出的[React 组件](https://reactjs.org/docs/components-and-props.html)。你甚至可以在文件名中添加[动态路由](/docs/routing/dynamic-routes)参数。
 
-Inside the `pages` directory add the `index.js` file to get started. This is the page that is rendered when the user visits the root of your application
+在`pages`目录中添加文件`index.js`以开始。这是你的用户访问这个应用程序根地址时被渲染的页面。
 
-Populate `pages/index.js` with the following contents:
+在`pages/index.js`中添加如下内容：
 
 ```jsx
 function HomePage() {
@@ -96,25 +92,25 @@ function HomePage() {
 export default HomePage
 ```
 
-After the set up is complete:
+在配置完成之后：
 
-- Run `npm run dev` or `yarn dev` or `pnpm dev` to start the development server on `http://localhost:3000`
-- Visit `http://localhost:3000` to view your application
-- Edit `pages/index.js` and see the updated result in your browser
+- 运行`npm run dev`或`yarn dev`或`pnpm dev`在`http://localhost:3000`上启动一个开发服务器
+- 访问`http://localhost:3000`查看你的应用程序
+- 编辑`pages/index.js`并在浏览器中看到更新的结果
 
-So far, we get:
+目前为止，我们得到了：
 
-- Automatic compilation and [bundling](/docs/advanced-features/compiler)
-- [React Fast Refresh](https://nextjs.org/blog/next-9-4#fast-refresh)
-- [Static generation and server-side rendering](/docs/basic-features/data-fetching/overview) of [`pages/`](/docs/basic-features/pages)
-- [Static file serving](/docs/basic-features/static-file-serving) through `public/` which is mapped to the base URL (`/`)
+- 自动编译和[捆绑（bundling）](/docs/advanced-features/compiler)
+- [React 快速刷新（Fast Refresh）](https://nextjs.org/blog/next-9-4#fast-refresh)
+- [`pages/`](/docs/basic-features/pages)目录的[静态生成和服务端渲染](/docs/basic-features/data-fetching/overview)
+- 通过`public/`目录映射到根 URL（`/`）的[静态文件服务](/docs/basic-features/static-file-serving)
 
-In addition, any Next.js application is ready for production from the start. Read more in our [Deployment documentation](/docs/deployment).
+此外，任何 Next.js 程序从一开始就随时准备进入生产环境。在[部署文档](/docs/deployment)中阅读更多有关内容。
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们建议阅读以下章节：
 
-- [Pages: Learn more about what pages are in Next.js.](/docs/basic-features/pages)
-- [CSS Support: Built-in CSS support to add custom styles to your app.](/docs/basic-features/built-in-css-support)
-- [CLI: Learn more about the Next.js CLI.](/docs/api-reference/cli)
+- [页面：了解更多关于Next.js中页面的信息。](/docs/basic-features/pages)
+- [CSS 支持：内建 CSS 支持，为你的应用程序添加自定义样式。](/docs/basic-features/built-in-css-support)
+- [CLI：了解更多有关 Next.js 的命令行工具。](/docs/api-reference/cli)

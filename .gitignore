@@ -17,3 +17,5 @@ out
 
 # macOS
 .DS_Store
+
+.Ulysses-Settings.plist
