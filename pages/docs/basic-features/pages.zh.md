@@ -1,8 +1,8 @@
 # 页面
 
-> **提示：** 我们正在 Next.js 中引入改进的路由支持。阅读[Layouts RFC](https://nextjs.org/blog/layouts-rfc)以了解更多细节并给我们反馈。
+> **提示：** 我们正在 Next.js 中引入改进的路由支持。阅读 [Layouts RFC](https://nextjs.org/blog/layouts-rfc) 以了解更多细节并给我们反馈。
 
-在 Next.js 中，一个页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts`或`.tsx` 文件导出的[React 组件](https://reactjs.org/docs/components-and-props.html)。 每一个页面都通过一个基于它们的文件名的路由访问。
+在 Next.js 中，一个页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts` 或 `.tsx` 文件导出的 [React 组件](https://reactjs.org/docs/components-and-props.html)。 每一个页面都通过一个基于它们的文件名的路由访问。
 
 **示例**：如果你创建 `pages/about.js` 并如下导出一个 React 组件，它将可以在 `/about` 中被访问。
 

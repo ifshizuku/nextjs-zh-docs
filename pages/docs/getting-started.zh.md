@@ -6,7 +6,7 @@
 
 带有测验的互动课程将指导你学习使用 Next.js 所需的一切知识。
 
-如果你有一些关于 Next.js 的疑问，随时欢迎你在我们的[GitHub Discussions](https://github.com/vercel/next.js/discussions)社区里提问。
+如果你有一些关于 Next.js 的疑问，随时欢迎你在我们的 [GitHub Discussions](https://github.com/vercel/next.js/discussions) 社区里提问。
 
 #### 系统要求
 
@@ -78,7 +78,7 @@ pnpm add next react react-dom
 - `pages` - 通过它们的文件名与路由相关联。如文件 `pages/about.js` 会被映射到 `/about`
 - `public` - 存放类似图片、字体等静态资源。`public` 文件夹中的文件可以被代码从根 URL（`/`）直接引用
 
-Next.js 是围绕[页面](/docs/basic-features/pages)的概念建立的。一个页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts`或`.tsx` 文件导出的[React 组件](https://reactjs.org/docs/components-and-props.html)。你甚至可以在文件名中添加[动态路由](/docs/routing/dynamic-routes)参数。
+Next.js 是围绕[页面](/docs/basic-features/pages)的概念建立的。一个页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts` 或 `.tsx` 文件导出的 [React 组件](https://reactjs.org/docs/components-and-props.html)。你甚至可以在文件名中添加[动态路由](/docs/routing/dynamic-routes)参数。
 
 在 `pages` 目录中添加文件 `index.js` 以开始。这是你的用户访问这个应用程序根地址时被渲染的页面。
 
