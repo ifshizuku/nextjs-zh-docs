@@ -77,9 +77,4 @@ module.exports = {
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/advanced-features/custom-document">
-    <b>Custom Document</b>
-    <small>Learn how to augment your application's html and body tags.</small>
-  </a>
-</div>
+- [Custom Document: Learn how to augment your application's html and body tags.](/docs/advanced-features/custom-document)

@@ -45,7 +45,7 @@ The following is the definition of the `router` object returned by both [`useRou
 - `query`: `Object` - The query string parsed to an object, including [dynamic route](/docs/routing/dynamic-routes) parameters. It will be an empty object during prerendering if the page doesn't use [Server-side Rendering](/docs/basic-features/data-fetching/get-server-side-props). Defaults to `{}`
 - `asPath`: `String` - The path (including the query) shown in the browser without the configured `basePath` or `locale`.
 - `isFallback`: `boolean` - Whether the current page is in [fallback mode](/docs/api-reference/data-fetching/get-static-paths#fallback-pages).
-- `basePath`: `String` - The active [basePath](/docs/api-reference/next.config.js/basepath) (if enabled).
+- `basePath`: `String` - The active [basePath](/docs/api-reference/next-config-js/basepath) (if enabled).
 - `locale`: `String` - The active locale (if enabled).
 - `locales`: `String[]` - All supported locales (if enabled).
 - `defaultLocale`: `String` - The current default locale (if enabled).
@@ -398,7 +398,7 @@ You can listen to different events happening inside the Next.js Router. Here's a
 - `hashChangeStart(url, { shallow })` - Fires when the hash will change but not the page
 - `hashChangeComplete(url, { shallow })` - Fires when the hash has changed but not the page
 
-> **Note:** Here `url` is the URL shown in the browser, including the [`basePath`](/docs/api-reference/next.config.js/basepath).
+> **Note:** Here `url` is the URL shown in the browser, including the [`basePath`](/docs/api-reference/next-config-js/basepath).
 
 #### Usage
 

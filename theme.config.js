@@ -15,11 +15,12 @@ export default {
     nextLinks: true,
     prevLinks: true,
     search: true,
+    unstable_flexsearch: true,
     customSearch: null, // customizable, you can use algolia for example
     darkMode: true,
     footer: true,
     floatTOC: true,
-    footerText: `Apache-2.0 ${new Date().getFullYear()} © ZHD, Vercel`,
+    footerText: `Apache-2.0 ${new Date().getFullYear()} © Kawasaki Shizuku, Vercel`,
     footerEditLink: `Edit this page on GitHub`,
     logo: () => {
         return (

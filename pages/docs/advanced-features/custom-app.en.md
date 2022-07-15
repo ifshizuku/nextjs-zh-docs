@@ -57,16 +57,5 @@ If you’re using TypeScript, take a look at [our TypeScript documentation](/doc
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/advanced-features/automatic-static-optimization">
-    <b>Automatic Static Optimization:</b>
-    <small>Next.js automatically optimizes your app to be static HTML whenever possible. Learn how it works here.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/advanced-features/custom-error-page">
-    <b>Custom Error Page:</b>
-    <small>Learn more about the built-in Error page.</small>
-  </a>
-</div>
+- [Automatic Static Optimization: Next.js automatically optimizes your app to be static HTML whenever possible. Learn how it works here.](/docs/advanced-features/automatic-static-optimization)
+- [Custom Error Page: Learn more about the built-in Error page.](/docs/advanced-features/custom-error-page)

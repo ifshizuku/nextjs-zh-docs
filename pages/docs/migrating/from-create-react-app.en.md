@@ -234,7 +234,7 @@ If you've ejected Create React App, here are some things to consider:
 - If you've manually added [new JavaScript features](/docs/basic-features/supported-browsers-features#javascript-language-features) (e.g. Optional Chaining) or [Polyfills](/docs/basic-features/supported-browsers-features#polyfills), check to see what's included by default with Next.js.
 - If you have a custom code splitting setup, you can remove that. Next.js has automatic code splitting on a [per-page basis](/docs/basic-features/pages).
 - You can [customize your PostCSS setup](/docs/advanced-features/customizing-postcss-config#default-behavior) with Next.js without ejecting from the framework.
-- You should reference the default [Babel config](/docs/advanced-features/customizing-babel-config) and [Webpack config](/docs/api-reference/next.config.js/custom-webpack-config) of Next.js to see what's included by default.
+- You should reference the default [Babel config](/docs/advanced-features/customizing-babel-config) and [Webpack config](/docs/api-reference/next-config-js/custom-webpack-config) of Next.js to see what's included by default.
 
 ## Learn More
 

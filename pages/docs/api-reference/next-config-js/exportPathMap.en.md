@@ -49,7 +49,7 @@ The pages will then be exported as HTML files, for example, `/about` will become
 - `dev` - `true` when `exportPathMap` is being called in development. `false` when running `next export`. In development `exportPathMap` is used to define routes.
 - `dir` - Absolute path to the project directory
 - `outDir` - Absolute path to the `out/` directory ([configurable with `-o`](#customizing-the-output-directory)). When `dev` is `true` the value of `outDir` will be `null`.
-- `distDir` - Absolute path to the `.next/` directory (configurable with the [`distDir`](/docs/api-reference/next.config.js/setting-a-custom-build-directory) config)
+- `distDir` - Absolute path to the `.next/` directory (configurable with the [`distDir`](/docs/api-reference/next-config-js/setting-a-custom-build-directory) config)
 - `buildId` - The generated build id
 
 The returned object is a map of pages where the `key` is the `pathname` and the `value` is an object that accepts the following fields:
@@ -81,16 +81,5 @@ next export -o outdir
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction">
-    <b>Introduction to next.config.js:</b>
-    <small>Learn more about the configuration file used by Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/advanced-features/static-html-export">
-    <b>Static HTML Export:</b>
-    <small>Export your Next.js app to static HTML.</small>
-  </a>
-</div>
+- [Introduction to next.config.js: Learn more about the configuration file used by Next.js.](/docs/api-reference/next-config-js/introduction)
+- [Static HTML Export: Export your Next.js app to static HTML.](/docs/advanced-features/static-html-export)

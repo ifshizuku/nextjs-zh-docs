@@ -153,23 +153,7 @@ The default behavior of `next/link` and `next/router` is to scroll to the top of
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/routing/introduction">
-    <b>Routing:</b>
-    <small>Learn more about routing in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/routing/dynamic-routes">
-    <b>Dynamic Routes:</b>
-    <small>Learn more about the built-in dynamic routes.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next/link">
-    <b>Pages:</b>
-    <small>Enable client-side transitions with next/link.</small>
-  </a>
-</div>
+- [Routing: Learn more about routing in Next.js.](/docs/routing/introduction)
+- [Dynamic Routes: Learn more about the built-in dynamic routes.](/docs/routing/dynamic-routes)
+- [Pages: Enable client-side transitions with next/link.](/docs/api-reference/next/link)
+s

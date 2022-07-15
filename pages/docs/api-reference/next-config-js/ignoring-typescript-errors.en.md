@@ -26,16 +26,5 @@ module.exports = {
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction">
-    <b>Introduction to next.config.js:</b>
-    <small>Learn more about the configuration file used by Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/basic-features/typescript">
-    <b>TypeScript:</b>
-    <small>Get started with TypeScript in Next.js.</small>
-  </a>
-</div>
+- [Introduction to next.config.js: Learn more about the configuration file used by Next.js.](/docs/api-reference/next-config-js/introduction)
+- [TypeScript: Get started with TypeScript in Next.js.](/docs/basic-features/typescript)

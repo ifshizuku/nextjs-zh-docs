@@ -282,7 +282,7 @@ module.exports = {
 
 ### Headers with basePath support
 
-When leveraging [`basePath` support](/docs/api-reference/next.config.js/basepath) with headers each `source` is automatically prefixed with the `basePath` unless you add `basePath: false` to the header:
+When leveraging [`basePath` support](/docs/api-reference/next-config-js/basepath) with headers each `source` is automatically prefixed with the `basePath` unless you add `basePath: false` to the header:
 
 ```js
 module.exports = {
@@ -395,9 +395,4 @@ If you need to revalidate the cache of a page that has been [statically generate
 
 For more information, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/advanced-features/security-headers">
-    <b>Security Headers:</b>
-    <small>Improve the security of your Next.js application by add HTTP response headers.</small>
-  </a>
-</div>
+- [Security Headers: Improve the security of your Next.js application by add HTTP response headers.](/docs/advanced-features/security-headers)

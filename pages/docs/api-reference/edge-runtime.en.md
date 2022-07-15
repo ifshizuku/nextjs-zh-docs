@@ -139,23 +139,6 @@ The following JavaScript language features are disabled, and **will not work:**
 
 ## Related
 
-<div class="card">
-  <a href="/docs/advanced-features/middleware">
-    <b>Middleware</b>
-    <small>Run code before a request is completed.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next/server">
-    <b>Middleware API Reference</b>
-    <small>Learn more about the supported APIs for Middleware.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-routes/edge-api-routes">
-    <b>Edge API Routes</b>
-    <small>Build high performance APIs in Next.js. </small>
-  </a>
-</div>
+- [Middleware: Run code before a request is completed.](/docs/advanced-features/middleware)
+- [Middleware API Reference: Learn more about the supported APIs for Middleware.](/docs/api-reference/next/server)
+- [Edge API Routes: Build high performance APIs in Next.js.](/docs/api-routes/edge-api-routes)

@@ -149,16 +149,5 @@ To see examples with other authentication providers, check out the [examples fol
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/basic-features/pages">
-    <b>Pages:</b>
-    <small>Learn more about pages and the different pre-rendering methods in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/overview">
-    <b>Data Fetching:</b>
-    <small>Learn more about data fetching in Next.js.</small>
-  </a>
-</div>
+- [Pages: Learn more about pages and the different pre-rendering methods in Next.js.](/docs/basic-features/pages)
+- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)

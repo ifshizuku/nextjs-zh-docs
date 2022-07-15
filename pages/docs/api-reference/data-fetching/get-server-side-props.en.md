@@ -143,9 +143,4 @@ export default Page
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/overview">
-    <b>Data Fetching:</b>
-    <small>Learn more about data fetching in Next.js.</small>
-  </a>
-</div>
+- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)

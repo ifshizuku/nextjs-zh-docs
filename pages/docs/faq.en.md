@@ -55,12 +55,12 @@ description: Get to know more about Next.js with the frequently asked questions.
 
 <details>
   <summary>Can I use a CDN for static assets?</summary>
-  <p>Yes! When you deploy your Next.js application to <a href="https://vercel.com">Vercel</a>, your static assets are automatically detected and served by the Edge Network. If you self-host Next.js, you can learn how to manually configure the asset prefix <a href="/docs/api-reference/next.config.js/cdn-support-with-asset-prefix">here</a>.</p>
+  <p>Yes! When you deploy your Next.js application to <a href="https://vercel.com">Vercel</a>, your static assets are automatically detected and served by the Edge Network. If you self-host Next.js, you can learn how to manually configure the asset prefix <a href="/docs/api-reference/next-config-js/cdn-support-with-asset-prefix">here</a>.</p>
 </details>
 
 <details>
   <summary>How can I change the internal webpack config?</summary>
-  <p>In most cases, no manual webpack configuration is necessary since Next.js automatically configures webpack. For advanced cases where more control is needed, refer to the <a href="/docs/api-reference/next.config.js/custom-webpack-config">custom webpack config documentation</a>.</p>
+  <p>In most cases, no manual webpack configuration is necessary since Next.js automatically configures webpack. For advanced cases where more control is needed, refer to the <a href="/docs/api-reference/next-config-js/custom-webpack-config">custom webpack config documentation</a>.</p>
 </details>
 
 <details>

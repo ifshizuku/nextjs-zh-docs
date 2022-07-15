@@ -263,30 +263,7 @@ We've discussed two forms of pre-rendering for Next.js.
 
 We recommend you to read the following sections next:
 
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/overview">
-    <b>Data Fetching:</b>
-    <small>Learn more about data fetching in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/advanced-features/preview-mode">
-    <b>Preview Mode:</b>
-    <small>Learn more about the preview mode in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/routing/introduction">
-    <b>Routing:</b>
-    <small>Learn more about routing in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/basic-features/typescript#pages">
-    <b>TypeScript:</b>
-    <small>Add TypeScript to your pages.</small>
-  </a>
-</div>
+- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)
+- [Preview Mode: Learn more about the preview mode in Next.js.](/docs/advanced-features/preview-mode)
+- [Routing: Learn more about routing in Next.js.](/docs/routing/introduction)
+- [TypeScript: Add TypeScript to your pages.](/docs/basic-features/typescript#pages)

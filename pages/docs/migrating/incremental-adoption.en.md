@@ -21,7 +21,7 @@ Next.js has been designed for gradual adoption. With Next.js, you can continue u
 
 The first strategy is to configure your server or proxy such that, everything under a specific subpath points to a Next.js app. For example, your existing website might be at `example.com`, and you might configure your proxy such that `example.com/store` serves a Next.js e-commerce store.
 
-Using [`basePath`](/docs/api-reference/next.config.js/basepath), you can configure your Next.js application's assets and links to automatically work with your new subpath `/store`. Since each page in Next.js is its own [standalone route](/docs/routing/introduction), pages like `pages/products.js` will route to `example.com/store/products` in your application.
+Using [`basePath`](/docs/api-reference/next-config-js/basepath), you can configure your Next.js application's assets and links to automatically work with your new subpath `/store`. Since each page in Next.js is its own [standalone route](/docs/routing/introduction), pages like `pages/products.js` will route to `example.com/store/products` in your application.
 
 ```jsx
 // next.config.js
@@ -31,13 +31,13 @@ module.exports = {
 }
 ```
 
-To learn more about `basePath`, take a look at our [documentation](/docs/api-reference/next.config.js/basepath).
+To learn more about `basePath`, take a look at our [documentation](/docs/api-reference/next-config-js/basepath).
 
 > This feature was introduced in [Next.js 9.5](https://nextjs.org/blog/next-9-5) and up. If you’re using older versions of Next.js, please upgrade before trying it out.
 
 ### Rewrites
 
-The second strategy is to create a new Next.js app that points to the root URL of your domain. Then, you can use [`rewrites`](/docs/api-reference/next.config.js/rewrites) inside `next.config.js` to have some subpaths to be proxied to your existing app.
+The second strategy is to create a new Next.js app that points to the root URL of your domain. Then, you can use [`rewrites`](/docs/api-reference/next-config-js/rewrites) inside `next.config.js` to have some subpaths to be proxied to your existing app.
 
 For example, let's say you created a Next.js app to be served from `example.com` with the following `next.config.js`. Now, requests for the pages you’ve added to this Next.js app (e.g. `/about` if you’ve added `pages/about.js`) will be handled by Next.js, and requests for any other route (e.g. `/dashboard`) will be proxied to `proxy.example.com`.
 
@@ -74,7 +74,7 @@ module.exports = {
 }
 ```
 
-To learn more about rewrites, take a look at our [documentation](/docs/api-reference/next.config.js/rewrites).
+To learn more about rewrites, take a look at our [documentation](/docs/api-reference/next-config-js/rewrites).
 
 > This feature was introduced in [Next.js 9.5](https://nextjs.org/blog/next-9-5) and up. If you’re using older versions of Next.js, please upgrade before trying it out.
 
@@ -90,4 +90,4 @@ Once your monorepo is set up, push changes to your Git repository as usual and y
 
 ## Conclusion
 
-To learn more, read about [subpaths](/docs/api-reference/next.config.js/basepath) and [rewrites](/docs/api-reference/next.config.js/rewrites) or [deploy an example with micro-frontends](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-zones&project-name=with-zones&repository-name=with-zones).
+To learn more, read about [subpaths](/docs/api-reference/next-config-js/basepath) and [rewrites](/docs/api-reference/next-config-js/rewrites) or [deploy an example with micro-frontends](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-zones&project-name=with-zones&repository-name=with-zones).

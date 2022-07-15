@@ -288,9 +288,4 @@ Yes, if you disable JavaScript the CSS will still be loaded in the production bu
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/advanced-features/customizing-postcss-config">
-    <b>Customizing PostCSS Config:</b>
-    <small>Extend the PostCSS config and plugins added by Next.js with your own.</small>
-  </a>
-</div>
+- [Customizing PostCSS Config: Extend the PostCSS config and plugins added by Next.js with your own.](/docs/advanced-features/customizing-postcss-config)

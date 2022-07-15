@@ -100,9 +100,4 @@ The `query` objects are as follows:
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/routing/dynamic-routes">
-    <b>Dynamic Routes:</b>
-    <small>Learn more about the built-in dynamic routes.</small>
-  </a>
-</div>
+- [Dynamic Routes: Learn more about the built-in dynamic routes.](/docs/routing/dynamic-routes)

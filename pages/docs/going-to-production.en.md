@@ -147,9 +147,4 @@ Once you are able to measure the loading performance, use the following strategi
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/deployment">
-    <b>Deployment:</b>
-    <small>Take your Next.js application to production.</small>
-  </a>
-</div>
+- [Deployment: Take your Next.js application to production.](/docs/deployment)

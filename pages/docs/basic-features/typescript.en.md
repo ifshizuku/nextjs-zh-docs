@@ -72,7 +72,7 @@ You're now ready to start converting files from `.js` to `.tsx` and leveraging t
 
 By default, Next.js will do type checking as part of `next build`. We recommend using code editor type checking during development.
 
-If you want to silence the error reports, refer to the documentation for [Ignoring TypeScript errors](/docs/api-reference/next.config.js/ignoring-typescript-errors).
+If you want to silence the error reports, refer to the documentation for [Ignoring TypeScript errors](/docs/api-reference/next-config-js/ignoring-typescript-errors).
 
 ## Static Generation and Server-side Rendering
 

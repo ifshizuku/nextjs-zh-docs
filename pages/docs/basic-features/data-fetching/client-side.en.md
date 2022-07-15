@@ -73,9 +73,4 @@ function Profile() {
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/routing/introduction">
-    <b>Routing:</b>
-    <small>Learn more about routing in Next.js.</small>
-  </a>
-</div>
+- [Routing: Learn more about routing in Next.js.](/docs/routing/introduction)s

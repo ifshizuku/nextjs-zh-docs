@@ -58,16 +58,5 @@ export default MyImage
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction">
-    <b>Introduction to next.config.js:</b>
-    <small>Learn more about the configuration file used by Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/environment-variables">
-    <b>Environment Variables:</b>
-    <small>Access environment variables in your Next.js application at build time.</small>
-  </a>
-</div>
+- [Introduction to next.config.js: Learn more about the configuration file used by Next.js.](/docs/api-reference/next-config-js/introduction)
+- [Environment Variables: Access environment variables in your Next.js application at build time.](/docs/api-reference/next-config-js/environment-variables)

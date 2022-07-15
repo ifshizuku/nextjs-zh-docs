@@ -57,9 +57,4 @@ In development (`next dev`), `getStaticPaths` will be called on every request.
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/api-reference/data-fetching/get-static-paths">
-    <b>getStaticPaths API Reference</b>
-    <small>Read the API Reference for getStaticPaths</small>
-  </a>
-</div>
+- [getStaticPaths API Reference: Read the API Reference for getStaticPaths](/docs/api-reference/data-fetching/get-static-paths)

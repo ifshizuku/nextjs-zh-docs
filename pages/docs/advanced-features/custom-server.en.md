@@ -88,7 +88,7 @@ The above `next` import is a function that receives an object with the following
 - `dev`: `Boolean` - Whether or not to launch Next.js in dev mode. Defaults to `false`
 - `dir`: `String` - Location of the Next.js project. Defaults to `'.'`
 - `quiet`: `Boolean` - Hide error messages containing server information. Defaults to `false`
-- `conf`: `object` - The same object you would use in [next.config.js](/docs/api-reference/next.config.js/introduction). Defaults to `{}`
+- `conf`: `object` - The same object you would use in [next.config.js](/docs/api-reference/next-config-js/introduction). Defaults to `{}`
 
 The returned `app` can then be used to let Next.js handle requests as required.
 

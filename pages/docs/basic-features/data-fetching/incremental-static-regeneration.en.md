@@ -205,9 +205,4 @@ module.exports = {
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/get-static-paths">
-    <b>Dynamic routing</b>
-    <small>Learn more about dynamic routing in Next.js with getStaticPaths.</small>
-  </a>
-</div>
+- [Dynamic routing: Learn more about dynamic routing in Next.js with getStaticPaths.](/docs/basic-features/data-fetching/get-static-paths)

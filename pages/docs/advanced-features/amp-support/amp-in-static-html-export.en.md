@@ -27,7 +27,7 @@ And the AMP version of your page will include a link to the HTML page:
 <link rel="canonical" href="/about" />
 ```
 
-When [`trailingSlash`](/docs/api-reference/next.config.js/trailing-slash) is enabled the exported pages for `pages/about.js` would be:
+When [`trailingSlash`](/docs/api-reference/next-config-js/trailing-slash) is enabled the exported pages for `pages/about.js` would be:
 
 - `out/about/index.html` - HTML page
 - `out/about.amp/index.html` - AMP page

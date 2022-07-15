@@ -232,23 +232,6 @@ This ensures that the bypass cookie can’t be guessed.
 
 The following pages might also be useful.
 
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/overview">
-    <b>Data Fetching:</b>
-    <small>Learn more about data fetching in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-routes/introduction">
-    <b>API Routes:</b>
-    <small>Learn more about API routes in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/environment-variables">
-    <b>Environment Variables:</b>
-    <small>Learn more about environment variables in Next.js.</small>
-  </a>
-</div>
+- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)
+- [API Routes: Learn more about API routes in Next.js.](/docs/api-routes/introduction)
+- [Environment Variables: Learn more about environment variables in Next.js.](/docs/api-reference/next-config-js/environment-variables)

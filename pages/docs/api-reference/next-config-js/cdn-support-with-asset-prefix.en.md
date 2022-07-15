@@ -7,7 +7,7 @@ description: A custom asset prefix allows you serve static assets from a CDN. Le
 > **Attention**: [Deploying to Vercel](/docs/deployment) automatically configures a global CDN for your Next.js project.
 > You do not need to manually setup an Asset Prefix.
 
-> **Note**: Next.js 9.5+ added support for a customizable [Base Path](/docs/api-reference/next.config.js/basepath), which is better
+> **Note**: Next.js 9.5+ added support for a customizable [Base Path](/docs/api-reference/next-config-js/basepath), which is better
 > suited for hosting your application on a sub-path like `/docs`.
 > We do not suggest you use a custom Asset Prefix for this use case.
 
@@ -46,16 +46,5 @@ While `assetPrefix` covers requests to `_next/static`, it does not influence the
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction">
-    <b>Introduction to next.config.js:</b>
-    <small>Learn more about the configuration file used by Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/basic-features/static-file-serving">
-    <b>Static File Serving:</b>
-    <small>Serve static files, like images, in the public directory.</small>
-  </a>
-</div>
+- [Introduction to next.config.js: Learn more about the configuration file used by Next.js.](/docs/api-reference/next-config-js/introduction)
+- [Static File Serving: Serve static files, like images, in the public directory.](/docs/basic-features/static-file-serving)

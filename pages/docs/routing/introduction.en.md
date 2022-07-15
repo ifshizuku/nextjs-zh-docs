@@ -151,16 +151,5 @@ In general we recommend using [`useRouter`](/docs/api-reference/next/router#useR
 
 The router is divided in multiple parts:
 
-<div class="card">
-  <a href="/docs/api-reference/next/link">
-    <b>next/link:</b>
-    <small>Handle client-side navigations.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next/router">
-    <b>next/router:</b>
-    <small>Leverage the router API in your pages.</small>
-  </a>
-</div>
+- [`next/link`: Handle client-side navigations.](/docs/api-reference/next/link)
+- [`next/router`: Leverage the router API in your pages.](/docs/api-reference/next/router)

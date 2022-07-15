@@ -146,9 +146,4 @@ You can temporarily bypass static generation and render the page at **request ti
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/api-reference/data-fetching/get-static-props">
-    <b>getStaticProps API Reference</b>
-    <small>Read the API Reference for getStaticProps</small>
-  </a>
-</div>
+- [getStaticProps API Reference: Read the API Reference for getStaticProps](/docs/api-reference/data-fetching/get-static-props)

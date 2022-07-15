@@ -27,7 +27,7 @@ export default function handler(req, res) {
 }
 ```
 
-> **Note**: API Routes will be affected by [`pageExtensions` configuration](/docs/api-reference/next.config.js/custom-page-extensions) in `next.config.js`.
+> **Note**: API Routes will be affected by [`pageExtensions` configuration](/docs/api-reference/next-config-js/custom-page-extensions) in `next.config.js`.
 
 For an API route to work, you need to export a function as default (a.k.a **request handler**), which then receives the following parameters:
 
@@ -64,23 +64,6 @@ For new projects, you can build your entire API with API Routes. If you have an 
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/api-routes/api-middlewares">
-    <b>API Middlewares:</b>
-    <small>learn about the built-in middlewares for the request.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-routes/response-helpers">
-    <b>Response Helpers:</b>
-    <small>learn about the built-in methods for the response.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/basic-features/typescript#api-routes">
-    <b>TypeScript:</b>
-    <small>Add TypeScript to your API Routes.</small>
-  </a>
-</div>
+- [API Middlewares: Learn about the built-in middlewares for the request.](/docs/api-routes/api-middlewares)
+- [Response Helpers: Learn about the built-in methods for the response.](/docs/api-routes/response-helpers)
+- [TypeScript: Add TypeScript to your API Routes.](/docs/basic-features/typescript#api-routes)

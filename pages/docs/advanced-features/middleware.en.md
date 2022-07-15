@@ -152,23 +152,6 @@ export function middleware(request: NextRequest) {
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/edge-runtime">
-    <b>Edge Runtime</b>
-    <small>Learn more about the supported Web APIs available.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-reference/next/server">
-    <b>Middleware API Reference</b>
-    <small>Learn more about the supported APIs for Middleware.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/api-routes/edge-api-routes">
-    <b>Edge API Routes</b>
-    <small>Build high performance APIs in Next.js. </small>
-  </a>
-</div>
+- [Edge Runtime: Learn more about the supported Web APIs available.](/docs/api-reference/edge-runtime)
+- [Middleware API Reference: Learn more about the supported APIs for Middleware.](/docs/api-reference/next/server)
+- [Edge API Routes: Build high performance APIs in Next.js.](/docs/api-routes/edge-api-routes)

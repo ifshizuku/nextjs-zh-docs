@@ -160,16 +160,5 @@ If you want to cause a `GET` response to a `POST` request, use `303`.
 
 ## Related
 
-<div class="card">
-  <a href="/docs/api-reference/edge-runtime">
-    <b>Edge Runtime</b>
-    <small>Learn more about the supported Web APIs available.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/middleware">
-    <b>Middleware</b>
-    <small>Run code before a request is completed.</small>
-  </a>
-</div>
+- [Edge Runtime: Learn more about the supported Web APIs available.](/docs/api-reference/edge-runtime)
+- [Middleware: Run code before a request is completed.](/docs/middleware)

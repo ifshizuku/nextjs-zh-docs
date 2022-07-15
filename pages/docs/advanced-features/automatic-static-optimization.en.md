@@ -24,7 +24,7 @@ The cases where the query will be updated after hydration triggering another ren
 
 - The page is a [dynamic-route](/docs/routing/dynamic-routes).
 - The page has query values in the URL.
-- [Rewrites](/docs/api-reference/next.config.js/rewrites) are configured in your `next.config.js` since these can have parameters that may need to be parsed and provided in the `query`.
+- [Rewrites](/docs/api-reference/next-config-js/rewrites) are configured in your `next.config.js` since these can have parameters that may need to be parsed and provided in the `query`.
 
 To be able to distinguish if the query is fully updated and ready for use, you can leverage the `isReady` field on [`next/router`](/docs/api-reference/next/router#router-object).
 

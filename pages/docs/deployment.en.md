@@ -159,9 +159,4 @@ if (process.env.NEXT_MANUAL_SIG_HANDLE) {
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/going-to-production">
-    <b>Going to Production:</b>
-    <small>Ensure the best performance and user experience.</small>
-  </a>
-</div>
+- [Going to Production: Ensure the best performance and user experience.](/docs/going-to-production)

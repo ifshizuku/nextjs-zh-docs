@@ -139,7 +139,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-If the redirects are known at build-time, they should be added in [`next.config.js`](/docs/api-reference/next.config.js/redirects) instead.
+If the redirects are known at build-time, they should be added in [`next.config.js`](/docs/api-reference/next-config-js/redirects) instead.
 
 ## Reading files: Use `process.cwd()`
 
@@ -244,9 +244,4 @@ export default Blog
 
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/basic-features/data-fetching/overview">
-    <b>Data Fetching:</b>
-    <small>Learn more about data fetching in Next.js.</small>
-  </a>
-</div>
+- [Data Fetching: Learn more about data fetching in Next.js.](/docs/basic-features/data-fetching/overview)
