@@ -21,7 +21,7 @@ export async function getServerSideProps(context) {
 `getServerSideProps` only runs on server-side and never runs on the browser. If a page uses `getServerSideProps`, then:
 
 - When you request this page directly, `getServerSideProps` runs at request time, and this page will be pre-rendered with the returned props
-- When you request this page on client-side page transitions through [`next/link`](/docs/api-reference/next/link.md) or [`next/router`](/docs/api-reference/next/router.md), Next.js sends an API request to the server, which runs `getServerSideProps`
+- When you request this page on client-side page transitions through [`next/link`](/docs/api-reference/next/link) or [`next/router`](/docs/api-reference/next/router), Next.js sends an API request to the server, which runs `getServerSideProps`
 
 `getServerSideProps` returns JSON which will be used to render the page. All this work will be handled automatically by Next.js, so you don’t need to do anything extra as long as you have `getServerSideProps` defined.
 
@@ -31,7 +31,7 @@ You can use the [next-code-elimination tool](https://next-code-elimination.verce
 
 Note that you must export `getServerSideProps` as a standalone function — it will **not** work if you add `getServerSideProps` as a property of the page component.
 
-The [`getServerSideProps` API reference](/docs/api-reference/data-fetching/get-server-side-props.md) covers all parameters and props that can be used with `getServerSideProps`.
+The [`getServerSideProps` API reference](/docs/api-reference/data-fetching/get-server-side-props) covers all parameters and props that can be used with `getServerSideProps`.
 
 ## When should I use getServerSideProps
 
@@ -41,13 +41,13 @@ If you do not need to render the data during the request, then you should consid
 
 ### getServerSideProps or API Routes
 
-It can be tempting to reach for an [API Route](/docs/api-routes/introduction.md) when you want to fetch data from the server, then call that API route from `getServerSideProps`. This is an unnecessary and inefficient approach, as it will cause an extra request to be made due to both `getServerSideProps` and API Routes running on the server.
+It can be tempting to reach for an [API Route](/docs/api-routes/introduction) when you want to fetch data from the server, then call that API route from `getServerSideProps`. This is an unnecessary and inefficient approach, as it will cause an extra request to be made due to both `getServerSideProps` and API Routes running on the server.
 
 Take the following example. An API route is used to fetch some data from a CMS. That API route is then called directly from `getServerSideProps`. This produces an additional call, reducing performance. Instead, directly import the logic used inside your API Route into `getServerSideProps`. This could mean calling a CMS, database, or other API directly from inside `getServerSideProps`.
 
 ## Fetching data on the client side
 
-If your page contains frequently updating data, and you don’t need to pre-render the data, you can fetch the data on the [client side](/docs/basic-features/data-fetching/client-side.md). An example of this is user-specific data:
+If your page contains frequently updating data, and you don’t need to pre-render the data, you can fetch the data on the [client side](/docs/basic-features/data-fetching/client-side). An example of this is user-specific data:
 
 - First, immediately show the page without data. Parts of the page can be pre-rendered using Static Generation. You can show loading states for missing data
 - Then, fetch the data on the client side and display it when ready
@@ -100,7 +100,7 @@ export async function getServerSideProps({ req, res }) {
 }
 ```
 
-Learn more about [caching](/docs/going-to-production.md).
+Learn more about [caching](/docs/going-to-production).
 
 ## Does getServerSideProps render an error page
 
@@ -111,7 +111,7 @@ If an error is thrown inside `getServerSideProps`, it will show the `pages/500.j
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/data-fetching/get-server-side-props.md">
+  <a href="/docs/api-reference/data-fetching/get-server-side-props">
     <b>getServerSideProps API Reference</b>
     <small>Read the API Reference for getServerSideProps</small>
   </a>

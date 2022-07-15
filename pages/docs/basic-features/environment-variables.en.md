@@ -4,7 +4,7 @@ description: Learn to add and access environment variables in your Next.js appli
 
 # Environment Variables
 
-> This document is for Next.js versions 9.4 and up. If you’re using an older version of Next.js, upgrade or refer to [Environment Variables in next.config.js](/docs/api-reference/next.config.js/environment-variables.md).
+> This document is for Next.js versions 9.4 and up. If you’re using an older version of Next.js, upgrade or refer to [Environment Variables in next.config.js](/docs/api-reference/next.config.js/environment-variables).
 
 <details open>
   <summary><b>Examples</b></summary>
@@ -30,9 +30,9 @@ DB_USER=myuser
 DB_PASS=mypassword
 ```
 
-This loads `process.env.DB_HOST`, `process.env.DB_USER`, and `process.env.DB_PASS` into the Node.js environment automatically allowing you to use them in [Next.js data fetching methods](/docs/basic-features/data-fetching/overview.md) and [API routes](/docs/api-routes/introduction.md).
+This loads `process.env.DB_HOST`, `process.env.DB_USER`, and `process.env.DB_PASS` into the Node.js environment automatically allowing you to use them in [Next.js data fetching methods](/docs/basic-features/data-fetching/overview) and [API routes](/docs/api-routes/introduction).
 
-For example, using [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md):
+For example, using [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props):
 
 ```js
 // pages/index.js

@@ -8,12 +8,12 @@ description: Extend the default webpack config added by Next.js.
 
 Before continuing to add custom webpack configuration to your application make sure Next.js doesn't already support your use-case:
 
-- [CSS imports](/docs/basic-features/built-in-css-support.md#adding-a-global-stylesheet)
-- [CSS modules](/docs/basic-features/built-in-css-support.md#adding-component-level-css)
-- [Sass/SCSS imports](/docs/basic-features/built-in-css-support.md#sass-support)
-- [Sass/SCSS modules](/docs/basic-features/built-in-css-support.md#sass-support)
+- [CSS imports](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet)
+- [CSS modules](/docs/basic-features/built-in-css-support#adding-component-level-css)
+- [Sass/SCSS imports](/docs/basic-features/built-in-css-support#sass-support)
+- [Sass/SCSS modules](/docs/basic-features/built-in-css-support#sass-support)
 - [preact](https://github.com/vercel/next.js/tree/canary/examples/using-preact)
-- [Customizing babel configuration](/docs/advanced-features/customizing-babel-config.md)
+- [Customizing babel configuration](/docs/advanced-features/customizing-babel-config)
 
 Some commonly asked for features are available as plugins:
 
@@ -54,7 +54,7 @@ Example usage of `defaultLoaders.babel`:
 module.exports = {
   webpack: (config, options) => {
     config.module.rules.push({
-      test: /\.mdx/,
+      test: /\x/,
       use: [
         options.defaultLoaders.babel,
         {
@@ -76,7 +76,7 @@ Notice that `isServer` is `true` when `nextRuntime` is `"edge"` or `"nodejs"`, n
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>

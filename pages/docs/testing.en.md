@@ -500,7 +500,7 @@ The Next.js community has created packages and articles you may find helpful:
 For more information on what to read next, we recommend:
 
 <div class="card">
-  <a href="/docs/basic-features/environment-variables#test-environment-variables.md">
+  <a href="/docs/basic-features/environment-variables#test-environment-variables">
     <b>Test Environment Variables</b>
     <small>Learn more about the test environment variables.</small>
   </a>

@@ -25,7 +25,7 @@ description: Next.js helps you optimize loading third-party scripts with the bui
 
 </details>
 
-The Next.js Script component, [`next/script`](/docs/api-reference/next/script.md), is an extension of the HTML `<script>` element. It enables developers to set the loading priority of third-party scripts anywhere in their application, outside `next/head`, saving developer time while improving loading performance.
+The Next.js Script component, [`next/script`](/docs/api-reference/next/script), is an extension of the HTML `<script>` element. It enables developers to set the loading priority of third-party scripts anywhere in their application, outside `next/head`, saving developer time while improving loading performance.
 
 ```jsx
 import Script from 'next/script'
@@ -185,7 +185,7 @@ There are a number of trade-offs that need to be considered when loading a third
 
 Although the `worker` strategy does not require any additional configuration to work, Partytown supports the use of a config object to modify some of its settings, including enabling `debug` mode and forwarding events and triggers.
 
-If you would like to add additional configuration options, you can include it within the `<Head />` component used in a [custom `_document.js`](/docs/advanced-features/custom-document.md):
+If you would like to add additional configuration options, you can include it within the `<Head />` component used in a [custom `_document.js`](/docs/advanced-features/custom-document):
 
 ```jsx
 import { Html, Head, Main, NextScript } from 'next/document'
@@ -220,7 +220,7 @@ In order to modify Partytown's configuration, the following conditions must be m
 1. The `data-partytown-config` attribute must be used in order to overwrite the default configuration used by Next.js
 2. Unless you decide to save Partytown's library files in a separate directory, the `lib: "/_next/static/~partytown/"` property and value must be included in the configuration object in order to let Partytown know where Next.js stores the necessary static files.
 
-> **Note**: If you are using an [asset prefix](/docs/api-reference/next.config.js/cdn-support-with-asset-prefix.md) and would like to modify Partytown's default configuration, you must include it as part of the `lib` path.
+> **Note**: If you are using an [asset prefix](/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) and would like to modify Partytown's default configuration, you must include it as part of the `lib` path.
 
 Take a look at Partytown's [configuration options](https://partytown.builder.io/configuration) to see the full list of other properties that can be added.
 

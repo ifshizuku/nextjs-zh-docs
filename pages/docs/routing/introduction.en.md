@@ -4,7 +4,7 @@ description: Next.js has a built-in, opinionated, and file-system based Router. 
 
 # Routing
 
-Next.js has a file-system based router built on the [concept of pages](/docs/basic-features/pages.md).
+Next.js has a file-system based router built on the [concept of pages](/docs/basic-features/pages).
 
 When a file is added to the `pages` directory, it's automatically available as a route.
 
@@ -32,7 +32,7 @@ To match a dynamic segment, you can use the bracket syntax. This allows you to m
 - `pages/[username]/settings.js` → `/:username/settings` (`/foo/settings`)
 - `pages/post/[...all].js` → `/post/*` (`/post/2020/id/title`)
 
-> Check out the [Dynamic Routes documentation](/docs/routing/dynamic-routes.md) to learn more about how they work.
+> Check out the [Dynamic Routes documentation](/docs/routing/dynamic-routes) to learn more about how they work.
 
 ## Linking between pages
 
@@ -74,7 +74,7 @@ The example above uses multiple links. Each one maps a path (`href`) to a known 
 - `/about` → `pages/about.js`
 - `/blog/hello-world` → `pages/blog/[slug].js`
 
-Any `<Link />` in the viewport (initially or through scroll) will be prefetched by default (including the corresponding data) for pages using [Static Generation](/docs/basic-features/data-fetching/get-static-props.md). The corresponding data for [server-rendered](/docs/basic-features/data-fetching/get-server-side-props.md) routes is _not_ prefetched.
+Any `<Link />` in the viewport (initially or through scroll) will be prefetched by default (including the corresponding data) for pages using [Static Generation](/docs/basic-features/data-fetching/get-static-props). The corresponding data for [server-rendered](/docs/basic-features/data-fetching/get-server-side-props) routes is _not_ prefetched.
 
 ### Linking to dynamic paths
 
@@ -143,23 +143,23 @@ Now, instead of using interpolation to create the path, we use a URL object in `
   </ul>
 </details>
 
-To access the [`router` object](/docs/api-reference/next/router.md#router-object) in a React component you can use [`useRouter`](/docs/api-reference/next/router.md#useRouter) or [`withRouter`](/docs/api-reference/next/router.md#withRouter).
+To access the [`router` object](/docs/api-reference/next/router#router-object) in a React component you can use [`useRouter`](/docs/api-reference/next/router#useRouter) or [`withRouter`](/docs/api-reference/next/router#withRouter).
 
-In general we recommend using [`useRouter`](/docs/api-reference/next/router.md#useRouter).
+In general we recommend using [`useRouter`](/docs/api-reference/next/router#useRouter).
 
 ## Learn more
 
 The router is divided in multiple parts:
 
 <div class="card">
-  <a href="/docs/api-reference/next/link.md">
+  <a href="/docs/api-reference/next/link">
     <b>next/link:</b>
     <small>Handle client-side navigations.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/next/router.md">
+  <a href="/docs/api-reference/next/router">
     <b>next/router:</b>
     <small>Leverage the router API in your pages.</small>
   </a>

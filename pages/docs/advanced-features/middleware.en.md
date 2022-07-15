@@ -116,7 +116,7 @@ The [`NextResponse`](#nextresponse) API allows you to:
 - Set response cookies
 - Set response headers
 
-To produce a response from Middleware, you should `rewrite` to a route ([Page](/docs/basic-features/pages.md) or [Edge API Route](/docs/api-routes/edge-api-routes.md)) that produces a response.
+To produce a response from Middleware, you should `rewrite` to a route ([Page](/docs/basic-features/pages) or [Edge API Route](/docs/api-routes/edge-api-routes)) that produces a response.
 
 ## Using Cookies
 
@@ -153,21 +153,21 @@ export function middleware(request: NextRequest) {
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/edge-runtime.md">
+  <a href="/docs/api-reference/edge-runtime">
     <b>Edge Runtime</b>
     <small>Learn more about the supported Web APIs available.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/next/server.md">
+  <a href="/docs/api-reference/next/server">
     <b>Middleware API Reference</b>
     <small>Learn more about the supported APIs for Middleware.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-routes/edge-api-routes.md">
+  <a href="/docs/api-routes/edge-api-routes">
     <b>Edge API Routes</b>
     <small>Build high performance APIs in Next.js. </small>
   </a>

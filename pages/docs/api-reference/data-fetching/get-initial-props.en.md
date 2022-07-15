@@ -4,11 +4,11 @@ description: Enable Server-Side Rendering in a page and do initial data populati
 
 # getInitialProps
 
-**Recommended: [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md) or [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md)** instead of `getInitialProps`. These data fetching methods allow you to have a granular choice between static generation and server-side rendering.
+**Recommended: [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) or [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props)** instead of `getInitialProps`. These data fetching methods allow you to have a granular choice between static generation and server-side rendering.
 
-`getInitialProps` enables [server-side rendering](/docs/basic-features/pages.md#server-side-rendering) in a page and allows you to do **initial data population**, it means sending the [page](/docs/basic-features/pages.md) with the data already populated from the server. This is especially useful for [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization).
+`getInitialProps` enables [server-side rendering](/docs/basic-features/pages#server-side-rendering) in a page and allows you to do **initial data population**, it means sending the [page](/docs/basic-features/pages) with the data already populated from the server. This is especially useful for [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization).
 
-`getInitialProps` will disable [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md).
+`getInitialProps` will disable [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization).
 
 `getInitialProps` is an [`async`](https://vercel.com/blog/async-and-await) function that can be added to any page as a [`static method`](https://javascript.info/static-properties-methods). Take a look at the following example:
 
@@ -50,7 +50,7 @@ export default Page
 
 Data returned from `getInitialProps` is serialized when server rendering, similar to what [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) does. Make sure the returned object from `getInitialProps` is a plain `Object` and not using `Date`, `Map` or `Set`.
 
-For the initial page load, `getInitialProps` will run on the server only. `getInitialProps` will then run on the client when navigating to a different route via the [`next/link`](/docs/api-reference/next/link.md) component or by using [`next/router`](/docs/api-reference/next/router.md). However, if `getInitialProps` is used in a custom `_app.js`, and the page being navigated to implements `getServerSideProps`, then `getInitialProps` will run on the server.
+For the initial page load, `getInitialProps` will run on the server only. `getInitialProps` will then run on the client when navigating to a different route via the [`next/link`](/docs/api-reference/next/link) component or by using [`next/router`](/docs/api-reference/next/router). However, if `getInitialProps` is used in a custom `_app.js`, and the page being navigated to implements `getServerSideProps`, then `getInitialProps` will run on the server.
 
 ## Context Object
 
@@ -121,7 +121,7 @@ export default class Page extends React.Component<Props> {
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/overview.md">
+  <a href="/docs/basic-features/data-fetching/overview">
     <b>Data Fetching:</b>
     <small>Learn more about data fetching in Next.js.</small>
   </a>

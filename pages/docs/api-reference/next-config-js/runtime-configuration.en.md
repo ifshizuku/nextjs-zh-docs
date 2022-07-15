@@ -4,7 +4,7 @@ description: Add client and server runtime configuration to your Next.js app.
 
 # Runtime Configuration
 
-> Generally you'll want to use [build-time environment variables](/docs/basic-features/environment-variables.md) to provide your configuration. The reason for this is that runtime configuration adds rendering / initialization overhead and is incompatible with [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md).
+> Generally you'll want to use [build-time environment variables](/docs/basic-features/environment-variables) to provide your configuration. The reason for this is that runtime configuration adds rendering / initialization overhead and is incompatible with [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization).
 
 To add runtime configuration to your app open `next.config.js` and add the `publicRuntimeConfig` and `serverRuntimeConfig` configs:
 
@@ -26,7 +26,7 @@ Place any server-only runtime config under `serverRuntimeConfig`.
 
 Anything accessible to both client and server-side code should be under `publicRuntimeConfig`.
 
-> A page that relies on `publicRuntimeConfig` **must** use `getInitialProps` or `getServerSideProps` or your application must have a [Custom App](/docs/advanced-features/custom-app.md) with `getInitialProps` to opt-out of [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md). Runtime configuration won't be available to any page (or component in a page) without being server-side rendered.
+> A page that relies on `publicRuntimeConfig` **must** use `getInitialProps` or `getServerSideProps` or your application must have a [Custom App](/docs/advanced-features/custom-app) with `getInitialProps` to opt-out of [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization). Runtime configuration won't be available to any page (or component in a page) without being server-side rendered.
 
 To get access to the runtime configs in your app use `next/config`, like so:
 
@@ -59,14 +59,14 @@ export default MyImage
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/environment-variables.md">
+  <a href="/docs/api-reference/next.config.js/environment-variables">
     <b>Environment Variables:</b>
     <small>Access environment variables in your Next.js application at build time.</small>
   </a>

@@ -29,7 +29,7 @@ description: Enable Image Optimization with the built-in Image component.
 
 </details>
 
-> **Note: This is API documentation for the Image Component and Image Optimization. For a feature overview and usage information for images in Next.js, please see [Images](/docs/basic-features/image-optimization.md).**
+> **Note: This is API documentation for the Image Component and Image Optimization. For a feature overview and usage information for images in Next.js, please see [Images](/docs/basic-features/image-optimization).**
 
 ## Required Props
 
@@ -39,7 +39,7 @@ The `<Image />` component requires the following properties.
 
 Must be one of the following:
 
-1. A [statically imported](/docs/basic-features/image-optimization.md#local-images) image file, or
+1. A [statically imported](/docs/basic-features/image-optimization#local-images) image file, or
 2. A path string. This can be either an absolute external URL,
    or an internal path depending on the [loader](#loader) prop or [loader configuration](#loader-configuration).
 
@@ -55,7 +55,7 @@ When using `layout="intrinsic"` or `layout="fixed"` the `width` property represe
 
 When using `layout="responsive"`, `layout="fill"`, the `width` property represents the _original_ width in pixels, so it will only affect the aspect ratio.
 
-The `width` property is required, except for [statically imported images](/docs/basic-features/image-optimization.md#local-images), or those with `layout="fill"`.
+The `width` property is required, except for [statically imported images](/docs/basic-features/image-optimization#local-images), or those with `layout="fill"`.
 
 ### height
 
@@ -65,7 +65,7 @@ When using `layout="intrinsic"` or `layout="fixed"` the `height` property repres
 
 When using `layout="responsive"`, `layout="fill"`, the `height` property represents the _original_ height in pixels, so it will only affect the aspect ratio.
 
-The `height` property is required, except for [statically imported images](/docs/basic-features/image-optimization.md#local-images), or those with `layout="fill"`.
+The `height` property is required, except for [statically imported images](/docs/basic-features/image-optimization#local-images), or those with `layout="fill"`.
 
 ## Optional Props
 
@@ -158,7 +158,7 @@ Should only be used when the image is visible above the fold. Defaults to `false
 
 A placeholder to use while the image is loading. Possible values are `blur` or `empty`. Defaults to `empty`.
 
-When `blur`, the [`blurDataURL`](#blurdataurl) property will be used as the placeholder. If `src` is an object from a [static import](/docs/basic-features/image-optimization.md#local-images) and the imported image is `.jpg`, `.png`, `.webp`, or `.avif`, then `blurDataURL` will be automatically populated.
+When `blur`, the [`blurDataURL`](#blurdataurl) property will be used as the placeholder. If `src` is an object from a [static import](/docs/basic-features/image-optimization#local-images) and the imported image is `.jpg`, `.png`, `.webp`, or `.avif`, then `blurDataURL` will be automatically populated.
 
 For dynamic images, you must provide the [`blurDataURL`](#blurdataurl) property. Solutions such as [Plaiceholder](https://github.com/joe-bell/plaiceholder) can help with `base64` generation.
 
@@ -414,11 +414,11 @@ The following Image Optimization cloud providers are included:
 - [Imgix](https://www.imgix.com): `loader: 'imgix'`
 - [Cloudinary](https://cloudinary.com): `loader: 'cloudinary'`
 - [Akamai](https://www.akamai.com): `loader: 'akamai'`
-- Custom: `loader: 'custom'` use a custom cloud provider by implementing the [`loader`](/docs/api-reference/next/image.md#loader) prop on the `next/image` component
+- Custom: `loader: 'custom'` use a custom cloud provider by implementing the [`loader`](/docs/api-reference/next/image#loader) prop on the `next/image` component
 
 If you need a different provider, you can use the [`loader`](#loader) prop with `next/image`.
 
-> Images can not be optimized at build time using [`next export`](/docs/advanced-features/static-html-export.md), only on-demand. To use `next/image` with `next export`, you will need to use a different loader than the default. [Read more in the discussion.](https://github.com/vercel/next.js/discussions/19065)
+> Images can not be optimized at build time using [`next export`](/docs/advanced-features/static-html-export), only on-demand. To use `next/image` with `next export`, you will need to use a different loader than the default. [Read more in the discussion.](https://github.com/vercel/next.js/discussions/19065)
 
 > The `next/image` component's default loader uses [`squoosh`](https://www.npmjs.com/package/@squoosh/lib) because it is quick to install and suitable for a development environment. When using `next start` in your production environment, it is strongly recommended that you install [`sharp`](https://www.npmjs.com/package/sharp) by running `yarn add sharp` in your project directory. This is not necessary for Vercel deployments, as `sharp` is installed automatically.
 
@@ -428,7 +428,7 @@ The following configuration is for advanced use cases and is usually not necessa
 
 ### Device Sizes
 
-If you know the expected device widths of your users, you can specify a list of device width breakpoints using the `deviceSizes` property in `next.config.js`. These widths are used when the [`next/image`](/docs/api-reference/next/image.md) component uses `layout="responsive"` or `layout="fill"` to ensure the correct image is served for user's device.
+If you know the expected device widths of your users, you can specify a list of device width breakpoints using the `deviceSizes` property in `next.config.js`. These widths are used when the [`next/image`](/docs/api-reference/next/image) component uses `layout="responsive"` or `layout="fill"` to ensure the correct image is served for user's device.
 
 If no configuration is provided, the default below is used.
 
@@ -504,7 +504,7 @@ The expiration (or rather Max Age) is defined by either the [`minimumCacheTTL`](
 
 ### Minimum Cache TTL
 
-You can configure the Time to Live (TTL) in seconds for cached optimized images. In many cases, it's better to use a [Static Image Import](/docs/basic-features/image-optimization.md#local-images) which will automatically hash the file contents and cache the image forever with a `Cache-Control` header of `immutable`.
+You can configure the Time to Live (TTL) in seconds for cached optimized images. In many cases, it's better to use a [Static Image Import](/docs/basic-features/image-optimization#local-images) which will automatically hash the file contents and cache the image forever with a `Cache-Control` header of `immutable`.
 
 ```js
 module.exports = {
@@ -538,7 +538,7 @@ module.exports = {
 
 ### Dangerously Allow SVG
 
-The default [loader](#loader) does not optimize SVG images for a few reasons. First, SVG is a vector format meaning it can be resized losslessly. Second, SVG has many of the same features as HTML/CSS, which can lead to vulnerabilities without proper [Content Security Policy (CSP) headers](/docs/advanced-features/security-headers.md).
+The default [loader](#loader) does not optimize SVG images for a few reasons. First, SVG is a vector format meaning it can be resized losslessly. Second, SVG has many of the same features as HTML/CSS, which can lead to vulnerabilities without proper [Content Security Policy (CSP) headers](/docs/advanced-features/security-headers).
 
 If you need to serve SVG images with the default Image Optimization API, you can set `dangerouslyAllowSVG` and `contentSecurityPolicy` inside your `next.config.js`:
 
@@ -553,7 +553,7 @@ module.exports = {
 
 ### Experimental "raw" layout mode
 
-The `layout="raw"` experiment has been moved to a new module. Please use [`next/future/image`](/docs/api-reference/next/future/image.md) instead.
+The `layout="raw"` experiment has been moved to a new module. Please use [`next/future/image`](/docs/api-reference/next/future/image) instead.
 
 ### Animated Images
 
@@ -566,7 +566,7 @@ Auto-detection for animated files is best-effort and supports GIF, APNG, and Web
 For an overview of the Image component features and usage guidelines, see:
 
 <div class="card">
-  <a href="/docs/basic-features/image-optimization.md">
+  <a href="/docs/basic-features/image-optimization">
     <b>Images</b>
     <small>Learn how to display and optimize images with the Image component.</small>
   </a>

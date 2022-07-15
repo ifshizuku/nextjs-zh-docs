@@ -14,7 +14,7 @@ yarn create next-app
 pnpm create next-app
 ```
 
-You can create a [TypeScript project](https://github.com/vercel/next.js/blob/canary/docs/basic-features/typescript.md) with the `--ts, --typescript` flag:
+You can create a [TypeScript project](https://github.com/vercel/next.js/blob/canary/docs/basic-features/typescript) with the `--ts, --typescript` flag:
 
 ```bash
 npx create-next-app@latest --ts
@@ -51,21 +51,21 @@ Note: To bootstrap using `yarn` we recommend running `yarn create next-app`
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/pages.md">
+  <a href="/docs/basic-features/pages">
     <b>Pages:</b>
     <small>Learn more about what pages are in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/built-in-css-support.md">
+  <a href="/docs/basic-features/built-in-css-support">
     <b>CSS Support:</b>
     <small>Use the built-in CSS support to add custom styles to your app.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/cli.md">
+  <a href="/docs/api-reference/cli">
     <b>CLI:</b>
     <small>Learn more about the Next.js CLI.</small>
   </a>

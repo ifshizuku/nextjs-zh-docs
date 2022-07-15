@@ -4,7 +4,7 @@ description: The Next.js Edge Runtime is based on standard Web APIs. Learn more 
 
 # Edge Runtime
 
-The Next.js Edge Runtime is based on standard Web APIs, which is used by [Middleware](/docs/middleware.md) and [Edge API Routes](/docs/api-routes/edge-api-routes.md).
+The Next.js Edge Runtime is based on standard Web APIs, which is used by [Middleware](/docs/middleware) and [Edge API Routes](/docs/api-routes/edge-api-routes).
 
 ## Network APIs
 
@@ -113,7 +113,7 @@ The Next.js Edge Runtime is based on standard Web APIs, which is used by [Middle
 
 ## Environment Variables
 
-You can use `process.env` to access [Environment Variables](/docs/basic-features/environment-variables.md) for both `next dev` and `next build`.
+You can use `process.env` to access [Environment Variables](/docs/basic-features/environment-variables) for both `next dev` and `next build`.
 
 Running `console.log` on `process.env` **will not** show all your Environment Variables. You have to access the variables directly as shown below:
 
@@ -140,21 +140,21 @@ The following JavaScript language features are disabled, and **will not work:**
 ## Related
 
 <div class="card">
-  <a href="/docs/advanced-features/middleware.md">
+  <a href="/docs/advanced-features/middleware">
     <b>Middleware</b>
     <small>Run code before a request is completed.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/next/server.md">
+  <a href="/docs/api-reference/next/server">
     <b>Middleware API Reference</b>
     <small>Learn more about the supported APIs for Middleware.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-routes/edge-api-routes.md">
+  <a href="/docs/api-routes/edge-api-routes">
     <b>Edge API Routes</b>
     <small>Build high performance APIs in Next.js. </small>
   </a>

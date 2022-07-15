@@ -1,0 +1,7 @@
+{
+    "introduction": "Introduction",
+    "dynamic-api-routes": "Dynamic API Routes",
+    "api-middlewares": "API Middlewares",
+    "response-helpers": "Response Helpers",
+    "edge-api-routes": "Edge API Routes (Beta)"
+}

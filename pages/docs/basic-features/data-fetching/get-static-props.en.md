@@ -31,11 +31,11 @@ You should use `getStaticProps` if:
 
 - `getStaticProps` always runs during `next build`
 - `getStaticProps` runs in the background when using `revalidate`
-- `getStaticProps` runs on-demand in the background when using [`revalidate()`](/docs/basic-features/data-fetching/incremental-static-regeneration.md#on-demand-revalidation)
+- `getStaticProps` runs on-demand in the background when using [`revalidate()`](/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation)
 
-When combined with [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration.md), `getStaticProps` will run in the background while the stale page is being revalidated, and the fresh page served to the browser.
+When combined with [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration), `getStaticProps` will run in the background while the stale page is being revalidated, and the fresh page served to the browser.
 
-`getStaticProps` does not have access to the incoming request (such as query parameters or HTTP headers) as it generates static HTML. If you need access to the request for your page, consider using [Middleware](/docs/middleware.md) in addition to `getStaticProps`.
+`getStaticProps` does not have access to the incoming request (such as query parameters or HTTP headers) as it generates static HTML. If you need access to the request for your page, consider using [Middleware](/docs/middleware) in addition to `getStaticProps`.
 
 ## Using getStaticProps to fetch data from a CMS
 
@@ -74,7 +74,7 @@ export async function getStaticProps() {
 export default Blog
 ```
 
-The [`getStaticProps` API reference](/docs/api-reference/data-fetching/get-static-props.md) covers all parameters and props that can be used with `getStaticProps`.
+The [`getStaticProps` API reference](/docs/api-reference/data-fetching/get-static-props) covers all parameters and props that can be used with `getStaticProps`.
 
 ## Write server-side code directly
 
@@ -120,7 +120,7 @@ To verify what Next.js eliminates from the client-side bundle, you can use the [
 
 When a page with `getStaticProps` is pre-rendered at build time, in addition to the page HTML file, Next.js generates a JSON file holding the result of running `getStaticProps`.
 
-This JSON file will be used in client-side routing through [`next/link`](/docs/api-reference/next/link.md) or [`next/router`](/docs/api-reference/next/router.md). When you navigate to a page that’s pre-rendered using `getStaticProps`, Next.js fetches this JSON file (pre-computed at build time) and uses it as the props for the page component. This means that client-side page transitions will **not** call `getStaticProps` as only the exported JSON is used.
+This JSON file will be used in client-side routing through [`next/link`](/docs/api-reference/next/link) or [`next/router`](/docs/api-reference/next/router). When you navigate to a page that’s pre-rendered using `getStaticProps`, Next.js fetches this JSON file (pre-computed at build time) and uses it as the props for the page component. This means that client-side page transitions will **not** call `getStaticProps` as only the exported JSON is used.
 
 When using Incremental Static Generation, `getStaticProps` will be executed in the background to generate the JSON needed for client-side navigation. You may see this in the form of multiple requests being made for the same page, however, this is intended and has no impact on end-user performance.
 
@@ -132,7 +132,7 @@ One of the reasons for this restriction is that React needs to have all the requ
 
 Also, you must use export `getStaticProps` as a standalone function — it will **not** work if you add `getStaticProps` as a property of the page component.
 
-> Note: if you have created a [custom app](/docs/advanced-features/custom-app.md), ensure you are passing the `pageProps` to the page component as shown in the linked document, otherwise the props will be empty.
+> Note: if you have created a [custom app](/docs/advanced-features/custom-app), ensure you are passing the `pageProps` to the page component as shown in the linked document, otherwise the props will be empty.
 
 ## Runs on every request in development
 
@@ -140,14 +140,14 @@ In development (`next dev`), `getStaticProps` will be called on every request.
 
 ## Preview Mode
 
-You can temporarily bypass static generation and render the page at **request time** instead of build time using [**Preview Mode**](/docs/advanced-features/preview-mode.md). For example, you might be using a headless CMS and want to preview drafts before they're published.
+You can temporarily bypass static generation and render the page at **request time** instead of build time using [**Preview Mode**](/docs/advanced-features/preview-mode). For example, you might be using a headless CMS and want to preview drafts before they're published.
 
 ## Related
 
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/data-fetching/get-static-props.md">
+  <a href="/docs/api-reference/data-fetching/get-static-props">
     <b>getStaticProps API Reference</b>
     <small>Read the API Reference for getStaticProps</small>
   </a>

@@ -24,7 +24,7 @@ By default, Next.js will automatically inline font CSS at build time, eliminatin
 
 ## Usage
 
-To add a web font to your Next.js application, add the font to a [Custom `Document`](/docs/advanced-features/custom-document.md).
+To add a web font to your Next.js application, add the font to a [Custom `Document`](/docs/advanced-features/custom-document).
 
 ```js
 // pages/_document.js
@@ -78,7 +78,7 @@ module.exports = {
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/advanced-features/custom-document.md">
+  <a href="/docs/advanced-features/custom-document">
     <b>Custom Document</b>
     <small>Learn how to augment your application's html and body tags.</small>
   </a>

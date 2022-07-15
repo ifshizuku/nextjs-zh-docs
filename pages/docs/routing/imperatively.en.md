@@ -11,9 +11,9 @@ description: Client-side navigations are also possible using the Next.js Router 
   </ul>
 </details>
 
-[`next/link`](/docs/api-reference/next/link.md) should be able to cover most of your routing needs, but you can also do client-side navigations without it, take a look at the [documentation for `next/router`](/docs/api-reference/next/router.md).
+[`next/link`](/docs/api-reference/next/link) should be able to cover most of your routing needs, but you can also do client-side navigations without it, take a look at the [documentation for `next/router`](/docs/api-reference/next/router).
 
-The following example shows how to do basic page navigations with [`useRouter`](/docs/api-reference/next/router.md#useRouter):
+The following example shows how to do basic page navigations with [`useRouter`](/docs/api-reference/next/router#useRouter):
 
 ```jsx
 import { useRouter } from 'next/router'

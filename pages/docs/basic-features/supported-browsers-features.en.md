@@ -26,7 +26,7 @@ In addition to `fetch()` on the client-side, Next.js polyfills `fetch()` in the 
 
 If your own code or any external npm dependencies require features not supported by your target browsers, you need to add polyfills yourself.
 
-In this case, you should add a top-level import for the **specific polyfill** you need in your [Custom `<App>`](/docs/advanced-features/custom-app.md) or the individual component.
+In this case, you should add a top-level import for the **specific polyfill** you need in your [Custom `<App>`](/docs/advanced-features/custom-app) or the individual component.
 
 ## JavaScript Language Features
 
@@ -42,8 +42,8 @@ Next.js allows you to use the latest JavaScript features out of the box. In addi
 
 ### TypeScript Features
 
-Next.js has built-in TypeScript support. [Learn more here](/docs/basic-features/typescript.md).
+Next.js has built-in TypeScript support. [Learn more here](/docs/basic-features/typescript).
 
 ### Customizing Babel Config (Advanced)
 
-You can customize babel configuration. [Learn more here](/docs/advanced-features/customizing-babel-config.md).
+You can customize babel configuration. [Learn more here](/docs/advanced-features/customizing-babel-config).

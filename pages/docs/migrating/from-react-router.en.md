@@ -4,7 +4,7 @@ description: Learn how to migrate from React Router to file-system based routes 
 
 # Migrating from React Router
 
-This guide will help you understand how to transition from [React Router](https://reactrouter.com) to [file-system based](/docs/routing/introduction.md) routes with Next.js. Using [`next/link`](/docs/api-reference/next/link.md) and [`next/router`](/docs/api-reference/next/router.md) will allow you to:
+This guide will help you understand how to transition from [React Router](https://reactrouter.com) to [file-system based](/docs/routing/introduction) routes with Next.js. Using [`next/link`](/docs/api-reference/next/link) and [`next/router`](/docs/api-reference/next/router) will allow you to:
 
 - Decrease bundle size by removing React Router as a dependency.
 - Define your application routes through the file system.
@@ -64,7 +64,7 @@ export default function App() {
 }
 ```
 
-With Next.js, you can express the same application structure in the file system. When a file is added to the [`pages`](/docs/basic-features/pages.md) directory it's automatically available as a route.
+With Next.js, you can express the same application structure in the file system. When a file is added to the [`pages`](/docs/basic-features/pages) directory it's automatically available as a route.
 
 - `pages/about.js` → `/about`
 - `pages/blog.js` → `/blog`
@@ -107,7 +107,7 @@ function Post() {
 }
 ```
 
-Rather than using the `:slug` syntax inside your `Route` component, Next.js uses the `[slug]` syntax in the file name for [Dynamic Routes](/docs/routing/dynamic-routes.md). We can transform this to Next.js by creating two new files, `pages/blog/index.js` (showing all pages) and `pages/blog/[slug].js` (showing an individual post).
+Rather than using the `:slug` syntax inside your `Route` component, Next.js uses the `[slug]` syntax in the file name for [Dynamic Routes](/docs/routing/dynamic-routes). We can transform this to Next.js by creating two new files, `pages/blog/index.js` (showing all pages) and `pages/blog/[slug].js` (showing an individual post).
 
 ```jsx
 // pages/blog/index.js
@@ -130,7 +130,7 @@ export default function Post() {
 
 ## Server Rendering
 
-Next.js has built-in support for [Server-side Rendering](/docs/basic-features/pages#server-side-rendering.md). This means you can remove any instances of `StaticRouter` in your code.
+Next.js has built-in support for [Server-side Rendering](/docs/basic-features/pages#server-side-rendering). This means you can remove any instances of `StaticRouter` in your code.
 
 ## Code Splitting
 
@@ -139,7 +139,7 @@ Next.js has built-in support for [Code Splitting](https://reactrouter.com/web/gu
 - `@loadable/server`, `@loadable/babel-plugin`, and `@loadable/webpack-plugin`
 - Modifications to your `.babelrc` for `@loadable/babel-plugin`
 
-Each file inside your `pages/` directory will be code split into its own JavaScript bundle during the build process. Next.js [also supports](/docs/basic-features/supported-browsers-features.md#javascript-language-features) ES2020 dynamic `import()` for JavaScript. With it you can import JavaScript modules dynamically and work with them. They also work with SSR.
+Each file inside your `pages/` directory will be code split into its own JavaScript bundle during the build process. Next.js [also supports](/docs/basic-features/supported-browsers-features#javascript-language-features) ES2020 dynamic `import()` for JavaScript. With it you can import JavaScript modules dynamically and work with them. They also work with SSR.
 
 For more information, read about [Dynamic Imports](https://nextjs.org/docs/advanced-features/dynamic-import).
 
@@ -154,21 +154,21 @@ The default behavior of `next/link` and `next/router` is to scroll to the top of
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/routing/introduction.md">
+  <a href="/docs/routing/introduction">
     <b>Routing:</b>
     <small>Learn more about routing in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/routing/dynamic-routes.md">
+  <a href="/docs/routing/dynamic-routes">
     <b>Dynamic Routes:</b>
     <small>Learn more about the built-in dynamic routes.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-reference/next/link.md">
+  <a href="/docs/api-reference/next/link">
     <b>Pages:</b>
     <small>Enable client-side transitions with next/link.</small>
   </a>

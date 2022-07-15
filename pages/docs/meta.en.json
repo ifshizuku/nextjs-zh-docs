@@ -11,6 +11,7 @@
     "guide": "Guide",
     "advanced-features": "Advanced Features",
     "upgrading": "Upgrade Guide",
-    "migrating": "Migrating",
-    "faq": "FAQ"
+    "migrating": "Migrating to Next.js",
+    "faq": "FAQ",
+    "api-reference": "API Reference"
 }

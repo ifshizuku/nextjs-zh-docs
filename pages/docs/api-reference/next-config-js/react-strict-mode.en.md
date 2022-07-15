@@ -22,7 +22,7 @@ If you or your team are not ready to use Strict Mode in your entire application,
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>

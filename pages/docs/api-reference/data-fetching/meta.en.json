@@ -1,0 +1,6 @@
+{
+    "get-initial-props": "getInitialProps",
+    "get-server-side-props": "getServerSideProps",
+    "get-static-paths": "getStaticPaths",
+    "get-static-props": "getStaticProps"
+}

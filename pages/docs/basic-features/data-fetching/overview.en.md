@@ -29,35 +29,35 @@ description: 'Next.js allows you to fetch data in multiple ways, with pre-render
 Data fetching in Next.js allows you to render your content in different ways, depending on your application's use case. These include pre-rendering with **Server-side Rendering** or **Static Generation**, and updating or creating content at runtime with **Incremental Static Regeneration**.
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/get-server-side-props.md">
+  <a href="/docs/basic-features/data-fetching/get-server-side-props">
     <b>SSR: Server-side rendering</b>
     <small>Learn more about server-side rendering in Next.js with getServerSideProps.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/get-static-props.md">
+  <a href="/docs/basic-features/data-fetching/get-static-props">
     <b>SSG: Static-site generation</b>
     <small>Learn more about static site generation in Next.js with getStaticProps.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/client-side.md">
+  <a href="/docs/basic-features/data-fetching/client-side">
     <b>CSR: Client-side rendering</b>
     <small>Learn more about client side rendering in Next.js with SWR.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/get-static-paths.md">
+  <a href="/docs/basic-features/data-fetching/get-static-paths">
     <b>Dynamic routing</b>
     <small>Learn more about dynamic routing in Next.js with getStaticPaths.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/incremental-static-regeneration.md">
+  <a href="/docs/basic-features/data-fetching/incremental-static-regeneration">
     <b>ISR: Incremental Static Regeneration</b>
     <small>Learn more about Incremental Static Regeneration in Next.js.</small>
   </a>
@@ -66,21 +66,21 @@ Data fetching in Next.js allows you to render your content in different ways, de
 ## Learn more
 
 <div class="card">
-  <a href="/docs/advanced-features/preview-mode.md">
+  <a href="/docs/advanced-features/preview-mode">
     <b>Preview Mode:</b>
     <small>Learn more about the preview mode in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/routing/introduction.md">
+  <a href="/docs/routing/introduction">
     <b>Routing:</b>
     <small>Learn more about routing in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/typescript.md#pages">
+  <a href="/docs/basic-features/typescript#pages">
     <b>TypeScript:</b>
     <small>Add TypeScript to your pages.</small>
   </a>

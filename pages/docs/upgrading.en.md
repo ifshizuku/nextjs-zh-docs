@@ -270,7 +270,7 @@ If your application uses `router.router.events` which was an internal property t
 
 ## React 16 to 17
 
-React 17 introduced a new [JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) that brings a long-time Next.js feature to the wider React ecosystem: Not having to `import React from 'react'` when using JSX. When using React 17 Next.js will automatically use the new transform. This transform does not make the `React` variable global, which was an unintended side-effect of the previous Next.js implementation. A [codemod is available](/docs/advanced-features/codemods.md#add-missing-react-import) to automatically fix cases where you accidentally used `React` without importing it.
+React 17 introduced a new [JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) that brings a long-time Next.js feature to the wider React ecosystem: Not having to `import React from 'react'` when using JSX. When using React 17 Next.js will automatically use the new transform. This transform does not make the `React` variable global, which was an unintended side-effect of the previous Next.js implementation. A [codemod is available](/docs/advanced-features/codemods#add-missing-react-import) to automatically fix cases where you accidentally used `React` without importing it.
 
 ## Upgrading from version 9 to 10
 
@@ -294,15 +294,15 @@ yarn add next@10
 
 #### Production Deployment on Vercel
 
-If you previously configured `routes` in your `vercel.json` file for dynamic routes, these rules can be removed when leveraging Next.js 9's new [Dynamic Routing feature](/docs/routing/dynamic-routes.md).
+If you previously configured `routes` in your `vercel.json` file for dynamic routes, these rules can be removed when leveraging Next.js 9's new [Dynamic Routing feature](/docs/routing/dynamic-routes).
 
 Next.js 9's dynamic routes are **automatically configured on [Vercel](https://vercel.com/)** and do not require any `vercel.json` customization.
 
-You can read more about [Dynamic Routing here](/docs/routing/dynamic-routes.md).
+You can read more about [Dynamic Routing here](/docs/routing/dynamic-routes).
 
 #### Check your Custom `<App>` (`pages/_app.js`)
 
-If you previously copied the [Custom `<App>`](/docs/advanced-features/custom-app.md) example, you may be able to remove your `getInitialProps`.
+If you previously copied the [Custom `<App>`](/docs/advanced-features/custom-app) example, you may be able to remove your `getInitialProps`.
 
 Removing `getInitialProps` from `pages/_app.js` (when possible) is important to leverage new Next.js features!
 

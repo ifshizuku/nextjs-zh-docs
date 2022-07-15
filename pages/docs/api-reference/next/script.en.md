@@ -24,7 +24,7 @@ description: Optimize loading of third-party scripts with the built-in Script co
 
 </details>
 
-> **Note: This is API documentation for the Script Component. For a feature overview and usage information for scripts in Next.js, please see [Script Optimization](/docs/basic-features/script.md).**
+> **Note: This is API documentation for the Script Component. For a feature overview and usage information for scripts in Next.js, please see [Script Optimization](/docs/basic-features/script).**
 
 ## Optional Props
 

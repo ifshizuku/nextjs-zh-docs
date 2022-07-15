@@ -27,12 +27,12 @@ export default function handler(req, res) {
 }
 ```
 
-> **Note**: API Routes will be affected by [`pageExtensions` configuration](/docs/api-reference/next.config.js/custom-page-extensions.md) in `next.config.js`.
+> **Note**: API Routes will be affected by [`pageExtensions` configuration](/docs/api-reference/next.config.js/custom-page-extensions) in `next.config.js`.
 
 For an API route to work, you need to export a function as default (a.k.a **request handler**), which then receives the following parameters:
 
-- `req`: An instance of [http.IncomingMessage](https://nodejs.org/api/http.html#class-httpincomingmessage), plus some [pre-built middlewares](/docs/api-routes/api-middlewares.md)
-- `res`: An instance of [http.ServerResponse](https://nodejs.org/api/http.html#class-httpserverresponse), plus some [helper functions](/docs/api-routes/response-helpers.md)
+- `req`: An instance of [http.IncomingMessage](https://nodejs.org/api/http.html#class-httpincomingmessage), plus some [pre-built middlewares](/docs/api-routes/api-middlewares)
+- `res`: An instance of [http.ServerResponse](https://nodejs.org/api/http.html#class-httpserverresponse), plus some [helper functions](/docs/api-routes/response-helpers)
 
 To handle different HTTP methods in an API route, you can use `req.method` in your request handler, like so:
 
@@ -53,33 +53,33 @@ To fetch API endpoints, take a look into any of the examples at the start of thi
 For new projects, you can build your entire API with API Routes. If you have an existing API, you do not need to forward calls to the API through an API Route. Some other use cases for API Routes are:
 
 - Masking the URL of an external service (e.g. `/api/secret` instead of `https://company.com/secret-url`)
-- Using [Environment Variables](/docs/basic-features/environment-variables.md) on the server to securely access external services.
+- Using [Environment Variables](/docs/basic-features/environment-variables) on the server to securely access external services.
 
 ## Caveats
 
-- API Routes [do not specify CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), meaning they are **same-origin only** by default. You can customize such behavior by wrapping the request handler with the [CORS middleware](/docs/api-routes/api-middlewares.md#connectexpress-middleware-support).
-- API Routes can't be used with [`next export`](/docs/advanced-features/static-html-export.md)
+- API Routes [do not specify CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), meaning they are **same-origin only** by default. You can customize such behavior by wrapping the request handler with the [CORS middleware](/docs/api-routes/api-middlewares#connectexpress-middleware-support).
+- API Routes can't be used with [`next export`](/docs/advanced-features/static-html-export)
 
 ## Related
 
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-routes/api-middlewares.md">
+  <a href="/docs/api-routes/api-middlewares">
     <b>API Middlewares:</b>
     <small>learn about the built-in middlewares for the request.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/api-routes/response-helpers.md">
+  <a href="/docs/api-routes/response-helpers">
     <b>Response Helpers:</b>
     <small>learn about the built-in methods for the response.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/typescript.md#api-routes">
+  <a href="/docs/basic-features/typescript#api-routes">
     <b>TypeScript:</b>
     <small>Add TypeScript to your API Routes.</small>
   </a>

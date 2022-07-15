@@ -23,14 +23,14 @@ module.exports = {
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/eslint.md">
+  <a href="/docs/basic-features/eslint">
     <b>ESLint:</b>
     <small>Get started with ESLint in Next.js.</small>
   </a>

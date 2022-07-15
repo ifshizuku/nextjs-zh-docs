@@ -21,7 +21,7 @@ Now if you run `next build` Next.js will use `build` instead of the default `.ne
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>

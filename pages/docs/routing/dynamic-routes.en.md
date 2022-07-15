@@ -54,7 +54,7 @@ Multiple dynamic route segments work the same way. The page `pages/post/[pid]/[c
 { "pid": "abc", "comment": "a-comment" }
 ```
 
-Client-side navigations to dynamic routes are handled with [`next/link`](/docs/api-reference/next/link.md). If we wanted to have links to the routes used above it will look like this:
+Client-side navigations to dynamic routes are handled with [`next/link`](/docs/api-reference/next/link). If we wanted to have links to the routes used above it will look like this:
 
 ```jsx
 import Link from 'next/link'
@@ -84,7 +84,7 @@ function Home() {
 export default Home
 ```
 
-Read our docs for [Linking between pages](/docs/routing/introduction.md#linking-between-pages) to learn more.
+Read our docs for [Linking between pages](/docs/routing/introduction#linking-between-pages) to learn more.
 
 ### Catch all routes
 
@@ -135,7 +135,7 @@ The `query` objects are as follows:
   - `pages/post/create.js` - Will match `/post/create`
   - `pages/post/[pid].js` - Will match `/post/1`, `/post/abc`, etc. But not `/post/create`
   - `pages/post/[...slug].js` - Will match `/post/1/2`, `/post/a/b/c`, etc. But not `/post/create`, `/post/abc`
-- Pages that are statically optimized by [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md) will be hydrated without their route parameters provided, i.e `query` will be an empty object (`{}`).
+- Pages that are statically optimized by [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization) will be hydrated without their route parameters provided, i.e `query` will be an empty object (`{}`).
 
   After hydration, Next.js will trigger an update to your application to provide the route parameters in the `query` object.
 
@@ -144,14 +144,14 @@ The `query` objects are as follows:
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/next/link.md">
+  <a href="/docs/api-reference/next/link">
     <b>next/link:</b>
     <small>Enable client-side transitions with next/link.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/routing/introduction.md">
+  <a href="/docs/routing/introduction">
     <b>Routing:</b>
     <small>Learn more about routing in Next.js.</small>
   </a>

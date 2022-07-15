@@ -4,7 +4,7 @@ description: Customize the pages that will be exported as HTML files when using 
 
 # exportPathMap
 
-> This feature is exclusive to `next export`. Please refer to [Static HTML export](/docs/advanced-features/static-html-export.md) if you want to learn more about it.
+> This feature is exclusive to `next export`. Please refer to [Static HTML export](/docs/advanced-features/static-html-export) if you want to learn more about it.
 
 <details>
   <summary><b>Examples</b></summary>
@@ -13,7 +13,7 @@ description: Customize the pages that will be exported as HTML files when using 
   </ul>
 </details>
 
-`exportPathMap` allows you to specify a mapping of request paths to page destinations, to be used during export. Paths defined in `exportPathMap` will also be available when using [`next dev`](/docs/api-reference/cli.md#development).
+`exportPathMap` allows you to specify a mapping of request paths to page destinations, to be used during export. Paths defined in `exportPathMap` will also be available when using [`next dev`](/docs/api-reference/cli#development).
 
 Let's start with an example, to create a custom `exportPathMap` for an app with the following pages:
 
@@ -40,7 +40,7 @@ module.exports = {
 }
 ```
 
-Note: the `query` field in `exportPathMap` cannot be used with [automatically statically optimized pages](/docs/advanced-features/automatic-static-optimization) or [`getStaticProps` pages](/docs/basic-features/data-fetching/get-static-props.md) as they are rendered to HTML files at build-time and additional query information cannot be provided during `next export`.
+Note: the `query` field in `exportPathMap` cannot be used with [automatically statically optimized pages](/docs/advanced-features/automatic-static-optimization) or [`getStaticProps` pages](/docs/basic-features/data-fetching/get-static-props) as they are rendered to HTML files at build-time and additional query information cannot be provided during `next export`.
 
 The pages will then be exported as HTML files, for example, `/about` will become `/about.html`.
 
@@ -49,7 +49,7 @@ The pages will then be exported as HTML files, for example, `/about` will become
 - `dev` - `true` when `exportPathMap` is being called in development. `false` when running `next export`. In development `exportPathMap` is used to define routes.
 - `dir` - Absolute path to the project directory
 - `outDir` - Absolute path to the `out/` directory ([configurable with `-o`](#customizing-the-output-directory)). When `dev` is `true` the value of `outDir` will be `null`.
-- `distDir` - Absolute path to the `.next/` directory (configurable with the [`distDir`](/docs/api-reference/next.config.js/setting-a-custom-build-directory.md) config)
+- `distDir` - Absolute path to the `.next/` directory (configurable with the [`distDir`](/docs/api-reference/next.config.js/setting-a-custom-build-directory) config)
 - `buildId` - The generated build id
 
 The returned object is a map of pages where the `key` is the `pathname` and the `value` is an object that accepts the following fields:
@@ -57,7 +57,7 @@ The returned object is a map of pages where the `key` is the `pathname` and the 
 - `page`: `String` - the page inside the `pages` directory to render
 - `query`: `Object` - the `query` object passed to `getInitialProps` when prerendering. Defaults to `{}`
 
-> The exported `pathname` can also be a filename (for example, `/readme.md`), but you may need to set the `Content-Type` header to `text/html` when serving its content if it is different than `.html`.
+> The exported `pathname` can also be a filename (for example, `/readme`), but you may need to set the `Content-Type` header to `text/html` when serving its content if it is different than `.html`.
 
 ## Adding a trailing slash
 
@@ -73,7 +73,7 @@ module.exports = {
 
 ## Customizing the output directory
 
-[`next export`](/docs/advanced-features/static-html-export.md#how-to-use-it) will use `out` as the default output directory, you can customize this using the `-o` argument, like so:
+[`next export`](/docs/advanced-features/static-html-export#how-to-use-it) will use `out` as the default output directory, you can customize this using the `-o` argument, like so:
 
 ```bash
 next export -o outdir
@@ -82,14 +82,14 @@ next export -o outdir
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/advanced-features/static-html-export.md">
+  <a href="/docs/advanced-features/static-html-export">
     <b>Static HTML Export:</b>
     <small>Export your Next.js app to static HTML.</small>
   </a>

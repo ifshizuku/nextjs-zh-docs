@@ -1,0 +1,9 @@
+{
+    "cli": "CLI",
+    "create-next-app": "Create Next App",
+    "next": "`next` Packages",
+    "edge-runtime": "Edge Runtime",
+    "data-fetching": "Data Fetching",
+    "static-optimization-indicator": "Static Optimization Indicator",
+    "next-config-js": "next.config.js"
+}

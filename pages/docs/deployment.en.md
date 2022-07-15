@@ -10,7 +10,7 @@ Congratulations, you are ready to deploy your Next.js application to production.
 
 `next build` generates an optimized version of your application for production. This standard output includes:
 
-- HTML files for pages using `getStaticProps` or [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md)
+- HTML files for pages using `getStaticProps` or [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization)
 - CSS files for global styles or for individually scoped styles
 - JavaScript for pre-rendering dynamic content from the Next.js server
 - JavaScript for interactivity on the client-side through React
@@ -20,11 +20,11 @@ This output is generated inside the `.next` folder:
 - `.next/static/chunks/pages` – Each JavaScript file inside this folder relates to the route with the same name. For example, `.next/static/chunks/pages/about.js` would be the JavaScript file loaded when viewing the `/about` route in your application
 - `.next/static/media` – Statically imported images from `next/image` are hashed and copied here
 - `.next/static/css` – Global CSS files for all pages in your application
-- `.next/server/pages` – The HTML and JavaScript entry points prerendered from the server. The `.nft.json` files are created when [Output File Tracing](/docs/advanced-features/output-file-tracing.md) is enabled and contain all the file paths that depend on a given page.
+- `.next/server/pages` – The HTML and JavaScript entry points prerendered from the server. The `.nft.json` files are created when [Output File Tracing](/docs/advanced-features/output-file-tracing) is enabled and contain all the file paths that depend on a given page.
 - `.next/server/chunks` – Shared JavaScript chunks used in multiple places throughout your application
 - `.next/cache` – Output for the build cache and cached images, responses, and pages from the Next.js server. Using a cache helps decrease build times and improve performance of loading images
 
-All JavaScript code inside `.next` has been **compiled** and browser bundles have been **minified** to help achieve the best performance and support [all modern browsers](/docs/basic-features/supported-browsers-features.md).
+All JavaScript code inside `.next` has been **compiled** and browser bundles have been **minified** to help achieve the best performance and support [all modern browsers](/docs/basic-features/supported-browsers-features).
 
 ## Managed Next.js with Vercel
 
@@ -34,10 +34,10 @@ When deploying to Vercel, the platform [automatically detects Next.js](https://v
 
 - Persisting cached assets across deployments if unchanged
 - [Immutable deployments](https://vercel.com/features/previews) with a unique URL for every commit
-- [Pages](/docs/basic-features/pages.md) are automatically statically optimized, if possible
+- [Pages](/docs/basic-features/pages) are automatically statically optimized, if possible
 - Assets (JavaScript, CSS, images, fonts) are compressed and served from a [Global Edge Network](https://vercel.com/features/infrastructure)
-- [API Routes](/docs/api-routes/introduction.md) are automatically optimized as isolated [Serverless Functions](https://vercel.com/features/infrastructure) that can scale infinitely
-- [Middleware](/docs/middleware.md) are automatically optimized as [Edge Functions](https://vercel.com/features/edge-functions) that have zero cold starts and boot instantly
+- [API Routes](/docs/api-routes/introduction) are automatically optimized as isolated [Serverless Functions](https://vercel.com/features/infrastructure) that can scale infinitely
+- [Middleware](/docs/middleware) are automatically optimized as [Edge Functions](https://vercel.com/features/edge-functions) that have zero cold starts and boot instantly
 
 In addition, Vercel provides features like:
 
@@ -46,14 +46,14 @@ In addition, Vercel provides features like:
 - Automatic CI/CD (through GitHub, GitLab, Bitbucket, etc.)
 - Support for [Environment Variables](https://vercel.com/docs/environment-variables)
 - Support for [Custom Domains](https://vercel.com/docs/custom-domains)
-- Support for [Image Optimization](/docs/basic-features/image-optimization.md) with `next/image`
+- Support for [Image Optimization](/docs/basic-features/image-optimization) with `next/image`
 - Instant global deployments via `git push`
 
 [Deploy a Next.js application to Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/hello-world&project-name=hello-world&repository-name=hello-world&utm_source=github.com&utm_medium=referral&utm_campaign=deployment) for free to try it out.
 
 ## Self-Hosting
 
-You can self-host Next.js with support for all features using Node.js or Docker. You can also do a Static HTML Export, which [has some limitations](/docs/advanced-features/static-html-export.md).
+You can self-host Next.js with support for all features using Node.js or Docker. You can also do a Static HTML Export, which [has some limitations](/docs/advanced-features/static-html-export).
 
 ### Node.js Server
 
@@ -73,7 +73,7 @@ First, ensure your `package.json` has the `"build"` and `"start"` scripts:
 
 Then, run `next build` to build your application. Finally, run `next start` to start the Node.js server. This server supports all features of Next.js.
 
-> If you are using [`next/image`](/docs/basic-features/image-optimization.md), consider adding `sharp` for more performant [Image Optimization](/docs/basic-features/image-optimization.md) in your production environment by running `npm install sharp` in your project directory. On Linux platforms, `sharp` may require [additional configuration](https://sharp.pixelplumbing.com/install#linux-memory-allocator) to prevent excessive memory usage.
+> If you are using [`next/image`](/docs/basic-features/image-optimization), consider adding `sharp` for more performant [Image Optimization](/docs/basic-features/image-optimization) in your production environment by running `npm install sharp` in your project directory. On Linux platforms, `sharp` may require [additional configuration](https://sharp.pixelplumbing.com/install#linux-memory-allocator) to prevent excessive memory usage.
 
 ### Docker Image
 
@@ -88,7 +88,7 @@ If you need to use different Environment Variables across multiple environments,
 
 ### Static HTML Export
 
-If you’d like to do a static HTML export of your Next.js app, follow the directions on our [Static HTML Export documentation](/docs/advanced-features/static-html-export.md).
+If you’d like to do a static HTML export of your Next.js app, follow the directions on our [Static HTML Export documentation](/docs/advanced-features/static-html-export).
 
 ## Other Services
 
@@ -103,18 +103,18 @@ The following services support Next.js `v12+`. Below, you’ll find examples or 
 - [Railway](https://railway.app/new/starters/nextjs-prisma)
 - [Render](https://render.com/docs/deploy-nextjs-app)
 
-> **Note:** There are also managed platforms that allow you to use a Dockerfile as shown in the [example above](/docs/deployment.md#docker-image).
+> **Note:** There are also managed platforms that allow you to use a Dockerfile as shown in the [example above](/docs/deployment#docker-image).
 
 ### Static Only
 
-The following services support deploying Next.js using [`next export`](/docs/advanced-features/static-html-export.md).
+The following services support deploying Next.js using [`next export`](/docs/advanced-features/static-html-export).
 
 - [Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs)
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/)
 - [Firebase](https://github.com/vercel/next.js/tree/canary/examples/with-firebase-hosting)
 - [GitHub Pages](https://github.com/vercel/next.js/tree/canary/examples/github-pages)
 
-You can also manually deploy the [`next export`](/docs/advanced-features/static-html-export.md) output to any static hosting provider, often through your CI/CD pipeline like GitHub Actions, Jenkins, AWS CodeBuild, Circle CI, Azure Pipelines, and more.
+You can also manually deploy the [`next export`](/docs/advanced-features/static-html-export) output to any static hosting provider, often through your CI/CD pipeline like GitHub Actions, Jenkins, AWS CodeBuild, Circle CI, Azure Pipelines, and more.
 
 ### Serverless
 
@@ -122,7 +122,7 @@ You can also manually deploy the [`next export`](/docs/advanced-features/static-
 - [Terraform](https://github.com/milliHQ/terraform-aws-next-js)
 - [Netlify](https://docs.netlify.com/integrations/frameworks/next-js)
 
-> **Note:** Not all serverless providers implement the [Next.js Build API](/docs/deployment.md#nextjs-build-api) from `next start`. Please check with the provider to see what features are supported.
+> **Note:** Not all serverless providers implement the [Next.js Build API](/docs/deployment#nextjs-build-api) from `next start`. Please check with the provider to see what features are supported.
 
 ## Automatic Updates
 
@@ -160,7 +160,7 @@ if (process.env.NEXT_MANUAL_SIG_HANDLE) {
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/going-to-production.md">
+  <a href="/docs/going-to-production">
     <b>Going to Production:</b>
     <small>Ensure the best performance and user experience.</small>
   </a>

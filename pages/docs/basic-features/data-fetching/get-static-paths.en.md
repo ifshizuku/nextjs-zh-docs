@@ -4,7 +4,7 @@ description: Fetch data and generate static pages with `getStaticProps`. Learn m
 
 # getStaticPaths
 
-If a page has [Dynamic Routes](/docs/routing/dynamic-routes.md) and uses `getStaticProps`, it needs to define a list of paths to be statically generated.
+If a page has [Dynamic Routes](/docs/routing/dynamic-routes) and uses `getStaticProps`, it needs to define a list of paths to be statically generated.
 
 When you export a function called `getStaticPaths` (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by `getStaticPaths`.
 
@@ -19,9 +19,9 @@ export async function getStaticPaths() {
 }
 ```
 
-`getStaticPaths` **must** be used with `getStaticProps`. You **cannot** use it with [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md).
+`getStaticPaths` **must** be used with `getStaticProps`. You **cannot** use it with [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props).
 
-The [`getStaticPaths` API reference](/docs/api-reference/data-fetching/get-static-paths.md) covers all parameters and props that can be used with `getStaticPaths`.
+The [`getStaticPaths` API reference](/docs/api-reference/data-fetching/get-static-paths) covers all parameters and props that can be used with `getStaticPaths`.
 
 ## When should I use getStaticPaths?
 
@@ -45,7 +45,7 @@ You should use `getStaticPaths` if you’re statically pre-rendering pages that 
 
 ## Where can I use getStaticPaths
 
-`getStaticPaths` can only be exported from a [dynamic route](/docs/routing/dynamic-routes.md) that also uses `getStaticProps`. You **cannot** export it from non-page files e.g. from your `components` folder.
+`getStaticPaths` can only be exported from a [dynamic route](/docs/routing/dynamic-routes) that also uses `getStaticProps`. You **cannot** export it from non-page files e.g. from your `components` folder.
 
 Note that you must use export `getStaticPaths` as a standalone function — it will **not** work if you add `getStaticPaths` as a property of the page component.
 
@@ -58,7 +58,7 @@ In development (`next dev`), `getStaticPaths` will be called on every request.
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/data-fetching/get-static-paths.md">
+  <a href="/docs/api-reference/data-fetching/get-static-paths">
     <b>getStaticPaths API Reference</b>
     <small>Read the API Reference for getStaticPaths</small>
   </a>

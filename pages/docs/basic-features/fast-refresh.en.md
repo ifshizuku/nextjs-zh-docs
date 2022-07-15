@@ -77,7 +77,7 @@ local state being reset on every edit to a file:
 - Sometimes, a file would export the result of calling a higher-order component
   like `HOC(WrappedComponent)`. If the returned component is a
   class, its state will be reset.
-- Anonymous arrow functions like `export default () => <div />;` cause Fast Refresh to not preserve local component state. For large codebases you can use our [`name-default-component` codemod](/docs/advanced-features/codemods.md#name-default-component).
+- Anonymous arrow functions like `export default () => <div />;` cause Fast Refresh to not preserve local component state. For large codebases you can use our [`name-default-component` codemod](/docs/advanced-features/codemods#name-default-component).
 
 As more of your codebase moves to function components and Hooks, you can expect
 state to be preserved in more cases.
@@ -116,5 +116,5 @@ with an empty array of dependencies would still re-run once during Fast Refresh.
 
 However, writing code resilient to occasional re-running of `useEffect` is a good practice even
 without Fast Refresh. It will make it easier for you to introduce new dependencies to it later on
-and it's enforced by [React Strict Mode](/docs/api-reference/next.config.js/react-strict-mode.md),
+and it's enforced by [React Strict Mode](/docs/api-reference/next.config.js/react-strict-mode),
 which we highly recommend enabling.

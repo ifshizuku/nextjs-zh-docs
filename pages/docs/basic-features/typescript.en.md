@@ -72,7 +72,7 @@ You're now ready to start converting files from `.js` to `.tsx` and leveraging t
 
 By default, Next.js will do type checking as part of `next build`. We recommend using code editor type checking during development.
 
-If you want to silence the error reports, refer to the documentation for [Ignoring TypeScript errors](/docs/api-reference/next.config.js/ignoring-typescript-errors.md).
+If you want to silence the error reports, refer to the documentation for [Ignoring TypeScript errors](/docs/api-reference/next.config.js/ignoring-typescript-errors).
 
 ## Static Generation and Server-side Rendering
 
@@ -94,7 +94,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 ```
 
-> If you're using `getInitialProps`, you can [follow the directions on this page](/docs/api-reference/data-fetching/get-initial-props.md#typescript).
+> If you're using `getInitialProps`, you can [follow the directions on this page](/docs/api-reference/data-fetching/get-initial-props#typescript).
 
 ## API Routes
 
@@ -124,7 +124,7 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
 ## Custom `App`
 
-If you have a [custom `App`](/docs/advanced-features/custom-app.md), you can use the built-in type `AppProps` and change file name to `./pages/_app.tsx` like so:
+If you have a [custom `App`](/docs/advanced-features/custom-app), you can use the built-in type `AppProps` and change file name to `./pages/_app.tsx` like so:
 
 ```ts
 import type { AppProps } from 'next/app'
@@ -138,7 +138,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 Next.js automatically supports the `tsconfig.json` `"paths"` and `"baseUrl"` options.
 
-You can learn more about this feature on the [Module Path aliases documentation](/docs/advanced-features/module-path-aliases.md).
+You can learn more about this feature on the [Module Path aliases documentation](/docs/advanced-features/module-path-aliases).
 
 ## Type checking next.config.js
 

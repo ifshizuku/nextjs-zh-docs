@@ -1,7 +1,7 @@
 {
     "compiler": "Next.js Compiler",
     "preview-mode": "Preview Mode",
-    "dyamic-import": "Dynamic Import",
+    "dynamic-import": "Dynamic Import",
     "automatic-static-optimization": "Automatic Static Optimization",
     "static-html-export": "Static HTML Export",
     "module-path-aliases": "Absolute Imports and Module Path Aliases",
@@ -9,7 +9,7 @@
     "amp-support": "AMP Support",
     "customizing-babel-config": "Customizing Babel Config",
     "customizing-postcss-config": "Customizing PostCSS Config",
-    "cutom-server": "Custom Server",
+    "custom-server": "Custom Server",
     "custom-app": "Custom `App`",
     "custom-document": "Custom `Document`",
     "custom-error-page": "Custom ErrorPage",
@@ -22,7 +22,7 @@
     "error-handling": "Error Handling",
     "source-maps": "Source Maps",
     "codemods": "CodeMods",
-    "Internationalized Routing": "Internationalized Routing",
+    "i18n-routing": "Internationalized Routing",
     "output-file-tracing": "Output File Tracing",
     "security-headers": "Security Headers",
     "react-18": "React 18"

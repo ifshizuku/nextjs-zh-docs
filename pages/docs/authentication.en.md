@@ -8,16 +8,16 @@ Authentication verifies who a user is, while authorization controls what a user 
 
 ## Authentication Patterns
 
-The first step to identifying which authentication pattern you need is understanding the [data-fetching strategy](/docs/basic-features/data-fetching/overview.md) you want. We can then determine which authentication providers support this strategy. There are two main patterns:
+The first step to identifying which authentication pattern you need is understanding the [data-fetching strategy](/docs/basic-features/data-fetching/overview) you want. We can then determine which authentication providers support this strategy. There are two main patterns:
 
-- Use [static generation](/docs/basic-features/pages.md#static-generation-recommended) to server-render a loading state, followed by fetching user data client-side.
-- Fetch user data [server-side](/docs/basic-features/pages.md#server-side-rendering) to eliminate a flash of unauthenticated content.
+- Use [static generation](/docs/basic-features/pages#static-generation-recommended) to server-render a loading state, followed by fetching user data client-side.
+- Fetch user data [server-side](/docs/basic-features/pages#server-side-rendering) to eliminate a flash of unauthenticated content.
 
 ### Authenticating Statically Generated Pages
 
-Next.js automatically determines that a page is static if there are no blocking data requirements. This means the absence of [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md) and `getInitialProps` in the page. Instead, your page can render a loading state from the server, followed by fetching the user client-side.
+Next.js automatically determines that a page is static if there are no blocking data requirements. This means the absence of [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props) and `getInitialProps` in the page. Instead, your page can render a loading state from the server, followed by fetching the user client-side.
 
-One advantage of this pattern is it allows pages to be served from a global CDN and preloaded using [`next/link`](/docs/api-reference/next/link.md). In practice, this results in a faster TTI ([Time to Interactive](https://web.dev/interactive/)).
+One advantage of this pattern is it allows pages to be served from a global CDN and preloaded using [`next/link`](/docs/api-reference/next/link). In practice, this results in a faster TTI ([Time to Interactive](https://web.dev/interactive/)).
 
 Let's look at an example for a profile page. This will initially render a loading skeleton. Once the request for a user has finished, it will show the user's name:
 
@@ -52,7 +52,7 @@ You can view this [example in action](https://iron-session-example.vercel.app/).
 
 ### Authenticating Server-Rendered Pages
 
-If you export an `async` function called [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md) from a page, Next.js will pre-render this page on each request using the data returned by `getServerSideProps`.
+If you export an `async` function called [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props) from a page, Next.js will pre-render this page on each request using the data returned by `getServerSideProps`.
 
 ```jsx
 export async function getServerSideProps(context) {
@@ -150,14 +150,14 @@ To see examples with other authentication providers, check out the [examples fol
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/pages.md">
+  <a href="/docs/basic-features/pages">
     <b>Pages:</b>
     <small>Learn more about pages and the different pre-rendering methods in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/overview.md">
+  <a href="/docs/basic-features/data-fetching/overview">
     <b>Data Fetching:</b>
     <small>Learn more about data fetching in Next.js.</small>
   </a>

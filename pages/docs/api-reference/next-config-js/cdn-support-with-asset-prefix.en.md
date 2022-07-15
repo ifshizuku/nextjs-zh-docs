@@ -4,10 +4,10 @@ description: A custom asset prefix allows you serve static assets from a CDN. Le
 
 # CDN Support with Asset Prefix
 
-> **Attention**: [Deploying to Vercel](/docs/deployment.md) automatically configures a global CDN for your Next.js project.
+> **Attention**: [Deploying to Vercel](/docs/deployment) automatically configures a global CDN for your Next.js project.
 > You do not need to manually setup an Asset Prefix.
 
-> **Note**: Next.js 9.5+ added support for a customizable [Base Path](/docs/api-reference/next.config.js/basepath.md), which is better
+> **Note**: Next.js 9.5+ added support for a customizable [Base Path](/docs/api-reference/next.config.js/basepath), which is better
 > suited for hosting your application on a sub-path like `/docs`.
 > We do not suggest you use a custom Asset Prefix for this use case.
 
@@ -40,21 +40,21 @@ The exact configuration for uploading your files to a given CDN will depend on y
 
 While `assetPrefix` covers requests to `_next/static`, it does not influence the following paths:
 
-- Files in the [public](/docs/basic-features/static-file-serving.md) folder; if you want to serve those assets over a CDN, you'll have to introduce the prefix yourself
+- Files in the [public](/docs/basic-features/static-file-serving) folder; if you want to serve those assets over a CDN, you'll have to introduce the prefix yourself
 - `/_next/data/` requests for `getServerSideProps` pages. These requests will always be made against the main domain since they're not static.
-- `/_next/data/` requests for `getStaticProps` pages. These requests will always be made against the main domain to support [Incremental Static Generation](/docs/basic-features/data-fetching/incremental-static-regeneration.md), even if you're not using it (for consistency).
+- `/_next/data/` requests for `getStaticProps` pages. These requests will always be made against the main domain to support [Incremental Static Generation](/docs/basic-features/data-fetching/incremental-static-regeneration), even if you're not using it (for consistency).
 
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/introduction.md">
+  <a href="/docs/api-reference/next.config.js/introduction">
     <b>Introduction to next.config.js:</b>
     <small>Learn more about the configuration file used by Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/basic-features/static-file-serving.md">
+  <a href="/docs/basic-features/static-file-serving">
     <b>Static File Serving:</b>
     <small>Serve static files, like images, in the public directory.</small>
   </a>

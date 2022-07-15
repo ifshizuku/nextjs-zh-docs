@@ -1,0 +1,8 @@
+{
+    "overview": "Overview",
+    "get-server-side-props": "getServerSideProps",
+    "get-static-paths": "getStaticPaths",
+    "get-static-props": "getStaticProps",
+    "incremental-static-regeneration": "Incremental Static Regeneration",
+    "client-side": "Client Side"
+}

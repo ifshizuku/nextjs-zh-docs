@@ -4,7 +4,7 @@ description: Improve the security of your Next.js application by adding HTTP res
 
 # Security Headers
 
-To improve the security of your application, you can use [`headers`](/docs/api-reference/next.config.js/headers.md) in `next.config.js` to apply HTTP response headers to all routes in your application.
+To improve the security of your application, you can use [`headers`](/docs/api-reference/next.config.js/headers) in `next.config.js` to apply HTTP response headers to all routes in your application.
 
 ```jsx
 // next.config.js
@@ -43,7 +43,7 @@ This header controls DNS prefetching, allowing browsers to proactively perform d
 
 This header informs browsers it should only be accessed using HTTPS, instead of using HTTP. Using the configuration below, all present and future subdomains will use HTTPS for a `max-age` of 2 years. This blocks access to pages or subdomains that can only be served over HTTP.
 
-If you're deploying to [Vercel](https://vercel.com/docs/edge-network/headers#strict-transport-security), this header is not necessary as it's automatically added to all deployments unless you declare [`headers`](/docs/api-reference/next.config.js/headers.md) in your `next.config.js`.
+If you're deploying to [Vercel](https://vercel.com/docs/edge-network/headers#strict-transport-security), this header is not necessary as it's automatically added to all deployments unless you declare [`headers`](/docs/api-reference/next.config.js/headers) in your `next.config.js`.
 
 ```jsx
 {
@@ -151,7 +151,7 @@ In the header's value, replace the new line with an empty string.
 For more information, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/next.config.js/headers.md">
+  <a href="/docs/api-reference/next.config.js/headers">
     <b>Headers:</b>
     <small>Add custom HTTP headers to your Next.js app.</small>
   </a>

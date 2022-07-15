@@ -14,14 +14,14 @@ Before taking your Next.js application to production, here are some recommendati
 - Defer loading heavy JavaScript bundles until needed.
 - Ensure [logging](#logging) is set up.
 - Ensure [error handling](#error-handling) is set up.
-- Configure the [404](/docs/advanced-features/custom-error-page.md#404-page) (Not Found) and [500](/docs/advanced-features/custom-error-page.md#500-page) (Error) pages.
-- Ensure you are [measuring performance](/docs/advanced-features/measuring-performance.md).
+- Configure the [404](/docs/advanced-features/custom-error-page#404-page) (Not Found) and [500](/docs/advanced-features/custom-error-page#500-page) (Error) pages.
+- Ensure you are [measuring performance](/docs/advanced-features/measuring-performance).
 - Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) to check for performance, best practices, accessibility, and SEO. For best results, use a production build of Next.js and use incognito in your browser so results aren't affected by extensions.
-- Review [Supported Browsers and Features](/docs/basic-features/supported-browsers-features.md).
+- Review [Supported Browsers and Features](/docs/basic-features/supported-browsers-features).
 - Improve performance using:
-  - [`next/image` and Automatic Image Optimization](/docs/basic-features/image-optimization.md)
-  - [Automatic Font Optimization](/docs/basic-features/font-optimization.md)
-  - [Script Optimization](/docs/basic-features/script.md)
+  - [`next/image` and Automatic Image Optimization](/docs/basic-features/image-optimization)
+  - [Automatic Font Optimization](/docs/basic-features/font-optimization)
+  - [Script Optimization](/docs/basic-features/script)
 - Improve [loading performance](#loading-performance)
 
 ## Caching
@@ -39,7 +39,7 @@ Caching improves response times and reduces the number of requests to external s
 Cache-Control: public, max-age=31536000, immutable
 ```
 
-`Cache-Control` headers set in `next.config.js` will be overwritten in production to ensure that static assets can be cached effectively. If you need to revalidate the cache of a page that has been [statically generated](/docs/basic-features/pages.md#static-generation-recommended), you can do so by setting `revalidate` in the page's [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md) function. If you're using `next/image`, there are also [specific caching rules](/docs/basic-features/image-optimization.md#caching) for the default Image Optimization loader.
+`Cache-Control` headers set in `next.config.js` will be overwritten in production to ensure that static assets can be cached effectively. If you need to revalidate the cache of a page that has been [statically generated](/docs/basic-features/pages#static-generation-recommended), you can do so by setting `revalidate` in the page's [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) function. If you're using `next/image`, there are also [specific caching rules](/docs/basic-features/image-optimization#caching) for the default Image Optimization loader.
 
 **Note:** When running your application locally with `next dev`, your headers are overwritten to prevent caching locally.
 
@@ -92,7 +92,7 @@ To reduce the amount of JavaScript sent to the browser, you can use the followin
 - [Bundle Phobia](https://bundlephobia.com/) - Analyze how much a dependency can increase bundle sizes.
 - [Webpack Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) – Visualize size of webpack output files with an interactive, zoomable treemap.
 
-Each file inside your `pages/` directory will automatically be code split into its own JavaScript bundle during `next build`. You can also use [Dynamic Imports](/docs/advanced-features/dynamic-import.md) to lazy-load components and libraries. For example, you might want to defer loading your modal code until a user clicks the open button.
+Each file inside your `pages/` directory will automatically be code split into its own JavaScript bundle during `next build`. You can also use [Dynamic Imports](/docs/advanced-features/dynamic-import) to lazy-load components and libraries. For example, you might want to defer loading your modal code until a user clicks the open button.
 
 ## Logging
 
@@ -119,7 +119,7 @@ If you want a structured logging package, we recommend [Pino](https://www.npmjs.
   </ul>
 </details>
 
-When an unhandled exception occurs, you can control the experience for your users with the [500 page](/docs/advanced-features/custom-error-page.md#500-page). We recommend customizing this to your brand instead of the default Next.js theme.
+When an unhandled exception occurs, you can control the experience for your users with the [500 page](/docs/advanced-features/custom-error-page#500-page). We recommend customizing this to your brand instead of the default Next.js theme.
 
 You can also log and track exceptions with a tool like Sentry. [This example](https://github.com/vercel/next.js/tree/canary/examples/with-sentry) shows how to catch & report errors on both the client and server-side, using the Sentry SDK for Next.js. There's also a [Sentry integration for Vercel](https://vercel.com/integrations/sentry).
 
@@ -148,7 +148,7 @@ Once you are able to measure the loading performance, use the following strategi
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/deployment.md">
+  <a href="/docs/deployment">
     <b>Deployment:</b>
     <small>Take your Next.js application to production.</small>
   </a>

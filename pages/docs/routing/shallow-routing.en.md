@@ -11,9 +11,9 @@ description: You can use shallow routing to change the URL without triggering a 
   </ul>
 </details>
 
-Shallow routing allows you to change the URL without running data fetching methods again, that includes [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md), [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md), and [`getInitialProps`](/docs/api-reference/data-fetching/get-initial-props.md).
+Shallow routing allows you to change the URL without running data fetching methods again, that includes [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props), [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props), and [`getInitialProps`](/docs/api-reference/data-fetching/get-initial-props).
 
-You'll receive the updated `pathname` and the `query` via the [`router` object](/docs/api-reference/next/router.md#router-object) (added by [`useRouter`](/docs/api-reference/next/router.md#useRouter) or [`withRouter`](/docs/api-reference/next/router.md#withRouter)), without losing state.
+You'll receive the updated `pathname` and the `query` via the [`router` object](/docs/api-reference/next/router#router-object) (added by [`useRouter`](/docs/api-reference/next/router#useRouter) or [`withRouter`](/docs/api-reference/next/router#withRouter)), without losing state.
 
 To enable shallow routing, set the `shallow` option to `true`. Consider the following example:
 

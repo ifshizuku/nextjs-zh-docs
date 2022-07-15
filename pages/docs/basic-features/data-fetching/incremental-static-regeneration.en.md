@@ -101,7 +101,7 @@ Starting with `v12.2.0`, Next.js supports On-Demand Incremental Static Regenerat
 
 Inside `getStaticProps`, you do not need to specify `revalidate` to use on-demand revalidation. If `revalidate` is omitted, Next.js will use the default value of `false` (no revalidation) and only revalidate the page on-demand when `revalidate()` is called.
 
-> **Note:** [Middleware](/docs/advanced-features/middleware.md) won't be executed for On-Demand ISR requests. Instead, call `revalidate()` on the _exact_ path that you want revalidated. For example, if you have `pages/blog/[slug].js` and a rewrite from `/post-1` -> `/blog/post-1`, you would need to call `res.revalidate('/blog/post-1')`.
+> **Note:** [Middleware](/docs/advanced-features/middleware) won't be executed for On-Demand ISR requests. Instead, call `revalidate()` on the _exact_ path that you want revalidated. For example, if you have `pages/blog/[slug].js` and a rewrite from `/post-1` -> `/blog/post-1`, you would need to call `res.revalidate('/blog/post-1')`.
 
 ### Using On-Demand Revalidation
 
@@ -111,7 +111,7 @@ First, create a secret token only known by your Next.js app. This secret will be
 https://<your-site.com>/api/revalidate?secret=<token>
 ```
 
-Next, add the secret as an [Environment Variable](/docs/basic-features/environment-variables.md) to your application. Finally, create the revalidation API Route:
+Next, add the secret as an [Environment Variable](/docs/basic-features/environment-variables) to your application. Finally, create the revalidation API Route:
 
 ```jsx
 // pages/api/revalidate.js
@@ -139,7 +139,7 @@ export default async function handler(req, res) {
 
 ### Testing on-Demand ISR during development
 
-When running locally with `next dev`, `getStaticProps` is invoked on every request. To verify your on-demand ISR configuration is correct, you will need to create a [production build](/docs/api-reference/cli.md#build) and start the [production server](/docs/api-reference/cli.md#production):
+When running locally with `next dev`, `getStaticProps` is invoked on every request. To verify your on-demand ISR configuration is correct, you will need to create a [production build](/docs/api-reference/cli#build) and start the [production server](/docs/api-reference/cli#production):
 
 ```bash
 $ next build
@@ -180,7 +180,7 @@ export async function getStaticProps() {
 
 ## Self-hosting ISR
 
-Incremental Static Regeneration (ISR) works on [self-hosted Next.js sites](/docs/deployment.md#self-hosting) out of the box when you use `next start`.
+Incremental Static Regeneration (ISR) works on [self-hosted Next.js sites](/docs/deployment#self-hosting) out of the box when you use `next start`.
 
 You can use this approach when deploying to container orchestrators such as [Kubernetes](https://kubernetes.io/) or [HashiCorp Nomad](https://www.nomadproject.io/). By default, generated assets will be stored in-memory on each pod. This means that each pod will have its own copy of the static files. Stale data may be shown until that specific pod is hit by a request.
 
@@ -206,7 +206,7 @@ module.exports = {
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/get-static-paths.md">
+  <a href="/docs/basic-features/data-fetching/get-static-paths">
     <b>Dynamic routing</b>
     <small>Learn more about dynamic routing in Next.js with getStaticPaths.</small>
   </a>

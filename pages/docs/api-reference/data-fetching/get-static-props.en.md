@@ -7,14 +7,14 @@ description: API reference for `getStaticProps`. Learn how to use `getStaticProp
 <details>
   <summary><b>Version History</b></summary>
 
-| Version   | Changes                                                                                                                                                 |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `v12.2.0` | [On-Demand Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration.md#on-demand-revalidation) is stable.    |
-| `v12.1.0` | [On-Demand Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration.md#on-demand-revalidation) added (beta). |
-| `v10.0.0` | `locale`, `locales`, `defaultLocale`, and `notFound` options added.                                                                                     |
-| `v10.0.0` | `fallback: 'blocking'` return option added.                                                                                                             |
-| `v9.5.0`  | Stable [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration.md)                                         |
-| `v9.3.0`  | `getStaticProps` introduced.                                                                                                                            |
+| Version   | Changes                                                                                                                                              |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `v12.2.0` | [On-Demand Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation) is stable.    |
+| `v12.1.0` | [On-Demand Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation) added (beta). |
+| `v10.0.0` | `locale`, `locales`, `defaultLocale`, and `notFound` options added.                                                                                  |
+| `v10.0.0` | `fallback: 'blocking'` return option added.                                                                                                          |
+| `v9.5.0`  | Stable [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration)                                         |
+| `v9.3.0`  | `getStaticProps` introduced.                                                                                                                         |
 
 </details>
 
@@ -34,9 +34,9 @@ You can import modules in top-level scope for use in `getStaticProps`. Imports u
 
 The `context` parameter is an object containing the following keys:
 
-- `params` contains the route parameters for pages using [dynamic routes](/docs/routing/dynamic-routes.md). For example, if the page name is `[id].js` , then `params` will look like `{ id: ... }`. You should use this together with `getStaticPaths`, which we’ll explain later.
-- `preview` is `true` if the page is in the [Preview Mode](/docs/advanced-features/preview-mode.md) and `undefined` otherwise.
-- `previewData` contains the [preview](/docs/advanced-features/preview-mode.md) data set by `setPreviewData`.
+- `params` contains the route parameters for pages using [dynamic routes](/docs/routing/dynamic-routes). For example, if the page name is `[id].js` , then `params` will look like `{ id: ... }`. You should use this together with `getStaticPaths`, which we’ll explain later.
+- `preview` is `true` if the page is in the [Preview Mode](/docs/advanced-features/preview-mode) and `undefined` otherwise.
+- `previewData` contains the [preview](/docs/advanced-features/preview-mode) data set by `setPreviewData`.
 - `locale` contains the active locale (if enabled).
 - `locales` contains all supported locales (if enabled).
 - `defaultLocale` contains the configured default locale (if enabled).
@@ -81,7 +81,7 @@ export async function getStaticProps() {
 }
 ```
 
-Learn more about [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration.md).
+Learn more about [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration).
 
 The cache status of a page leveraging ISR can be determined by reading the value of the `x-nextjs-cache` response header. The possible values are the following:
 
@@ -91,7 +91,7 @@ The cache status of a page leveraging ISR can be determined by reading the value
 
 ### `notFound`
 
-The `notFound` boolean allows the page to return a `404` status and [404 Page](/docs/advanced-features/custom-error-page.md#404-page). With `notFound: true`, the page will return a `404` even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author. Note, `notFound` follows the same `revalidate` behavior [described here](/docs/api-reference/data-fetching/get-static-props.md#revalidate).
+The `notFound` boolean allows the page to return a `404` status and [404 Page](/docs/advanced-features/custom-error-page#404-page). With `notFound: true`, the page will return a `404` even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author. Note, `notFound` follows the same `revalidate` behavior [described here](/docs/api-reference/data-fetching/get-static-props#revalidate).
 
 ```js
 export async function getStaticProps(context) {
@@ -139,7 +139,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-If the redirects are known at build-time, they should be added in [`next.config.js`](/docs/api-reference/next.config.js/redirects.md) instead.
+If the redirects are known at build-time, they should be added in [`next.config.js`](/docs/api-reference/next.config.js/redirects) instead.
 
 ## Reading files: Use `process.cwd()`
 
@@ -245,7 +245,7 @@ export default Blog
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/overview.md">
+  <a href="/docs/basic-features/data-fetching/overview">
     <b>Data Fetching:</b>
     <small>Learn more about data fetching in Next.js.</small>
   </a>

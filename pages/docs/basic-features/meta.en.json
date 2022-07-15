@@ -1,0 +1,15 @@
+{
+    "pages": "Pages",
+    "data-fetching": "Data fetching",
+    "built-in-css-support": "Built-in CSS support",
+    "layouts": "Layouts",
+    "image-optimization": "Image optimization",
+    "font-optimization": "Font optimization",
+    "static-file-serving": "Static file serving",
+    "fast-refresh": "Fast refresh",
+    "eslint": "ESLint",
+    "typescript": "TypeScript",
+    "environment-variables": "Environment variables",
+    "supported-browsers-features": "Supported Browsers and Features",
+    "script": "Handling Scripts"
+}

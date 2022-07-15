@@ -18,7 +18,7 @@ By default, Next.js includes its own server with `next start`. If you have an ex
 
 > **Note:** A custom server **cannot** be deployed on [Vercel](https://vercel.com/solutions/nextjs).
 
-> Before deciding to use a custom server, please keep in mind that it should only be used when the integrated router of Next.js can't meet your app requirements. A custom server will remove important performance optimizations, like **serverless functions** and **[Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization.md).**
+> Before deciding to use a custom server, please keep in mind that it should only be used when the integrated router of Next.js can't meet your app requirements. A custom server will remove important performance optimizations, like **serverless functions** and **[Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization).**
 
 Take a look at the following example of a custom server:
 
@@ -88,7 +88,7 @@ The above `next` import is a function that receives an object with the following
 - `dev`: `Boolean` - Whether or not to launch Next.js in dev mode. Defaults to `false`
 - `dir`: `String` - Location of the Next.js project. Defaults to `'.'`
 - `quiet`: `Boolean` - Hide error messages containing server information. Defaults to `false`
-- `conf`: `object` - The same object you would use in [next.config.js](/docs/api-reference/next.config.js/introduction.md). Defaults to `{}`
+- `conf`: `object` - The same object you would use in [next.config.js](/docs/api-reference/next.config.js/introduction). Defaults to `{}`
 
 The returned `app` can then be used to let Next.js handle requests as required.
 
@@ -106,4 +106,4 @@ module.exports = {
 
 > Note that `useFileSystemPublicRoutes` disables filename routes from SSR; client-side routing may still access those paths. When using this option, you should guard against navigation to routes you do not want programmatically.
 
-> You may also wish to configure the client-side router to disallow client-side redirects to filename routes; for that refer to [`router.beforePopState`](/docs/api-reference/next/router.md#router.beforePopState).
+> You may also wish to configure the client-side router to disallow client-side redirects to filename routes; for that refer to [`router.beforePopState`](/docs/api-reference/next/router#router.beforePopState).

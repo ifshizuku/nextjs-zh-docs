@@ -30,12 +30,12 @@ You can import modules in top-level scope for use in `getServerSideProps`. Impor
 
 The `context` parameter is an object containing the following keys:
 
-- `params`: If this page uses a [dynamic route](/docs/routing/dynamic-routes.md), `params` contains the route parameters. If the page name is `[id].js` , then `params` will look like `{ id: ... }`.
+- `params`: If this page uses a [dynamic route](/docs/routing/dynamic-routes), `params` contains the route parameters. If the page name is `[id].js` , then `params` will look like `{ id: ... }`.
 - `req`: [The `HTTP` IncomingMessage object](https://nodejs.org/api/http.html#http_class_http_incomingmessage), with an additional `cookies` prop, which is an object with string keys mapping to string values of cookies.
 - `res`: [The `HTTP` response object](https://nodejs.org/api/http.html#http_class_http_serverresponse).
 - `query`: An object representing the query string.
-- `preview`: `preview` is `true` if the page is in the [Preview Mode](/docs/advanced-features/preview-mode.md) and `false` otherwise.
-- `previewData`: The [preview](/docs/advanced-features/preview-mode.md) data set by `setPreviewData`.
+- `preview`: `preview` is `true` if the page is in the [Preview Mode](/docs/advanced-features/preview-mode) and `false` otherwise.
+- `previewData`: The [preview](/docs/advanced-features/preview-mode) data set by `setPreviewData`.
 - `resolvedUrl`: A normalized version of the request `URL` that strips the `_next/data` prefix for client transitions and includes original query values.
 - `locale` contains the active locale (if enabled).
 - `locales` contains all supported locales (if enabled).
@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
 
 ### `notFound`
 
-The `notFound` boolean allows the page to return a `404` status and [404 Page](/docs/advanced-features/custom-error-page.md#404-page). With `notFound: true`, the page will return a `404` even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author.
+The `notFound` boolean allows the page to return a `404` status and [404 Page](/docs/advanced-features/custom-error-page#404-page). With `notFound: true`, the page will return a `404` even if there was a successfully generated page before. This is meant to support use cases like user-generated content getting removed by its author.
 
 ```js
 export async function getServerSideProps(context) {
@@ -144,7 +144,7 @@ export default Page
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/data-fetching/overview.md">
+  <a href="/docs/basic-features/data-fetching/overview">
     <b>Data Fetching:</b>
     <small>Learn more about data fetching in Next.js.</small>
   </a>

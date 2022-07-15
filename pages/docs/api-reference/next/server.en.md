@@ -4,7 +4,7 @@ description: Learn about the server-only helpers for Middleware and Edge API Rou
 
 # next/server
 
-`next/server` provides server-only helpers for use in [Middleware](/docs/middleware.md) and [Edge API Routes](/docs/api-routes/edge-api-routes.md).
+`next/server` provides server-only helpers for use in [Middleware](/docs/middleware) and [Edge API Routes](/docs/api-routes/edge-api-routes).
 
 ## NextRequest
 
@@ -150,7 +150,7 @@ If you want to cause a `GET` response to a `POST` request, use `303`.
 
 ### How do I access Environment Variables?
 
-`process.env` can be used to access [Environment Variables](/docs/basic-features/environment-variables.md) from Edge Middleware. They are evaluated during `next build`:
+`process.env` can be used to access [Environment Variables](/docs/basic-features/environment-variables) from Edge Middleware. They are evaluated during `next build`:
 
 | Works                                                        | Does **not** work                          |
 | ------------------------------------------------------------ | ------------------------------------------ |
@@ -161,14 +161,14 @@ If you want to cause a `GET` response to a `POST` request, use `303`.
 ## Related
 
 <div class="card">
-  <a href="/docs/api-reference/edge-runtime.md">
+  <a href="/docs/api-reference/edge-runtime">
     <b>Edge Runtime</b>
     <small>Learn more about the supported Web APIs available.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/middleware.md">
+  <a href="/docs/middleware">
     <b>Middleware</b>
     <small>Run code before a request is completed.</small>
   </a>

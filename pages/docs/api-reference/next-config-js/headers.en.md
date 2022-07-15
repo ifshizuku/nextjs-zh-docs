@@ -282,7 +282,7 @@ module.exports = {
 
 ### Headers with basePath support
 
-When leveraging [`basePath` support](/docs/api-reference/next.config.js/basepath.md) with headers each `source` is automatically prefixed with the `basePath` unless you add `basePath: false` to the header:
+When leveraging [`basePath` support](/docs/api-reference/next.config.js/basepath) with headers each `source` is automatically prefixed with the `basePath` unless you add `basePath: false` to the header:
 
 ```js
 module.exports = {
@@ -316,7 +316,7 @@ module.exports = {
 
 ### Headers with i18n support
 
-When leveraging [`i18n` support](/docs/advanced-features/i18n-routing.md) with headers each `source` is automatically prefixed to handle the configured `locales` unless you add `locale: false` to the header. If `locale: false` is used you must prefix the `source` with a locale for it to be matched correctly.
+When leveraging [`i18n` support](/docs/advanced-features/i18n-routing) with headers each `source` is automatically prefixed to handle the configured `locales` unless you add `locale: false` to the header. If `locale: false` is used you must prefix the `source` with a locale for it to be matched correctly.
 
 ```js
 module.exports = {
@@ -376,7 +376,7 @@ module.exports = {
 
 ### Cache-Control
 
-You can set the `Cache-Control` header in your [Next.js API Routes](/docs/api-routes/introduction.md) by using the `res.setHeader` method:
+You can set the `Cache-Control` header in your [Next.js API Routes](/docs/api-routes/introduction) by using the `res.setHeader` method:
 
 ```js
 // pages/api/user.js
@@ -389,14 +389,14 @@ export default function handler(req, res) {
 
 You cannot set `Cache-Control` headers in `next.config.js` file as these will be overwritten in production to ensure that API Routes and static assets are cached effectively.
 
-If you need to revalidate the cache of a page that has been [statically generated](/docs/basic-features/pages.md#static-generation-recommended), you can do so by setting the `revalidate` prop in the page's [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md) function.
+If you need to revalidate the cache of a page that has been [statically generated](/docs/basic-features/pages#static-generation-recommended), you can do so by setting the `revalidate` prop in the page's [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) function.
 
 ## Related
 
 For more information, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/advanced-features/security-headers.md">
+  <a href="/docs/advanced-features/security-headers">
     <b>Security Headers:</b>
     <small>Improve the security of your Next.js application by add HTTP response headers.</small>
   </a>

@@ -13,7 +13,7 @@ description: Learn how to share components and state between Next.js pages with 
 
 > **Note:** We are introducing improved layouts support in Next.js. Read the [Layouts RFC](https://nextjs.org/blog/layouts-rfc) for more details and to provide feedback.
 
-The React model allows us to deconstruct a [page](/docs/basic-features/pages.md) into a series of components. Many of these components are often reused between pages. For example, you might have the same navigation bar and footer on every page.
+The React model allows us to deconstruct a [page](/docs/basic-features/pages) into a series of components. Many of these components are often reused between pages. For example, you might have the same navigation bar and footer on every page.
 
 ```jsx
 // components/layout.js
@@ -36,7 +36,7 @@ export default function Layout({ children }) {
 
 ### Single Shared Layout with Custom App
 
-If you only have one layout for your entire application, you can create a [Custom App](/docs/advanced-features/custom-app.md) and wrap your application with the layout. Since the `<Layout />` component is re-used when changing pages, its component state will be preserved (e.g. input values).
+If you only have one layout for your entire application, you can create a [Custom App](/docs/advanced-features/custom-app) and wrap your application with the layout. Since the `<Layout />` component is re-used when changing pages, its component state will be preserved (e.g. input values).
 
 ```jsx
 // pages/_app.js
@@ -146,7 +146,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
 ### Data Fetching
 
-Inside your layout, you can fetch data on the client-side using `useEffect` or a library like [SWR](https://swr.vercel.app/). Because this file is not a [Page](/docs/basic-features/pages.md), you cannot use `getStaticProps` or `getServerSideProps` currently.
+Inside your layout, you can fetch data on the client-side using `useEffect` or a library like [SWR](https://swr.vercel.app/). Because this file is not a [Page](/docs/basic-features/pages), you cannot use `getStaticProps` or `getServerSideProps` currently.
 
 ```jsx
 // components/layout.js
@@ -174,14 +174,14 @@ export default function Layout({ children }) {
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/basic-features/pages.md">
+  <a href="/docs/basic-features/pages">
     <b>Pages:</b>
     <small>Learn more about what pages are in Next.js.</small>
   </a>
 </div>
 
 <div class="card">
-  <a href="/docs/advanced-features/custom-app.md">
+  <a href="/docs/advanced-features/custom-app">
     <b>Custom App:</b>
     <small>Learn more about how Next.js initialize pages.</small>
   </a>

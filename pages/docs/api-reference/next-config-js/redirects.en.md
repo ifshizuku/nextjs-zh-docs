@@ -219,7 +219,7 @@ module.exports = {
 
 ### Redirects with basePath support
 
-When leveraging [`basePath` support](/docs/api-reference/next.config.js/basepath.md) with redirects each `source` and `destination` is automatically prefixed with the `basePath` unless you add `basePath: false` to the redirect:
+When leveraging [`basePath` support](/docs/api-reference/next.config.js/basepath) with redirects each `source` and `destination` is automatically prefixed with the `basePath` unless you add `basePath: false` to the redirect:
 
 ```js
 module.exports = {
@@ -246,7 +246,7 @@ module.exports = {
 
 ### Redirects with i18n support
 
-When leveraging [`i18n` support](/docs/advanced-features/i18n-routing.md) with redirects each `source` and `destination` is automatically prefixed to handle the configured `locales` unless you add `locale: false` to the redirect. If `locale: false` is used you must prefix the `source` and `destination` with a locale for it to be matched correctly.
+When leveraging [`i18n` support](/docs/advanced-features/i18n-routing) with redirects each `source` and `destination` is automatically prefixed to handle the configured `locales` unless you add `locale: false` to the redirect. If `locale: false` is used you must prefix the `source` and `destination` with a locale for it to be matched correctly.
 
 ```js
 module.exports = {
@@ -299,5 +299,5 @@ In some rare cases, you might need to assign a custom status code for older HTTP
 
 ## Other Redirects
 
-- Inside [API Routes](/docs/api-routes/response-helpers.md), you can use `res.redirect()`.
-- Inside [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props.md) and [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props.md), you can redirect specific pages at request-time.
+- Inside [API Routes](/docs/api-routes/response-helpers), you can use `res.redirect()`.
+- Inside [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) and [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props), you can redirect specific pages at request-time.

@@ -4,7 +4,7 @@ description: Learn how AMP pages are created when used together with `next expor
 
 # AMP in Static HTML export
 
-When using `next export` to do [Static HTML export](/docs/advanced-features/static-html-export.md) statically prerender pages, Next.js will detect if the page supports AMP and change the exporting behavior based on that.
+When using `next export` to do [Static HTML export](/docs/advanced-features/static-html-export) statically prerender pages, Next.js will detect if the page supports AMP and change the exporting behavior based on that.
 
 For example, the hybrid AMP page `pages/about.js` would output:
 
@@ -27,7 +27,7 @@ And the AMP version of your page will include a link to the HTML page:
 <link rel="canonical" href="/about" />
 ```
 
-When [`trailingSlash`](/docs/api-reference/next.config.js/trailing-slash.md) is enabled the exported pages for `pages/about.js` would be:
+When [`trailingSlash`](/docs/api-reference/next.config.js/trailing-slash) is enabled the exported pages for `pages/about.js` would be:
 
 - `out/about/index.html` - HTML page
 - `out/about.amp/index.html` - AMP page

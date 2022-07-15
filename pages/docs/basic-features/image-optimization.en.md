@@ -11,7 +11,7 @@ description: Next.js supports built-in image optimization, as well as third part
   </ul>
 </details>
 
-The Next.js Image component, [`next/image`](/docs/api-reference/next/image.md), is an extension of the HTML `<img>` element, evolved for the modern web. It includes a variety of built-in performance optimizations to help you achieve good [Core Web Vitals](https://nextjs.org/learn/seo/web-performance). These scores are an important measurement of user experience on your website, and are [factored into Google's search rankings](https://nextjs.org/learn/seo/web-performance/seo-impact).
+The Next.js Image component, [`next/image`](/docs/api-reference/next/image), is an extension of the HTML `<img>` element, evolved for the modern web. It includes a variety of built-in performance optimizations to help you achieve good [Core Web Vitals](https://nextjs.org/learn/seo/web-performance). These scores are an important measurement of user experience on your website, and are [factored into Google's search rankings](https://nextjs.org/learn/seo/web-performance/seo-impact).
 
 Some of the optimizations built into the Image component include:
 
@@ -22,13 +22,13 @@ Some of the optimizations built into the Image component include:
 
 ## Using the Image Component
 
-To add an image to your application, import the [`next/image`](/docs/api-reference/next/image.md) component:
+To add an image to your application, import the [`next/image`](/docs/api-reference/next/image) component:
 
 ```jsx
 import Image from 'next/image'
 ```
 
-Alternatively, you can import [`next/future/image`](/docs/api-reference/next/future/image.md) if you need a component much closer to the native `<img>` element:
+Alternatively, you can import [`next/future/image`](/docs/api-reference/next/future/image) if you need a component much closer to the native `<img>` element:
 
 ```jsx
 import Image from 'next/future/image'
@@ -72,7 +72,7 @@ function Home() {
 
 ### Remote Images
 
-To use a remote image, the `src` property should be a URL string, which can be [relative](#loaders) or [absolute](/docs/api-reference/next/image.md#domains). Because Next.js does not have access to remote files during the build process, you'll need to provide the [`width`](/docs/api-reference/next/image.md#width), [`height`](/docs/api-reference/next/image.md#height) and optional [`blurDataURL`](/docs/api-reference/next/image.md#blurdataurl) props manually:
+To use a remote image, the `src` property should be a URL string, which can be [relative](#loaders) or [absolute](/docs/api-reference/next/image#domains). Because Next.js does not have access to remote files during the build process, you'll need to provide the [`width`](/docs/api-reference/next/image#width), [`height`](/docs/api-reference/next/image#height) and optional [`blurDataURL`](/docs/api-reference/next/image#blurdataurl) props manually:
 
 ```jsx
 import Image from 'next/image'
@@ -101,15 +101,15 @@ Sometimes you may want to access a remote image, but still use the built-in Next
 
 To protect your application from malicious users, you must define a list of remote hostnames you intend to allow remote access.
 
-> Learn more about [`domains`](/docs/api-reference/next/image.md#domains) configuration.
+> Learn more about [`domains`](/docs/api-reference/next/image#domains) configuration.
 
 ### Loaders
 
-Note that in the [example earlier](#remote-images), a partial URL (`"/me.png"`) is provided for a remote image. This is possible because of the `next/image` [loader](/docs/api-reference/next/image.md#loader) architecture.
+Note that in the [example earlier](#remote-images), a partial URL (`"/me.png"`) is provided for a remote image. This is possible because of the `next/image` [loader](/docs/api-reference/next/image#loader) architecture.
 
 A loader is a function that generates the URLs for your image. It appends a root domain to your provided `src`, and generates multiple URLs to request the image at different sizes. These multiple URLs are used in the automatic [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) generation, so that visitors to your site will be served an image that is the right size for their viewport.
 
-The default loader for Next.js applications uses the built-in Image Optimization API, which optimizes images from anywhere on the web, and then serves them directly from the Next.js web server. If you would like to serve your images directly from a CDN or image server, you can use one of the [built-in loaders](/docs/api-reference/next/image.md#built-in-loaders) or write your own with a few lines of JavaScript.
+The default loader for Next.js applications uses the built-in Image Optimization API, which optimizes images from anywhere on the web, and then serves them directly from the Next.js web server. If you would like to serve your images directly from a CDN or image server, you can use one of the [built-in loaders](/docs/api-reference/next/image#built-in-loaders) or write your own with a few lines of JavaScript.
 
 Loaders can be defined per-image, or at the application level.
 
@@ -141,7 +141,7 @@ export default function Home() {
 }
 ```
 
-See more about priority in the [`next/image` component documentation](/docs/api-reference/next/image.md#priority).
+See more about priority in the [`next/image` component documentation](/docs/api-reference/next/image#priority).
 
 ## Image Sizing
 
@@ -150,8 +150,8 @@ One of the ways that images most commonly hurt performance is through _layout sh
 Because `next/image` is designed to guarantee good performance results, it cannot be used in a way that will contribute to layout shift, and **must** be sized in one of three ways:
 
 1. Automatically, using a [static import](#local-images)
-2. Explicitly, by including a [`width`](/docs/api-reference/next/image.md#width) and [`height`](/docs/api-reference/next/image.md#height) property
-3. Implicitly, by using [`layout="fill"`](/docs/api-reference/next/image.md#layout) which causes the image to expand to fill its parent element.
+2. Explicitly, by including a [`width`](/docs/api-reference/next/image#width) and [`height`](/docs/api-reference/next/image#height) property
+3. Implicitly, by using [`layout="fill"`](/docs/api-reference/next/image#layout) which causes the image to expand to fill its parent element.
 
 > ### What if I don't know the size of my images?
 >
@@ -159,7 +159,7 @@ Because `next/image` is designed to guarantee good performance results, it canno
 >
 > **Use `layout='fill'`**
 >
-> The `fill` layout mode allows your image to be sized by its parent element. Consider using CSS to give the image's parent element space on the page, then using the [`objectFit property`](/docs/api-reference/next/image.md#objectfit) with `fill`, `contain`, or `cover`, along with the [`objectPosition property`](/docs/api-reference/next/image.md#objectposition) to define how the image should occupy that space.
+> The `fill` layout mode allows your image to be sized by its parent element. Consider using CSS to give the image's parent element space on the page, then using the [`objectFit property`](/docs/api-reference/next/image#objectfit) with `fill`, `contain`, or `cover`, along with the [`objectPosition property`](/docs/api-reference/next/image#objectposition) to define how the image should occupy that space.
 >
 > **Normalize your images**
 >
@@ -173,23 +173,23 @@ If none of the suggested methods works for sizing your images, the `next/image` 
 
 ## Styling
 
-> Note: Many of the styling issues listed below can be solved with [`next/future/image`](/docs/api-reference/next/future/image.md)
+> Note: Many of the styling issues listed below can be solved with [`next/future/image`](/docs/api-reference/next/future/image)
 
 Styling the Image component is not that different from styling a normal `<img>` element, but there are a few guidelines to keep in mind:
 
 **Pick the correct layout mode**
 
-The image component has several different [layout modes](/docs/api-reference/next/image.md#layout) that define how it is sized on the page. If the styling of your image isn't turning out the way you want, consider experimenting with other layout modes.
+The image component has several different [layout modes](/docs/api-reference/next/image#layout) that define how it is sized on the page. If the styling of your image isn't turning out the way you want, consider experimenting with other layout modes.
 
 **Target the image with className, not based on DOM structure**
 
 For most layout modes, the Image component will have a DOM structure of one `<img>` tag wrapped by exactly one `<span>`. For some modes, it may also have a sibling `<span>` for spacing. These additional `<span>` elements are critical to allow the component to prevent layout shifts.
 
-The recommended way to style the inner `<img>` is to set the `className` prop on the Image component to the value of an imported [CSS Module](/docs/basic-features/built-in-css-support.md#adding-component-level-css). The value of `className` will be automatically applied to the underlying `<img>` element.
+The recommended way to style the inner `<img>` is to set the `className` prop on the Image component to the value of an imported [CSS Module](/docs/basic-features/built-in-css-support#adding-component-level-css). The value of `className` will be automatically applied to the underlying `<img>` element.
 
 Alternatively, you can import a [global stylesheet](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet) and manually set the `className` prop to the same name used in the global stylesheet.
 
-You cannot use [styled-jsx](/docs/basic-features/built-in-css-support.md#css-in-js) because it's scoped to the current component.
+You cannot use [styled-jsx](/docs/basic-features/built-in-css-support#css-in-js) because it's scoped to the current component.
 
 **When using `layout='fill'`, the parent element must have `position: relative`**
 
@@ -201,7 +201,7 @@ This is the default for `<div>` elements but should be specified otherwise.
 
 ## Properties
 
-[**View all properties available to the `next/image` component.**](/docs/api-reference/next/image.md)
+[**View all properties available to the `next/image` component.**](/docs/api-reference/next/image)
 
 ### Styling Examples
 
@@ -209,16 +209,16 @@ For examples of the Image component used with the various fill modes, see the [I
 
 ## Configuration
 
-The `next/image` component and Next.js Image Optimization API can be configured in the [`next.config.js` file](/docs/api-reference/next.config.js/introduction.md). These configurations allow you to [enable remote images](/docs/api-reference/next/image.md#domains), [define custom image breakpoints](/docs/api-reference/next/image.md#device-sizes), [change caching behavior](/docs/api-reference/next/image.md#caching-behavior) and more.
+The `next/image` component and Next.js Image Optimization API can be configured in the [`next.config.js` file](/docs/api-reference/next.config.js/introduction). These configurations allow you to [enable remote images](/docs/api-reference/next/image#domains), [define custom image breakpoints](/docs/api-reference/next/image#device-sizes), [change caching behavior](/docs/api-reference/next/image#caching-behavior) and more.
 
-[**Read the full image configuration documentation for more information.**](/docs/api-reference/next/image.md#configuration-options)
+[**Read the full image configuration documentation for more information.**](/docs/api-reference/next/image#configuration-options)
 
 ## Related
 
 For more information on what to do next, we recommend the following sections:
 
 <div class="card">
-  <a href="/docs/api-reference/next/image.md">
+  <a href="/docs/api-reference/next/image">
     <b>next/image</b>
     <small>See all available properties for the Image component</small>
   </a>
