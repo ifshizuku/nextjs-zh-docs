@@ -5,7 +5,8 @@
     "scripts": {
         "build": "next build",
         "dev": "next",
-        "prepare": "pnpm husky install"
+        "prepare": "pnpm husky install",
+        "start": "next start"
     },
     "lint-staged": {
         "package.json": "sort-package-json"
