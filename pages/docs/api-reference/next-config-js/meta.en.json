@@ -4,7 +4,7 @@
     "basepath": "Base Path",
     "rewrites": "Rewrites",
     "redirects": "Redirects",
-    "headers": "Custom Headers",
+    "headers": "Headers",
     "custom-page-extensions": "Custom Page Extensions",
     "cdn-support-with-assets-prefix": "CDN Support with Assets Prefix",
     "custom-webpack-config": "Custom Webpack Config",

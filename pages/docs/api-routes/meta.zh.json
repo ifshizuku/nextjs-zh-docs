@@ -1,0 +1,7 @@
+{
+    "introduction": "简介",
+    "dynamic-api-routes": "动态 API 路由",
+    "api-middlewares": "API 中间件",
+    "response-helpers": "响应 Helpers",
+    "edge-api-routes": "边缘 API 路由（Beta）"
+}

@@ -1,0 +1,6 @@
+{
+    "overview": "概览",
+    "streaming": "流式渲染（SSR）",
+    "server-components": "React 服务端组件",
+    "switchable-runtime": "可切换运行时"
+}

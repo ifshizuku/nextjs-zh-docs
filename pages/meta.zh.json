@@ -1,0 +1,11 @@
+{
+    "index": {
+        "title": "简介",
+        "type": "page",
+        "hidden": true
+    },
+    "docs": {
+        "title": "文档",
+        "type": "page"
+    }
+}

@@ -20,8 +20,15 @@ export default {
     darkMode: true,
     footer: true,
     floatTOC: true,
-    footerText: `Apache-2.0 ${new Date().getFullYear()} © Kawasaki Shizuku, Vercel`,
-    footerEditLink: `Edit this page on GitHub`,
+    footerText: `Apache-2.0 ${new Date().getFullYear()} © Shizuku, Vercel`,
+    footerEditLink: ({ locale }) => {
+        switch (locale) {
+            case "en":
+                return "Edit this page on GitHub →"
+            default:
+                return "在 GitHub 上编辑此页面 →"
+        }
+    },
     logo: () => {
         return (
             <>

@@ -1,0 +1,6 @@
+{
+    "incremental-adoption": "逐渐迁移到 Next.js",
+    "from-gatsby": "从 Gatsby 迁移",
+    "from-create-react-app": "从 Create React App 迁移",
+    "from-react-router": "从 React Router 迁移"
+}

@@ -1,0 +1,11 @@
+{
+    "router": "next/router",
+    "link": "next/link",
+    "image": "next/image",
+    "script": "next/script",
+    "head": "next/head",
+    "amp": "next/amp",
+    "server": "next/server",
+    "streaming": "next/streaming",
+    "future": "未来功能"
+}

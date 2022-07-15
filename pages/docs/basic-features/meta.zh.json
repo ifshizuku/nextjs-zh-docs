@@ -1,0 +1,15 @@
+{
+    "pages": "页面",
+    "data-fetching": "数据获取",
+    "built-in-css-support": "内建 CSS 支持",
+    "layouts": "布局",
+    "image-optimization": "图像优化",
+    "font-optimization": "字体优化",
+    "static-file-serving": "静态文件服务",
+    "fast-refresh": "快速刷新",
+    "eslint": "ESLint",
+    "typescript": "TypeScript",
+    "environment-variables": "环境变量",
+    "supported-browsers-features": "支持的浏览器和功能",
+    "script": "Script 处理"
+}

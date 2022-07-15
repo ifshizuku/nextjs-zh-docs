@@ -1,0 +1,8 @@
+{
+    "overview": "概览",
+    "get-server-side-props": "getServerSideProps",
+    "get-static-paths": "getStaticPaths",
+    "get-static-props": "getStaticProps",
+    "incremental-static-regeneration": "增量静态生成",
+    "client-side": "客户端"
+}

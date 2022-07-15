@@ -1,0 +1,9 @@
+{
+    "cli": "CLI",
+    "create-next-app": "Create Next App",
+    "next": "`next`包",
+    "edge-runtime": "边缘运行时",
+    "data-fetching": "数据获取",
+    "static-optimization-indicator": "静态优化指示器",
+    "next-config-js": "next.config.js"
+}

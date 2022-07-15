@@ -8,7 +8,7 @@
     "authentication": "Authentication",
     "testing": "Testing",
     "accessibility": "Accessibility",
-    "guide": "Guide",
+    "guides": "Guide",
     "advanced-features": "Advanced Features",
     "upgrading": "Upgrade Guide",
     "migrating": "Migrating to Next.js",
