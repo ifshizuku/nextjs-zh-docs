@@ -9,9 +9,9 @@ const Logo = ({ height }) => (
 
 // theme.config.js
 export default {
-    projectLink: "https://github.com/shuding/nextra", // GitHub link in the navbar
-    docsRepositoryBase: "https://github.com/shuding/nextra/blob/master", // base URL for the docs repository
-    titleSuffix: " – Nextra",
+    projectLink: "https://github.com/ifshizuku/nextjs-zh-docs", // GitHub link in the navbar
+    docsRepositoryBase: "https://github.com/ifshizuku/nextjs-zh-docs/tree/main", // base URL for the docs repository
+    titleSuffix: " – Next.js",
     nextLinks: true,
     prevLinks: true,
     search: true,

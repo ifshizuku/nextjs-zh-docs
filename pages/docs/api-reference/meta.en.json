@@ -1,7 +1,7 @@
 {
     "cli": "CLI",
     "create-next-app": "Create Next App",
-    "next": "`next` Packages",
+    "next": "`next` Package",
     "edge-runtime": "Edge Runtime",
     "data-fetching": "Data Fetching",
     "static-optimization-indicator": "Static Optimization Indicator",
