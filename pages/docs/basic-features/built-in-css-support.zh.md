@@ -149,7 +149,7 @@ npm install --save-dev sass
 > 
 > 如果你不确定选择哪个，可以从 `.scss` 扩展开始，它是 CSS 的超集，不需要学习额外的缩进语法（“Sass”）
 
-### 自定义Sass 选项
+### 自定义 Sass 选项
 
 如果你想配置 Sass 编译器，你可以通过在 `next.config.js` 中使用 `sassOptions` 来实现。
 
