@@ -1,7 +1,3 @@
----
-description: Next.js supports TypeScript by default and has built-in types for pages and the API. You can get started with TypeScript in Next.js here.
----
-
 # TypeScript
 
 <details>
@@ -33,8 +29,7 @@ pnpm create next-app --ts
 
 ## Existing projects
 
-To get started in an existing project, create an empty `tsconfig.json` file in
-the root folder:
+To get started in an existing project, create an empty `tsconfig.json` file in the root folder:
 
 ```bash
 touch tsconfig.json
