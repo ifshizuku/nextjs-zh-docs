@@ -1,52 +1,48 @@
----
-description: Next.js supports built-in image optimization, as well as third party loaders for Imgix, Cloudinary, and more! Learn more here.
----
-
-# Image Component and Image Optimization
+# Image 组件和图像优化
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/image-component">Image Component</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/image-component">Image Component</a></li>
   </ul>
 </details>
 
-The Next.js Image component, [`next/image`](/docs/api-reference/next/image), is an extension of the HTML `<img>` element, evolved for the modern web. It includes a variety of built-in performance optimizations to help you achieve good [Core Web Vitals](https://nextjs.org/learn/seo/web-performance). These scores are an important measurement of user experience on your website, and are [factored into Google's search rankings](https://nextjs.org/learn/seo/web-performance/seo-impact).
+Next.js 图像组件，[`next/image`](/docs/api-reference/next/image)，是HTML `<img>` 元素的扩展，为现代网络而优化。它包括各种内置的性能优化，以帮助你实现良好的 [Core Web Vitals](https://web.dev/vitals/)。这些分数是衡量你网站用户体验的重要标准，并被[计入谷歌的搜索排名](https://nextjs.org/learn/seo/web-performance/seo-impact)（百度其实不是很在意这个）。
 
-Some of the optimizations built into the Image component include:
+图像组件中的一些优化措施包括：
 
-- **Improved Performance:** Always serve correctly sized image for each device, using modern image formats
-- **Visual Stability:** Prevent [Cumulative Layout Shift](https://nextjs.org/learn/seo/web-performance/cls) automatically
-- **Faster Page Loads:** Images are only loaded when they enter the viewport, with optional blur-up placeholders
-- **Asset Flexibility:** On-demand image resizing, even for images stored on remote servers
+- **改进性能** - 始终为每个设备提供正确大小的图像，使用现代图像格式
+- **视觉稳定性** - 自动防止[累积布局偏移（CLS）](https://web.dev/cls/)
+- **更快的页面加载** - 图像只在进入视口时加载，可选择模糊图片占位
+- **资源的灵活性**  - 按需调整图像大小，甚至对存储在远程服务器上的图像也是如此
 
-## Using the Image Component
+## 使用 `Image` 组件
 
-To add an image to your application, import the [`next/image`](/docs/api-reference/next/image) component:
+要在你的应用程序中添加图片，导入 [`next/image`](/docs/api-reference/next/image) 组件：
 
 ```jsx
 import Image from 'next/image'
 ```
 
-Alternatively, you can import [`next/future/image`](/docs/api-reference/next/future/image) if you need a component much closer to the native `<img>` element:
+另外，如果你需要一个更接近原生 `<img>` 元素的组件，你可以导入 [`next/future/image`](/docs/api-reference/next/future/image)：
 
 ```jsx
 import Image from 'next/future/image'
 ```
 
-Now, you can define the `src` for your image (either local or remote).
+现在，你可以为你的图片定义 `src`（不管是本地还是远程）。
 
-### Local Images
+### 本地图片
 
-To use a local image, `import` your `.jpg`, `.png`, or `.webp` files:
+通过 `导入（import）` `.jpg`、`.png` 或 `.webp` 来使用本地图片：
 
 ```jsx
 import profilePic from '../public/me.png'
 ```
 
-Dynamic `await import()` or `require()` are _not_ supported. The `import` must be static so it can be analyzed at build time.
+不支持动态的 `await import()` 或 `require()`。`import` 必须是静态的，以便在构建时进行分析。
 
-Next.js will automatically determine the `width` and `height` of your image based on the imported file. These values are used to prevent [Cumulative Layout Shift](https://nextjs.org/learn/seo/web-performance/cls) while your image is loading.
+Next.js 将根据导入的文件自动确定你的图片的 `宽度（width）` 和 `高度（height）`。这些值是用来防止你的图像在加载时出现[累积布局偏移](https://web.dev/cls/)。
 
 ```js
 import Image from 'next/image'
@@ -70,9 +66,9 @@ function Home() {
 }
 ```
 
-### Remote Images
+### 远程图片
 
-To use a remote image, the `src` property should be a URL string, which can be [relative](#loaders) or [absolute](/docs/api-reference/next/image#domains). Because Next.js does not have access to remote files during the build process, you'll need to provide the [`width`](/docs/api-reference/next/image#width), [`height`](/docs/api-reference/next/image#height) and optional [`blurDataURL`](/docs/api-reference/next/image#blurdataurl) props manually:
+要使用远程图片，`src` 属性应该是一个 URL 字符串，可以是[相对](#loaders)或[绝对](/docs/api-reference/next/image#domains)的。因为 Next.js 在构建过程中无法访问远程文件，你需要手动提供 `宽度（width）`、`高度（height）` 和可选的 [`blurDataURL`](/docs/api-reference/next/image#blurdataurl) 属性：
 
 ```jsx
 import Image from 'next/image'
@@ -93,33 +89,33 @@ export default function Home() {
 }
 ```
 
-> Learn more about the [sizing requirements](#image-sizing) in `next/image`.
+> 了解更多关于 `next/image` 中的[图像尺寸](#image-sizing)。
 
-### Domains
+### 域名
 
-Sometimes you may want to access a remote image, but still use the built-in Next.js Image Optimization API. To do this, leave the `loader` at its default setting and enter an absolute URL for the Image `src`.
+有时你可能想访问一个远程图像，但仍然使用内置的 Next.js 图像优化 API。要做到这一点，让 `loader` 处于默认设置，然后为图像的 `src` 输入一个绝对的URL。
 
-To protect your application from malicious users, you must define a list of remote hostnames you intend to allow remote access.
+为了保护你的应用程序免受恶意用户的侵害，你必须定义一个你打算允许远程访问的远程主机名列表。
 
-> Learn more about [`domains`](/docs/api-reference/next/image#domains) configuration.
+> 了解更多[域名](/docs/api-reference/next/image#domains)配置。
 
-### Loaders
+### 加载器
 
-Note that in the [example earlier](#remote-images), a partial URL (`"/me.png"`) is provided for a remote image. This is possible because of the `next/image` [loader](/docs/api-reference/next/image#loader) architecture.
+注意在[前面的例子](#remote-images)中，为一个远程图像提供一个部分 URL（`"/me.png"`）是可能的，因为 `next/image` 的[加载器](/docs/api-reference/next/image#loader)的架构。
 
-A loader is a function that generates the URLs for your image. It appends a root domain to your provided `src`, and generates multiple URLs to request the image at different sizes. These multiple URLs are used in the automatic [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) generation, so that visitors to your site will be served an image that is the right size for their viewport.
+加载器是一个为你的图像生成 URL 的函数。它在你提供的 `src` 上附加一个根域，并生成多个 URL 来请求不同尺寸的图像。这些 URL 被用于自动生成 [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)，这样你的网站的访问者就会得到适合他们视口大小的图片。
 
-The default loader for Next.js applications uses the built-in Image Optimization API, which optimizes images from anywhere on the web, and then serves them directly from the Next.js web server. If you would like to serve your images directly from a CDN or image server, you can use one of the [built-in loaders](/docs/api-reference/next/image#built-in-loaders) or write your own with a few lines of JavaScript.
+Next.js 应用程序的默认加载器使用内置的图像优化 API，它可以优化来自网络上任何地方的图像，然后直接从 Next.js 网络服务器提供这些图像。如果你想直接从 CDN 或图像服务器上提供你的图像，你可以使用其中一个[内置加载器](/docs/api-reference/next/image#built-in-loaders)或用几行 JavaScript 编写你自己的加载器。
 
-Loaders can be defined per-image, or at the application level.
+加载器可以为每个图像定义，也可以在应用层面定义。
 
-### Priority
+### 优先加载
 
-You should add the `priority` property to the image that will be the [Largest Contentful Paint (LCP) element](https://web.dev/lcp/#what-elements-are-considered) for each page. Doing so allows Next.js to specially prioritize the image for loading (e.g. through preload tags or priority hints), leading to a meaningful boost in LCP.
+你应该为每个页面的[最大的内容绘画（LCP）元素](https://web.dev/lcp)的图像添加 `priority` 属性。这样做可以让 Next.js 优先加载这个图片（例如通过预加载标签或优先级提示），使 LCP 性能的有效提升。
 
-The LCP element is typically the largest image or text block visible within the viewport of the page. When you run `next dev`, you'll see a console warning if the LCP element is an `<Image>` without the `priority` property.
+LCP 元素通常是在页面视口中可见的最大的图像或文本块。当你运行 `next dev` 时，如果 LCP 元素是一个没有 `priority` 属性的 `<Image>`，你会看到一个控制台（console）警告（warning）。
 
-Once you've identified the LCP image, you can add the property like this:
+一旦你确定了 LCP 图像，你可以像这样添加属性：
 
 ```jsx
 import Image from 'next/image'
@@ -141,80 +137,80 @@ export default function Home() {
 }
 ```
 
-See more about priority in the [`next/image` component documentation](/docs/api-reference/next/image#priority).
+更多有关优先加载的信息，请查看 [`next/image` 组件文档](/docs/api-reference/next/image#priority)。
 
-## Image Sizing
+## 图像尺寸
 
-One of the ways that images most commonly hurt performance is through _layout shift_, where the image pushes other elements around on the page as it loads in. This performance problem is so annoying to users that it has its own Core Web Vital, called [Cumulative Layout Shift](https://web.dev/cls/). The way to avoid image-based layout shifts is to [always size your images](https://web.dev/optimize-cls/#images-without-dimensions). This allows the browser to reserve precisely enough space for the image before it loads.
+图片最常见的降低性能的原因之一是*布局转移（layout shift)*，即图片在加载时将页面上的其他元素推来推去。这个性能问题对用户来说很烦人，以至于它成为了一个重要的指标，叫做[累积布局偏移](https://web.dev/cls/)。避免基于图像的布局偏移的方法是[始终确定你的图像大小](https://web.dev/optimize-cls/#images-without-dimensions)，这可以让浏览器在图像加载之前为其精确地保留足够的空间。
 
-Because `next/image` is designed to guarantee good performance results, it cannot be used in a way that will contribute to layout shift, and **must** be sized in one of three ways:
+因为 `next/image` 的设计是为了保证良好的性能，所以它的使用方式不可以导致布局偏移，而且**必须**以如下三种方式之一来确定大小：
 
-1. Automatically, using a [static import](#local-images)
-2. Explicitly, by including a [`width`](/docs/api-reference/next/image#width) and [`height`](/docs/api-reference/next/image#height) property
-3. Implicitly, by using [`layout="fill"`](/docs/api-reference/next/image#layout) which causes the image to expand to fill its parent element.
+1. 自动，使用[静态导入](#local-images)
+2. 指定，包括一组 [`width`](/docs/api-reference/next/image#width) 和 [`height`](/docs/api-reference/next/image#height) 属性
+3. 隐式，通过使用 [`layout="fill"`](/docs/api-reference/next/image#layout)，使图像扩展到填充其父元素
 
-> ### What if I don't know the size of my images?
->
-> If you are accessing images from a source without knowledge of the images' sizes, there are several things you can do:
->
-> **Use `layout='fill'`**
->
-> The `fill` layout mode allows your image to be sized by its parent element. Consider using CSS to give the image's parent element space on the page, then using the [`objectFit property`](/docs/api-reference/next/image#objectfit) with `fill`, `contain`, or `cover`, along with the [`objectPosition property`](/docs/api-reference/next/image#objectposition) to define how the image should occupy that space.
->
-> **Normalize your images**
->
-> If you're serving images from a source that you control, consider modifying your image pipeline to normalize the images to a specific size.
->
-> **Modify your API calls**
->
-> If your application is retrieving image URLs using an API call (such as to a CMS), you may be able to modify the API call to return the image dimensions along with the URL.
+> ### 如果我不知道图像的尺寸？
+> 
+> 如果你在不知道图片尺寸的情况下从一个来源访问图片，有几件事你可以做：
+> 
+> **使用 `layout='fill'`**
+> 
+> `fill` 布局模式允许你的图像由其父元素决定大小。考虑使用 CSS 给图像的父元素在页面上留出空间，然后将 [`objectFit property`](/docs/api-reference/next/image#objectfit) 与 `fill`、`contain` 或 `cover` 一起使用，以及 [`objectPosition property`](/docs/api-reference/next/image#objectposition) 来定义图像应该如何占据这个空间。
+> 
+> **规范化你的图像**
+> 
+> 如果你从一个你自己控制的源头获取图像，考虑修改你的图像管道（pipeline），将图像规范化为一个特定的尺寸。
+> 
+> **修改你的 API 调用**
+> 
+> 如果你的应用程序使用 API 调用检索图像的 URL（如 CMS），你可能会修改 API 调用，使其与 URL 一起返回图像尺寸。
 
-If none of the suggested methods works for sizing your images, the `next/image` component is designed to work well on a page alongside standard `<img>` elements.
+如果建议的方法都不能满足你的图片尺寸要求，`next/image` 组件被设计成可以在页面上与标准的 `<img>` 元素一起工作。
 
-## Styling
+## 添加样式
 
-> Note: Many of the styling issues listed below can be solved with [`next/future/image`](/docs/api-reference/next/future/image)
+> 注意：以下列出的很多样式问题会在 [`next/future/image`](/docs/api-reference/next/future/image) 中解决
 
-Styling the Image component is not that different from styling a normal `<img>` element, but there are a few guidelines to keep in mind:
+为 Image 组件添加样式与为普通的 `<img>` 元素添加样式没有什么不同，但有一些准则需要记住：
 
-**Pick the correct layout mode**
+**选择正确的布局模式**
 
-The image component has several different [layout modes](/docs/api-reference/next/image#layout) that define how it is sized on the page. If the styling of your image isn't turning out the way you want, consider experimenting with other layout modes.
+图片组件有几种不同的[布局模式](/docs/api-reference/next/image#layout)，定义它在页面上的大小。如果你的图片样式没有达到你想要的效果，可以考虑尝试使用其他的布局模式。
 
-**Target the image with className, not based on DOM structure**
+**用 className 定位图片，而不是基于 DOM 结构**
 
-For most layout modes, the Image component will have a DOM structure of one `<img>` tag wrapped by exactly one `<span>`. For some modes, it may also have a sibling `<span>` for spacing. These additional `<span>` elements are critical to allow the component to prevent layout shifts.
+对于大多数布局模式，`Image` 组件的 DOM 结构是由一个 `<img>` 标签被一个 `<span>` 包裹。对于某些模式，它也可能有一个同级别的 `<span>` 用于间隔。 这些额外的 `<span>` 元素对防止该组件布局偏移至关重要。
 
-The recommended way to style the inner `<img>` is to set the `className` prop on the Image component to the value of an imported [CSS Module](/docs/basic-features/built-in-css-support#adding-component-level-css). The value of `className` will be automatically applied to the underlying `<img>` element.
+给内部 `<img>` 元素添加样式的建议方式是将 `Image` 组件的 `className` 的值设置为一个已经导入的 [CSS 模块](/docs/basic-features/built-in-css-support#adding-component-level-css)。`className` 的值将自动应用于底层的 `<img>` 元素。
 
-Alternatively, you can import a [global stylesheet](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet) and manually set the `className` prop to the same name used in the global stylesheet.
+或者，你可以导入一个[全局样式表](/docs/basic-features/built-in-css-support#adding-a-global-stylesheet)，并手动设置 `className` 属性为全局样式表中使用的相同名称。
 
-You cannot use [styled-jsx](/docs/basic-features/built-in-css-support#css-in-js) because it's scoped to the current component.
+你不能使用 [styled-jsx](/docs/basic-features/built-in-css-support#css-in-js)，因为它针对于当前组件的范围。
 
-**When using `layout='fill'`, the parent element must have `position: relative`**
+**当使用 `layout='fill'` 时，父元素必须有 `position: relative`**
 
-This is necessary for the proper rendering of the image element in that layout mode.
+这对于在该布局模式下正确渲染图像元素是必要的。
 
-**When using `layout='responsive'`, the parent element must have `display: block`**
+**当使用 `layout='responsive'` 时，父元素必须有 `display: block`**
 
-This is the default for `<div>` elements but should be specified otherwise.
+这是 `<div>` 元素的默认值，但需要另外指定。
 
-## Properties
+## 属性
 
-[**View all properties available to the `next/image` component.**](/docs/api-reference/next/image)
+[**查看 `next/image` 适用的所有属性**](/docs/api-reference/next/image)
 
-### Styling Examples
+### 样式添加的示例
 
-For examples of the Image component used with the various fill modes, see the [Image component example app](https://image-component.nextjs.gallery/).
+关于图像组件与各种填充模式的使用示例，参见[图像组件示例应用](https://image-component.nextjs.gallery/)。
 
-## Configuration
+## 配置
 
-The `next/image` component and Next.js Image Optimization API can be configured in the [`next.config.js` file](/docs/api-reference/next-config-js/introduction). These configurations allow you to [enable remote images](/docs/api-reference/next/image#domains), [define custom image breakpoints](/docs/api-reference/next/image#device-sizes), [change caching behavior](/docs/api-reference/next/image#caching-behavior) and more.
+`next/image` 组件和 Next.js 图像优化 API 可以在 [`next.config.js`文件](/docs/api-reference/next-config-js/introduction)中进行配置。这些配置允许你[启用远程图像](/docs/api-reference/next/image#domains)、[定义自定义图像断点](/docs/api-reference/next/image#device-sizes)、[改变缓存行为](/docs/api-reference/next/image#caching-behavior)等。
 
-[**Read the full image configuration documentation for more information.**](/docs/api-reference/next/image#configuration-options)
+[**阅读完整的配置文档以了解更多信息**](/docs/api-reference/next/image#configuration-options)
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [`next/image`: See all available properties for the Image component](/docs/api-reference/next/image)
+- [**`next/image`** / 查看 `Image` 组件所有可用的属性](/docs/api-reference/next/image)

@@ -1,13 +1,9 @@
----
-description: Next.js supports built-in image optimization, as well as third party loaders for Imgix, Cloudinary, and more! Learn more here.
----
-
 # Image Component and Image Optimization
 
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/image-component">Image Component</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/image-component">Image Component</a></li>
   </ul>
 </details>
 
@@ -154,19 +150,19 @@ Because `next/image` is designed to guarantee good performance results, it canno
 3. Implicitly, by using [`layout="fill"`](/docs/api-reference/next/image#layout) which causes the image to expand to fill its parent element.
 
 > ### What if I don't know the size of my images?
->
+> 
 > If you are accessing images from a source without knowledge of the images' sizes, there are several things you can do:
->
+> 
 > **Use `layout='fill'`**
->
+> 
 > The `fill` layout mode allows your image to be sized by its parent element. Consider using CSS to give the image's parent element space on the page, then using the [`objectFit property`](/docs/api-reference/next/image#objectfit) with `fill`, `contain`, or `cover`, along with the [`objectPosition property`](/docs/api-reference/next/image#objectposition) to define how the image should occupy that space.
->
+> 
 > **Normalize your images**
->
+> 
 > If you're serving images from a source that you control, consider modifying your image pipeline to normalize the images to a specific size.
->
+> 
 > **Modify your API calls**
->
+> 
 > If your application is retrieving image URLs using an API call (such as to a CMS), you may be able to modify the API call to return the image dimensions along with the URL.
 
 If none of the suggested methods works for sizing your images, the `next/image` component is designed to work well on a page alongside standard `<img>` elements.
