@@ -1,7 +1,3 @@
----
-description: Fetch data and generate static pages with `getStaticProps`. Learn more about this API for data fetching in Next.js.
----
-
 # getStaticProps
 
 If you export a function called `getStaticProps` (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by `getStaticProps`.
@@ -85,7 +81,7 @@ This means that instead of fetching an **API route** from `getStaticProps` (that
 Take the following example. An API route is used to fetch some data from a CMS. That API route is then called directly from `getStaticProps`. This produces an additional call, reducing performance. Instead, the logic for fetching the data from the CMS can be shared by using a `lib/` directory. Then it can be shared with `getStaticProps`.
 
 ```jsx
-// lib/fetch-posts.js
+// lib/load-posts.js
 
 // The following function is shared
 // with getStaticProps and API routes

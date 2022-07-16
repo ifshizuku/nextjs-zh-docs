@@ -24,10 +24,10 @@
 
 Next.js 的数据获取允许你用多种不同的方式渲染你的内容，这取决于你的应用程序的使用需求。这包括了**服务端渲染**和**静态生成**两种预渲染方式以及**增量静态再生**这种在运行时更新或创建内容的方式。
 
-- [**SSR - 服务端渲染** / 有关 Next.js 通过 `getServerSideProps` 进行服务端渲染 ](/docs/basic-features/data-fetching/get-server-side-props)
+- [**SSR - 服务端渲染** / 有关 Next.js 通过 `getServerSideProps` 进行服务端渲染](/docs/basic-features/data-fetching/get-server-side-props)
 - [**SSG - 静态站点生成** / 有关 Next.js 通过 `getStaticProps` 进行静态站点生成](/docs/basic-features/data-fetching/get-static-props)
 - [**CSR - 客户端渲染** / 有关在 Next.js 中通过 SWR 进行客户端渲染](/docs/basic-features/data-fetching/client-side)
-- [**动态路由** / 有关 Next.js 通过 `getStaticPaths` 实现动态路由 ](/docs/basic-features/data-fetching/get-static-paths)
+- [**动态路由** / 了解更多有关如何在 Next.js 中使用 `getStaticPaths` 配合动态路由](/docs/basic-features/data-fetching/get-static-paths)
 - [**ISR - 增量静态再生** / 有关 Next.js 的增量静态再生](/docs/basic-features/data-fetching/incremental-static-regeneration)
 
 ## 了解更多

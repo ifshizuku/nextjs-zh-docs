@@ -10,7 +10,7 @@ export async function getServerSideProps(context) {
 }
 ```
 
-> 请注意，无论渲染方式如何，任何 `props` 都将被传递给页面组件，并且可以在客户端的初始 HTML 中查看。这是为了让页面能够正确地被[水合](https://reactjs.org/docs/react-dom.html#hydrate)。请确保不要在 `props` 中传递任何不应该在客户端出现的敏感信息。
+> 请注意，无论渲染方式如何，任何 `props` 都将被传递给页面组件，并且可以在客户端的初始 HTML 中查看。这是为了让页面能够正确地被[注水](https://reactjs.org/docs/react-dom.html#hydrate)。请确保不要在 `props` 中传递任何不应该在客户端出现的敏感信息。
 
 ## getServerSideProps 运行的时间
 
@@ -23,19 +23,19 @@ export async function getServerSideProps(context) {
 
 你可以使用 [next-code-elimination tool](https://next-code-elimination.vercel.app/) 来验证 Next.js 在客户端的捆绑中移除了什么。
 
-`getServerSideProps` 只能从一个 **页面**导出，**你不可以在非页面文件中导出它。**
+`getServerSideProps` 只能从**页面**中导出，**你不可以在非页面文件中导出它。**
 
 注意，你必须将 `getServerSideProps` 作为一个独立的函数导出，如果你将 `getServerSideProps` 作为页面组件的一个属性，那么它将**不会**工作。
 
 [`getServerSideProps` API 参考](/docs/api-reference/data-fetching/get-server-side-props) 包含了所有 `getServerSideProps` 可用的参数和属性。
 
-## 什么时候使用 getServerSideProps
+## 何时使用 getServerSideProps ？
 
 只有当你需要渲染一个必须在请求时获取数据的页面时，你才应该使用 `getServerSideProps`，这可能是由于数据的性质或请求的属性（如 `身份验证` 标头或地理位置）。使用 `getServerSideProps` 的页面将会在每次请求时通过服务端渲染，只有在[配置缓存控制标头](/docs/going-to-production#caching)的情况下才会被缓存。
 
 如果你不需要在请求时渲染数据，那么你应该考虑在[客户端](#fetching-data-on-the-client-side)获取数据或使用 [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props)。
 
-### getServerSideProps 与 API 路由 ？
+### getServerSideProps 与 API 路由
 
 当你想从服务器上获取数据时，你可能很想去创建一个 [API 路由](/docs/api-routes/introduction)，然后从 `getServerSideProps` 中调用该 API 路由。这是一个不必要且低效的方法，因为它将导致一个额外的请求，因为 `getServerSideProps` 和 API Routes 都在服务器上运行。
 
@@ -98,7 +98,7 @@ export async function getServerSideProps({ req, res }) {
 
 了解更多有关[缓存](/docs/going-to-production)的信息
 
-## getServerSideProps 是否渲染错误页
+## getServerSideProps 错误页渲染
 
 如果 `getServerSideProps` 里抛出一个错误，它将渲染 `pages/500.js` 文件。查看 [500 Page](/docs/advanced-features/custom-error-page#500-page) 的文档，了解如何创建它的信息。在开发（development）过程中，这个文件将不会被使用，而会显示开发提示层。
 
@@ -106,4 +106,4 @@ export async function getServerSideProps({ req, res }) {
 
 关于下一步该做什么的更多信息，我们建议阅读以下章节：
 
-- [ **getServerSideProps**：阅读 `getServerSideProps` 的 API 参考](/docs/api-reference/data-fetching/get-server-side-props)
+- [ **getServerSideProps API 参考**](/docs/api-reference/data-fetching/get-server-side-props)

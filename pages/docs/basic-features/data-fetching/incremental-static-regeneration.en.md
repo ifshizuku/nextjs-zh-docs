@@ -1,15 +1,13 @@
----
-description: 'Learn how to create or update static pages at runtime with Incremental Static Regeneration.'
----
-
 # Incremental Static Regeneration
 
 <details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://nextjs.org/commerce">Next.js Commerce</a></li>
-    <li><a href="https://reactions-demo.vercel.app/">GitHub Reactions Demo</a></li>
-    <li><a href="https://static-tweet.vercel.app/">Static Tweet Demo</a></li>
+```
+<li><a href="https://nextjs.org/commerce">Next.js Commerce</a></li>
+<li><a href="https://reactions-demo.vercel.app/">GitHub Reactions Demo</a></li>
+<li><a href="https://static-tweet.vercel.app/">Static Tweet Demo</a></li>
+```
   </ul>
 </details>
 
@@ -101,7 +99,7 @@ Starting with `v12.2.0`, Next.js supports On-Demand Incremental Static Regenerat
 
 Inside `getStaticProps`, you do not need to specify `revalidate` to use on-demand revalidation. If `revalidate` is omitted, Next.js will use the default value of `false` (no revalidation) and only revalidate the page on-demand when `revalidate()` is called.
 
-> **Note:** [Middleware](/docs/advanced-features/middleware) won't be executed for On-Demand ISR requests. Instead, call `revalidate()` on the _exact_ path that you want revalidated. For example, if you have `pages/blog/[slug].js` and a rewrite from `/post-1` -> `/blog/post-1`, you would need to call `res.revalidate('/blog/post-1')`.
+> **Note:** [Middleware](/docs/advanced-features/middleware) won't be executed for On-Demand ISR requests. Instead, call `revalidate()` on the _exact_ path that you want revalidated. For example, if you have `pages/blog/[slug].js` and a rewrite from `/post-1` -\> `/blog/post-1`, you would need to call `res.revalidate('/blog/post-1')`.
 
 ### Using On-Demand Revalidation
 

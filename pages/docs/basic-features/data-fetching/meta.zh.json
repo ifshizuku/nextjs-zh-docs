@@ -3,6 +3,6 @@
     "get-server-side-props": "getServerSideProps",
     "get-static-paths": "getStaticPaths",
     "get-static-props": "getStaticProps",
-    "incremental-static-regeneration": "增量静态再生",
-    "client-side": "客户端"
+    "incremental-static-regeneration": "增量静态再生（ISR）",
+    "client-side": "客户端数据获取"
 }

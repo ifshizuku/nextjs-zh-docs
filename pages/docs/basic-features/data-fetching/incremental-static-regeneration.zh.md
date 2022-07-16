@@ -1,33 +1,29 @@
----
-description: 'Learn how to create or update static pages at runtime with Incremental Static Regeneration.'
----
-
-# Incremental Static Regeneration
+# 增量静态再生
 
 <details>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://nextjs.org/commerce">Next.js Commerce</a></li>
-    <li><a href="https://reactions-demo.vercel.app/">GitHub Reactions Demo</a></li>
-    <li><a href="https://static-tweet.vercel.app/">Static Tweet Demo</a></li>
+<li><a href="https://nextjs.org/commerce">Next.js Commerce</a></li>
+<li><a href="https://reactions-demo.vercel.app/">GitHub Reactions Demo</a></li>
+<li><a href="https://static-tweet.vercel.app/">Static Tweet Demo</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><b>Version History</b></summary>
+  <summary><b>版本记录</b></summary>
 
-| Version   | Changes                                                                                 |
-| --------- | --------------------------------------------------------------------------------------- |
-| `v12.2.0` | On-Demand ISR is stable                                                                 |
-| `v12.1.0` | On-Demand ISR added (beta).                                                             |
-| `v12.0.0` | [Bot-aware ISR fallback](https://nextjs.org/blog/next-12#bot-aware-isr-fallback) added. |
-| `v9.5.0`  | Base Path added.                                                                        |
+| 版本        | 更改                                                                       |
+| --------- | ------------------------------------------------------------------------ |
+| `v12.2.0` | 按需 ISR 稳定版                                                               |
+| `v12.1.0` | 按需 ISR 添加（Beta）                                                          |
+| `v12.0.0` | [机器友好 ISR 回退](https://nextjs.org/blog/next-12#bot-aware-isr-fallback) 添加 |
+| `v9.5.0`  | 根路径添加                                                                    |
 
 </details>
 
-Next.js allows you to create or update static pages _after_ you’ve built your site. Incremental Static Regeneration (ISR) enables you to use static-generation on a per-page basis, **without needing to rebuild the entire site**. With ISR, you can retain the benefits of static while scaling to millions of pages.
+Next.js允许你在建立网站*之后*创建或更新静态页面。增量静态再生（ISR）使你可以在每个页面的基础上使用静态生成，**不需要重建整个网站**。有了ISR，你可以保留静态的好处，同时扩展到数以百万计的页面。
 
-To use ISR, add the `revalidate` prop to `getStaticProps`:
+使用 ISR，将 `revalidate` 属性添加到 `getStaticProps`：
 
 ```jsx
 function Blog({ posts }) {
@@ -79,39 +75,39 @@ export async function getStaticPaths() {
 export default Blog
 ```
 
-When a request is made to a page that was pre-rendered at build time, it will initially show the cached page.
+当对一个在构建时已预渲染的页面提出请求时，它最初将显示缓存的页面。
 
-- Any requests to the page after the initial request and before 10 seconds are also cached and instantaneous.
-- After the 10-second window, the next request will still show the cached (stale) page
-- Next.js triggers a regeneration of the page in the background.
-- Once the page generates successfully, Next.js will invalidate the cache and show the updated page. If the background regeneration fails, the old page would still be unaltered.
+- 在最初的请求之后和 10 秒之前，任何对该页面的请求都是缓存且即时的
+- 在 10 秒之后，下一次请求仍然会显示缓存的（陈旧的）页面
+- Next.js 会在后台触发页面的再生（regeneration）
+- 一旦页面再生成功，Next.js 将使缓存失效并显示更新的页面；如果后台再生失败，旧的页面不会被改变
 
-When a request is made to a path that hasn’t been generated, Next.js will server-render the page on the first request. Future requests will serve the static file from the cache. ISR on Vercel [persists the cache globally and handles rollbacks](https://vercel.com/docs/concepts/next.js/incremental-static-regeneration).
+当对一个尚未生成的路径提出请求时，Next.js 将在第一次请求中对页面进行服务端渲染，之后的请求将从缓存中提供静态文件。Vercel 上的 ISR [ 全局地保存缓存并处理回滚 ](https://vercel.com/docs/concepts/next.js/incremental-static-regeneration) 。
 
-> Note: Check if your upstream data provider has caching enabled by default. You might need to disable (e.g. `useCdn: false`), otherwise a revalidation won't be able to pull fresh data to update the ISR cache. Caching can occur at a CDN (for an endpoint being requested) when it returns the `Cache-Control` header.
+> 注意：检查你的上游数据提供者是否默认启用了缓存。你可能需要禁用它（例如`useCdn: false`），否则重新验证（revalidate）将无法拉取最新数据来更新 ISR 的缓存。当 CDN 返回 `Cache-Control` 标头时，CDN（对于被请求的端点而言）会进行缓存。
 
-## On-demand Revalidation
+## 按需重新验证
 
-If you set a `revalidate` time of `60`, all visitors will see the same generated version of your site for one minute. The only way to invalidate the cache is from someone visiting that page after the minute has passed.
+如果你设置的 `revalidate` 时间是 `60`，那么所有的访问者都会在一分钟内看到你网站生成的同一版本。使缓存失效的唯一方法是在一分钟后有人访问该页面。
 
-Starting with `v12.2.0`, Next.js supports On-Demand Incremental Static Regeneration to manually purge the Next.js cache for a specific page. This makes it easier to update your site when:
+从 `v12.2.0` 开始，Next.js 支持按需增量静态再生（On-Demand ISR），可以手动清除特定页面的 Next.js 缓存。这使你的网站更容易更新，当：
 
-- Content from your headless CMS is created or updated
-- Ecommerce metadata changes (price, description, category, reviews, etc.)
+- 你的无头 CMS（Headless CMS）的内容被创建或更新
+- 电子商务元数据的变化（价格、描述、类别、评论等）
 
-Inside `getStaticProps`, you do not need to specify `revalidate` to use on-demand revalidation. If `revalidate` is omitted, Next.js will use the default value of `false` (no revalidation) and only revalidate the page on-demand when `revalidate()` is called.
+在 `getStaticProps` 中，你不需要指定 `revalidate` 来使用按需重新验证。如果省略 `revalidate`，Next.js 将使用默认值 `false`（无重新验证），只有在 `revalidate()` 被调用时才按需重新验证页面。
 
-> **Note:** [Middleware](/docs/advanced-features/middleware) won't be executed for On-Demand ISR requests. Instead, call `revalidate()` on the _exact_ path that you want revalidated. For example, if you have `pages/blog/[slug].js` and a rewrite from `/post-1` -> `/blog/post-1`, you would need to call `res.revalidate('/blog/post-1')`.
+> **注意** [中间件](/docs/advanced-features/middleware)不会为按需 ISR 请求执行。相反，在你想要重新验证的*确切*路径上调用 `revalidate()`。例如，如果你有 `pages/blog/[slug].js`，并且将 `/post-1` 重写（rewrite）到 `/blog/post-1`，你将需要调用的是 `res.revalidate('/blog/post-1')`。
 
-### Using On-Demand Revalidation
+### 使用按需重新验证
 
-First, create a secret token only known by your Next.js app. This secret will be used to prevent unauthorized access to the revalidation API Route. You can access the route (either manually or with a webhook) with the following URL structure:
+首先，创建一个只有你的 Next.js 应用程序知道的密钥令牌。这个密钥将被用来防止未经授权的重新验证的 API 路由访问。你可以通过以下 URL 结构访问该路由（手动或使用 Webhook）：
 
 ```bash
 https://<your-site.com>/api/revalidate?secret=<token>
 ```
 
-Next, add the secret as an [Environment Variable](/docs/basic-features/environment-variables) to your application. Finally, create the revalidation API Route:
+接着，将你的密钥作为[环境变量](/docs/basic-features/environment-variables)添加到你的应用程序。最后，创建一个重新验证（revalidate）API 路由：
 
 ```jsx
 // pages/api/revalidate.js
@@ -135,22 +131,22 @@ export default async function handler(req, res) {
 }
 ```
 
-[View our demo](https://on-demand-isr.vercel.app) to see on-demand revalidation in action and provide feedback.
+[查看我们的演示](https://on-demand-isr.vercel.app)以了解按需重新验证的行为与反馈提供。
 
-### Testing on-Demand ISR during development
+### 在开发过程中测试按需 ISR
 
-When running locally with `next dev`, `getStaticProps` is invoked on every request. To verify your on-demand ISR configuration is correct, you will need to create a [production build](/docs/api-reference/cli#build) and start the [production server](/docs/api-reference/cli#production):
+当使用 `next dev` 在本地运行时，`getStaticProps` 会在每次请求时被调用。 为了验证你的按需 ISR 配置是否正确，你将需要创建一个[生产环境构建](/docs/api-reference/cli#build)并启动[生产环境服务器](/docs/api-reference/cli#production)：
 
 ```bash
 $ next build
 $ next start
 ```
 
-Then, you can confirm that static pages have successfully revalidated.
+然后，你就可以确认静态页面是否成功地重新验证了。
 
-## Error handling and revalidation
+## 错误处理和重新验证
 
-If there is an error inside `getStaticProps` when handling background regeneration, or you manually throw an error, the last successfully generated page will continue to show. On the next subsequent request, Next.js will retry calling `getStaticProps`.
+如果在处理后台再生（regeneration）时，`getStaticProps` 内部出现错误，或者你手动抛出一个错误，**最后一次成功生成的页面**将继续显示。在接下来的请求中，Next.js 将再次调用 `getStaticProps` 以重试：
 
 ```jsx
 export async function getStaticProps() {
@@ -178,17 +174,17 @@ export async function getStaticProps() {
 }
 ```
 
-## Self-hosting ISR
+## 自托管 ISR
 
-Incremental Static Regeneration (ISR) works on [self-hosted Next.js sites](/docs/deployment#self-hosting) out of the box when you use `next start`.
+当你使用 `next start` 时，增量静态再生（ISR）可以在[自托管的 Next.js 网站](/docs/deployment#self-hosting)上开箱即用。
 
-You can use this approach when deploying to container orchestrators such as [Kubernetes](https://kubernetes.io/) or [HashiCorp Nomad](https://www.nomadproject.io/). By default, generated assets will be stored in-memory on each pod. This means that each pod will have its own copy of the static files. Stale data may be shown until that specific pod is hit by a request.
+你可以在部署到容器编排工具（如 [Kubernetes](https://kubernetes.io/) 或 [HashiCorp Nomad](https://www.nomadproject.io/) ）时使用这种方法。默认情况下，生成的资源将被存储在每个 `pod` 的内存中。这意味着每个 `pod` 将有自己的静态文件副本。旧的数据可能会被显示出来，直到该特定的 `pod` 收到一个请求。
 
-To ensure consistency across all pods, you can disable in-memory caching. This will inform the Next.js server to only leverage assets generated by ISR in the file system.
+为了确保所有 `pod` 之间的一致性，你可以禁用内存缓存。这将通知 Next.js 服务器只利用文件系统中由 ISR 生成的资源。
 
-You can use a shared network mount in your Kubernetes pods (or similar setup) to reuse the same file-system cache between different containers. By sharing the same mount, the `.next` folder which contains the `next/image` cache will also be shared and re-used.
+你可以在你的 Kubernetes pods（或类似的设置）中使用共享网络挂载，在不同的容器之间重复使用相同的文件系统缓存。通过共享相同的挂载，包含 `next/image` 缓存的 `.next` 文件夹也将被共享和重复使用。
 
-To disable in-memory caching, set `isrMemoryCacheSize` to `0` in your `next.config.js` file:
+要禁用内存缓存，请在你的 `next.config.js` 文件中将 `isrMemoryCacheSize` 设置为 `0`：
 
 ```js
 module.exports = {
@@ -199,10 +195,10 @@ module.exports = {
 }
 ```
 
-> **Note:** You might need to consider a race condition between multiple pods trying to update the cache at the same time, depending on how your shared mount is configured.
+> **注意** ：你可能需要考虑多个 `pod` 试图同时更新缓存的条件，这取决于你的共享挂载是如何配置的。
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Dynamic routing: Learn more about dynamic routing in Next.js with getStaticPaths.](/docs/basic-features/data-fetching/get-static-paths)
+- [**动态路由**：了解更多有关如何在 Next.js 中使用 `getStaticPaths` 配合动态路由](/docs/basic-features/data-fetching/get-static-paths)

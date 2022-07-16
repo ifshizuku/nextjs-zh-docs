@@ -1,7 +1,3 @@
----
-description: Fetch data and generate static pages with `getStaticProps`. Learn more about this API for data fetching in Next.js.
----
-
 # getStaticPaths
 
 If a page has [Dynamic Routes](/docs/routing/dynamic-routes) and uses `getStaticProps`, it needs to define a list of paths to be statically generated.
