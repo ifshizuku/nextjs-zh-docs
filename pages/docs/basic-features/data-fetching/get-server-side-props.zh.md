@@ -10,7 +10,7 @@ export async function getServerSideProps(context) {
 }
 ```
 
-> 请注意，无论渲染方式如何，任何 `props` 都将被传递给页面组件，并且可以在客户端的初始 HTML 中查看。这是为了让页面能够正确地被[注水](https://reactjs.org/docs/react-dom.html#hydrate)。请确保不要在 `props` 中传递任何不应该在客户端出现的敏感信息。
+> 请注意，无论渲染方式如何，任何 `props` 都将被传递给页面组件，并且可以在客户端的初始 HTML 中查看。这是为了让页面能够正确地被[注水](https://zh-hans.reactjs.org/docs/react-dom.html#hydrate)。请确保不要在 `props` 中传递任何不应该在客户端出现的敏感信息。
 
 ## getServerSideProps 运行的时间
 

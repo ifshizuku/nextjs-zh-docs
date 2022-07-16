@@ -3,11 +3,9 @@
 <details>
   <summary><b>Examples</b></summary>
   <ul>
-```
 <li><a href="https://nextjs.org/commerce">Next.js Commerce</a></li>
 <li><a href="https://reactions-demo.vercel.app/">GitHub Reactions Demo</a></li>
 <li><a href="https://static-tweet.vercel.app/">Static Tweet Demo</a></li>
-```
   </ul>
 </details>
 

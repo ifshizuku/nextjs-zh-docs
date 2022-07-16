@@ -1,25 +1,20 @@
----
-description: Next.js supports including CSS files as Global CSS or CSS Modules, using `styled-jsx` for CSS-in-JS, or any other CSS-in-JS solution! Learn more here.
----
-
-# Built-In CSS Support
+# 内建 CSS 支持
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/basic-css">Basic CSS Example</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss">With Tailwind CSS</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/basic-css">Basic CSS Example</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss">With Tailwind CSS</a></li>
   </ul>
 </details>
 
-Next.js allows you to import CSS files from a JavaScript file.
-This is possible because Next.js extends the concept of [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) beyond JavaScript.
+Next.js 允许你从一个 JavaScript 文件中导入 CSS 文件。这之所以能够实现，是因为 Next.js 将 [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) 的概念扩展到了 JavaScript 之外。
 
-## Adding a Global Stylesheet
+## 添加全局样式表
 
-To add a stylesheet to your application, import the CSS file within `pages/_app.js`.
+要在你的整个应用程序中添加一个样式表，需要在 `pages/_app.js` 中导入 CSS 文件。
 
-For example, consider the following stylesheet named `styles.css`:
+例如，考虑以下名为 `styles.css` 的样式表：
 
 ```css
 body {
@@ -31,8 +26,7 @@ body {
 }
 ```
 
-Create a [`pages/_app.js` file](/docs/advanced-features/custom-app) if not already present.
-Then, [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) the `styles.css` file.
+创建 [`pages/_app.js`文件](/docs/advanced-features/custom-app) 如果不存在的话，然后[`导入（import）`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) 这个 `styles.css` 文件。
 
 ```jsx
 import '../styles.css'
@@ -43,19 +37,17 @@ export default function MyApp({ Component, pageProps }) {
 }
 ```
 
-These styles (`styles.css`) will apply to all pages and components in your application.
-Due to the global nature of stylesheets, and to avoid conflicts, you may **only import them inside [`pages/_app.js`](/docs/advanced-features/custom-app)**.
+这些样式（`styles.css`）将应用于你的应用程序中的**所有**页面和组件。由于该样式表的全局性，为了避免冲突，你**只能在 [`pages/_app.js`](/docs/advanced-features/custom-app) 内导入**。
 
-In development, expressing stylesheets this way allows your styles to be hot reloaded as you edit them—meaning you can keep application state.
+在开发过程中，以这种方式导入样式表允许你在编辑样式时热重载，这意味着你可以保持应用的状态。
 
-In production, all CSS files will be automatically concatenated into a single minified `.css` file.
+在生产环境中，所有的 CSS 文件将被自动合并成一个的最小化的 `.css` 文件。
 
-### Import styles from `node_modules`
+### 从 `node_modules` 导入样式
 
-Since Next.js **9.5.4**, importing a CSS file from `node_modules` is permitted anywhere in your application.
+从 Next.js **9.5.4** 开始，在你的应用程序的任何地方从 `node_modules` 导入 CSS 文件是允许的。
 
-For global stylesheets, like `bootstrap` or `nprogress`, you should import the file inside `pages/_app.js`.
-For example:
+对于全局样式表，如 `bootstrap` 或 `nprogress`，你应该在 `pages/_app.js` 中导入该文件。例如：
 
 ```jsx
 // pages/_app.js
@@ -66,7 +58,7 @@ export default function MyApp({ Component, pageProps }) {
 }
 ```
 
-For importing CSS required by a third party component, you can do so in your component. For example:
+对于导入第三方组件所需的 CSS，你可以在你的组件中这样做：
 
 ```tsx
 // components/ExampleDialog.js
@@ -95,19 +87,17 @@ function ExampleDialog(props) {
 }
 ```
 
-## Adding Component-Level CSS
+## 添加组件级 CSS
 
-Next.js supports [CSS Modules](https://github.com/css-modules/css-modules) using the `[name].module.css` file naming convention.
+Next.js 支持使用 `[名称].module.css` 文件命名的 [CSS模块](https://github.com/css-modules/css-modules)。
 
-CSS Modules locally scope CSS by automatically creating a unique class name.
-This allows you to use the same CSS class name in different files without worrying about collisions.
+CSS 模块通过自动创建一个独特的类名来对 CSS 进行局部范围划分。这使得你可以在不同的文件中使用相同的 CSS 类名，而不必担心冲突问题。
 
-This behavior makes CSS Modules the ideal way to include component-level CSS.
-CSS Module files **can be imported anywhere in your application**.
+这种行为使 CSS 模块成为包含组件级 CSS 的理想方式。CSS 模块文件**可以在你的应用程序中的任何地方导入**。
 
-For example, consider a reusable `Button` component in the `components/` folder:
+例如，考虑 `components/` 文件夹中的一个可重复使用的 `Button` 组件。
 
-First, create `components/Button.module.css` with the following content:
+首先，创建 `components/Button.module.css`，内容如下：
 
 ```css
 /*
@@ -120,7 +110,7 @@ You do not need to worry about .error {} colliding with any other `.css` or
 }
 ```
 
-Then, create `components/Button.js`, importing and using the above CSS file:
+然后，创建 `components/Button.js`，导入并使用上述 CSS 文件：
 
 ```jsx
 import styles from './Button.module.css'
@@ -139,37 +129,31 @@ export function Button() {
 }
 ```
 
-CSS Modules are an _optional feature_ and are **only enabled for files with the `.module.css` extension**.
-Regular `<link>` stylesheets and global CSS files are still supported.
+CSS模块是一个*可选*的功能，并且**只对扩展名为 `.module.css` 的文件启用**。常规的 `<link>` 样式表和全局 CSS 文件仍然被支持。
 
-In production, all CSS Module files will be automatically concatenated into **many minified and code-split** `.css` files.
-These `.css` files represent hot execution paths in your application, ensuring the minimal amount of CSS is loaded for your application to paint.
+在生产环境中，所有的 CSS 模块文件将会自动生成**多个最小化且代码分割的**  `.css` 文件。这些 `.css` 文件代表了你的应用程序中的热执行路径，确保你的应用程序加载最小量的 CSS 来绘制（paint）。
 
-## Sass Support
+## Sass 支持
 
-Next.js allows you to import Sass using both the `.scss` and `.sass` extensions.
-You can use component-level Sass via CSS Modules and the `.module.scss` or `.module.sass` extension.
+Next.js 允许你使用 `.scss` 和 `.sass` 扩展名导入 Sass。你可以通过 CSS  Modules 的 `.module.scss` 或 `.module.sass` 扩展名使用组件级的 Sass。
 
-Before you can use Next.js' built-in Sass support, be sure to install [`sass`](https://github.com/sass/sass):
+在你使用 Next.js 内建的 Sass 支持之前，确保你已经安装了 [`sass`](https://github.com/sass/sass)：
 
 ```bash
 npm install --save-dev sass
 ```
 
-Sass support has the same benefits and restrictions as the built-in CSS support detailed above.
+内建的 Sass 支持与上面详述的内置 CSS 支持具有同样的好处和限制。
 
-> **Note**: Sass supports [two different syntaxes](https://sass-lang.com/documentation/syntax), each with their own extension.
-> The `.scss` extension requires you use the [SCSS syntax](https://sass-lang.com/documentation/syntax#scss),
-> while the `.sass` extension requires you use the [Indented Syntax ("Sass")](https://sass-lang.com/documentation/syntax#the-indented-syntax).
->
-> If you're not sure which to choose, start with the `.scss` extension which is a superset of CSS, and doesn't require you learn the
-> Indented Syntax ("Sass").
+> **注意**：Sass 支持[两种不同的语法](https://sass-lang.com/documentation/syntax)，每种语法都有自己的扩展名，`.scss` 扩展要求你使用 [SCSS语法](https://sass-lang.com/documentation/syntax#scss)，而 `.sass` 扩展要求你使用[缩进语法（“Sass”）](https://sass-lang.com/documentation/syntax#the-indented-syntax)
+> 
+> 如果你不确定选择哪个，可以从 `.scss` 扩展开始，它是 CSS 的超集，不需要学习额外的缩进语法（“Sass”）
 
-### Customizing Sass Options
+### 自定义Sass 选项
 
-If you want to configure the Sass compiler you can do so by using `sassOptions` in `next.config.js`.
+如果你想配置 Sass 编译器，你可以通过在 `next.config.js` 中使用 `sassOptions` 来实现。
 
-For example to add `includePaths`:
+例如，添加 `includePaths`：
 
 ```js
 const path = require('path')
@@ -181,11 +165,11 @@ module.exports = {
 }
 ```
 
-### Sass Variables
+### Sass 变量
 
-Next.js supports Sass variables exported from CSS Module files.
+Next.js 支持从 CSS 模块文件导出的 Sass 变量。
 
-For example, using the exported `primaryColor` Sass variable:
+例如，使用导出的 `primaryColor` Sass 变量：
 
 ```scss
 /* variables.module.scss */
@@ -212,23 +196,22 @@ export default function MyApp({ Component, pageProps }) {
 ## CSS-in-JS
 
 <details>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styled-jsx">Styled JSX</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styled-components">Styled Components</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-emotion">Emotion</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-linaria">Linaria</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss-emotion">Tailwind CSS + Emotion</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styletron">Styletron</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-cxs">Cxs</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-aphrodite">Aphrodite</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-fela">Fela</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-stitches">Stitches</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styled-jsx">Styled JSX</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styled-components">Styled Components</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-emotion">Emotion</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-linaria">Linaria</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss-emotion">Tailwind CSS + Emotion</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-styletron">Styletron</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-cxs">Cxs</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-aphrodite">Aphrodite</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-fela">Fela</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-stitches">Stitches</a></li>
   </ul>
 </details>
 
-It's possible to use any existing CSS-in-JS solution.
-The simplest one is inline styles:
+可以使用任何现有的CSS-in-JS解决方案。最简单的是内联样式：
 
 ```jsx
 function HiThere() {
@@ -238,12 +221,11 @@ function HiThere() {
 export default HiThere
 ```
 
-We bundle [styled-jsx](https://github.com/vercel/styled-jsx) to provide support for isolated scoped CSS.
-The aim is to support "shadow CSS" similar to Web Components, which unfortunately [do not support server-rendering and are JS-only](https://github.com/w3c/webcomponents/issues/71).
+我们捆绑了 [styled-jsx](https://github.com/vercel/styled-jsx)，以提供对独立的范围内 CSS 的支持。其目的是支持类似于 Web 组件的“shadow CSS”，遗憾的是，Web 组件[不支持服务器渲染，只支持 JS](https://github.com/w3c/webcomponents/issues/71)。
 
-See the above examples for other popular CSS-in-JS solutions (like Styled Components).
+关于其他流行的 CSS-in-JS 解决方案（如 Styled Components），请参见上面的例子。
 
-A component using `styled-jsx` looks like this:
+一个使用 `styled-jsx` 的组件看起来像这样：
 
 ```jsx
 function HelloWorld() {
@@ -276,16 +258,16 @@ function HelloWorld() {
 export default HelloWorld
 ```
 
-Please see the [styled-jsx documentation](https://github.com/vercel/styled-jsx) for more examples.
+查看 [styled-jsx 文档](https://github.com/vercel/styled-jsx) 获取更多示例。
 
 ## FAQ
 
-### Does it work with JavaScript disabled?
+### 是否支持禁用 JavaScript ？
 
-Yes, if you disable JavaScript the CSS will still be loaded in the production build (`next start`). During development, we require JavaScript to be enabled to provide the best developer experience with [Fast Refresh](https://nextjs.org/blog/next-9-4#fast-refresh).
+是的，如果你禁用了 JavaScript，CSS 仍然会在生产构建中加载（`next start`）。在开发过程中，我们要求启用 JavaScript，以提供[快速刷新](https://nextjs.org/blog/next-9-4#fast-refresh)的最佳开发者体验。
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Customizing PostCSS Config: Extend the PostCSS config and plugins added by Next.js with your own.](/docs/advanced-features/customizing-postcss-config)
+- [**自定义 PostCSS 配置** / 用你自己的配置和 Next.js 添加的插件来扩展PostCSS 的配置和插件](/docs/advanced-features/customizing-postcss-config)

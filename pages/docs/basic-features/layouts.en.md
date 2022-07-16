@@ -1,13 +1,9 @@
----
-description: Learn how to share components and state between Next.js pages with Layouts.
----
-
 # Layouts
 
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/layout-component">layout-component</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/layout-component">layout-component</a></li>
   </ul>
 </details>
 
@@ -36,7 +32,9 @@ export default function Layout({ children }) {
 
 ### Single Shared Layout with Custom App
 
-If you only have one layout for your entire application, you can create a [Custom App](/docs/advanced-features/custom-app) and wrap your application with the layout. Since the `<Layout />` component is re-used when changing pages, its component state will be preserved (e.g. input values).
+If you only have one layout for your entire application, you can create a [Custom App](/docs/advanced-features/custom-app) and wrap your application with the layout.
+
+Since the `<Layout />` component is re-used when changing pages, its component state will be preserved (e.g. input values).
 
 ```jsx
 // pages/_app.js
@@ -171,18 +169,9 @@ export default function Layout({ children }) {
 }
 ```
 
+## Related
+
 For more information on what to do next, we recommend the following sections:
 
-<div class="card">
-  <a href="/docs/basic-features/pages">
-    <b>Pages:</b>
-    <small>Learn more about what pages are in Next.js.</small>
-  </a>
-</div>
-
-<div class="card">
-  <a href="/docs/advanced-features/custom-app">
-    <b>Custom App:</b>
-    <small>Learn more about how Next.js initialize pages.</small>
-  </a>
-</div>
+- [Pages: Learn more about what pages are in Next.js.](/docs/basic-features/pages)
+- [Custom App: Learn more about how Next.js initialize pages.](/docs/advanced-features/custom-app)
