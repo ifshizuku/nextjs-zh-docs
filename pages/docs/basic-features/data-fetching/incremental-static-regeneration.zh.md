@@ -201,4 +201,4 @@ module.exports = {
 
 关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [**动态路由**：了解更多有关如何在 Next.js 中使用 `getStaticPaths` 配合动态路由](/docs/basic-features/data-fetching/get-static-paths)
+- [**动态路由** / 了解更多有关如何在 Next.js 中使用 `getStaticPaths` 配合动态路由](/docs/basic-features/data-fetching/get-static-paths)

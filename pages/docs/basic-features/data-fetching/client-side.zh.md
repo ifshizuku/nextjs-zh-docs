@@ -1,18 +1,14 @@
----
-description: 'Learn about client-side data fetching, and how to use SWR, a data fetching React hook library that handles caching, revalidation, focus tracking, refetching on interval and more.'
----
+# 客户端数据获取
 
-# Client-side data fetching
+当你的页面**不需要 SEO 索引、不需要预先渲染你的数据或当你的页面内容需要经常更新**时，客户端数据获取是非常有用的。与服务器端的渲染 API 不同，你可以在组件级别使用客户端的数据获取。
 
-Client-side data fetching is useful when your page doesn't require SEO indexing, when you don't need to pre-render your data, or when the content of your pages needs to update frequently. Unlike the server-side rendering APIs, you can use client-side data fetching at the component level.
+如果在页面层面上使用（客户端数据获取），数据是在运行时获取的，而页面的内容会随着数据的变化而更新；如果在组件层面上使用，数据在组件加载时被获取，组件的内容会随着数据的变化而更新。
 
-If done at the page level, the data is fetched at runtime, and the content of the page is updated as the data changes. When used at the component level, the data is fetched at the time of the component mount, and the content of the component is updated as the data changes.
+值得注意的是，使用客户端数据获取会影响你的应用程序的性能和页面的加载速度。这是因为数据获取是在组件或页面**加载时**进行的，数据**没有**被缓存。
 
-It's important to note that using client-side data fetching can affect the performance of your application and the load speed of your pages. This is because the data fetching is done at the time of the component or pages mount, and the data is not cached.
+## 使用 useEffect 进行客户端数据获取
 
-## Client-side data fetching with useEffect
-
-The following example shows how you can fetch data on the client side using the useEffect hook.
+以下的示例展示了如何在客户端使用 `useEffect` 钩子（Hook）获取数据：
 
 ```jsx
 function Profile() {
@@ -41,13 +37,13 @@ function Profile() {
 }
 ```
 
-## Client-side data fetching with SWR
+## 使用 SWR 进行客户端数据获取
 
-The team behind Next.js has created a React hook library for data fetching called [**SWR**](https://swr.vercel.app/). It is **highly recommended** if you are fetching data on the client-side. It handles caching, revalidation, focus tracking, refetching on intervals, and more.
+Next.js 背后的团队创建了一个 React Hook 库，用于数据的获取，称为 [**SWR**]()。如果你在客户端获取数据，我们强烈建议使用它。它可以处理缓存、重新验证、焦点跟踪、间隔时间的重新获取等等。
 
-Using the same example as above, we can now use SWR to fetch the profile data. SWR will automatically cache the data for us and will revalidate the data if it becomes stale.
+使用与上面相同的例子，我们现在可以使用 SWR 来获取个人资料数据了。SWR 将自动为我们缓存数据，并在数据变质时重新验证。
 
-For more information on using SWR, check out the [SWR docs](https://swr.vercel.app/docs/getting-started).
+有关使用 SWR 的更多信息，请查看 [SWR 文档](https://swr.vercel.app/docs/getting-started)。
 
 ```jsx
 import useSWR from 'swr'
@@ -69,8 +65,8 @@ function Profile() {
 }
 ```
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Routing: Learn more about routing in Next.js.](/docs/routing/introduction)s
+- [**路由** / 有关 Next.js 路由](/docs/routing/introduction)
