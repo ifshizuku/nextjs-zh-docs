@@ -1,4 +1,4 @@
-# 增量静态再生
+# 增量静态再生（ISR）
 
 <details>
   <summary><b>示例</b></summary>

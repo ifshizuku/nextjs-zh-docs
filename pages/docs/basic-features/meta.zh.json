@@ -10,6 +10,6 @@
     "eslint": "ESLint",
     "typescript": "TypeScript",
     "environment-variables": "环境变量",
-    "supported-browsers-features": "支持的浏览器和功能",
-    "script": "Script 处理"
+    "supported-browsers-features": "受支持的浏览器和功能",
+    "script": "脚本（Script）处理"
 }

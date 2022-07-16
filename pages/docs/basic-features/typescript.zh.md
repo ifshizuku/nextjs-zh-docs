@@ -3,7 +3,7 @@
 <details>
   <summary><b>版本记录</b></summary>
 
-| Version   | Changes                                                                                     |
+| 版本   | 更改                                                                                     |
 | --------- | ------------------------------------------------------------------------------------------- |
 | `v12.0.0` | 默认使用 [SWC](https://nextjs.org/docs/advanced-features/compiler) 来编译 TypeScript 和 TSX，以加快构建速度 |
 | `v10.2.1` | 增加了 `tsconfig.json` 中启用[增量类型检查](https://www.typescriptlang.org/tsconfig#incremental)的支持     |

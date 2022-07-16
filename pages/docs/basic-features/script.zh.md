@@ -1,31 +1,27 @@
----
-description: Next.js helps you optimize loading third-party scripts with the built-in next/script component.
----
-
-# Script Component
+# Script 组件
 
 <details>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/script-component">Script Component</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-google-tag-manager">Google Tag Manager</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics">Google Analytics</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-facebook-pixel">Facebook Pixel</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-clerk">Clerk</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics">Segment Analytics</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/script-component">Script Component</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-google-tag-manager">Google Tag Manager</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics">Google Analytics</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-facebook-pixel">Facebook Pixel</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-clerk">Clerk</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics">Segment Analytics</a></li>
   </ul>
 </details>
 
 <details>
-  <summary><b>Version History</b></summary>
+  <summary><b>版本记录</b></summary>
 
-| Version   | Changes                   |
-| --------- | ------------------------- |
-| `v11.0.0` | `next/script` introduced. |
+| 版本        | 更改               |
+| --------- | ---------------- |
+| `v11.0.0` | `next/script` 引入 |
 
 </details>
 
-The Next.js Script component, [`next/script`](/docs/api-reference/next/script), is an extension of the HTML `<script>` element. It enables developers to set the loading priority of third-party scripts anywhere in their application, outside `next/head`, saving developer time while improving loading performance.
+Next.js 脚本（Script）组件，[`next/script`](/docs/api-reference/next/script)，是 HTML `<script>` 元素的一个扩展。它使开发者能够在其应用程序的任何地方，在 `next/head` 之外，设置第三方脚本的加载优先级，在提高加载性能的同时节省开发者的时间。
 
 ```jsx
 import Script from 'next/script'
@@ -39,43 +35,43 @@ export default function Home() {
 }
 ```
 
-## Overview
+## 概览
 
-Websites often use third-party scripts to include different types of functionality into their site, such as analytics, ads, customer support widgets, and consent management. However, this can introduce problems that impact both user and developer experience:
+我们经常使用第三方脚本（Script）将不同类型的功能引入其网站，如分析、广告、客户支持小部件等。然而，这可能会带来影响用户和开发者体验的问题：
 
-- Some third-party scripts are heavy on loading performance and can drag down the user experience, especially if they are render-blocking and delay any page content from loading
-- Developers often struggle to decide where to place third-party scripts in an application to ensure optimal loading
+- 一些第三方脚本对加载性能要求很高，可能会**拖累用户体验**，特别是如果它们是渲染阻断的，会**延迟**任何页面内容的加载
+- 开发人员往往**难以决定**将第三方脚本放置在应用程序中的哪个位置，以确保**最佳的加载**
 
-The Script component makes it easier for developers to place a third-party script anywhere in their application while taking care of optimizing its loading strategy.
+脚本组件使开发者更容易将第三方脚本放置在其应用程序的任何地方，同时照顾到其加载策略的优化。
 
-## Usage
+## 用法
 
-To add a third-party script to your application, import the `next/script` component:
+要在你的应用程序中添加一个第三方脚本，请导入 `next/script` 组件：
 
 ```jsx
 import Script from 'next/script'
 ```
 
-### Strategy
+### 策略
 
-With `next/script`, you decide when to load your third-party script by using the `strategy` property:
+使用 `next/script`，你可以通过 `strategy` 属性决定何时加载你的第三方脚本：
 
 ```jsx
 <Script src="https://connect.facebook.net/en_US/sdk.js" strategy="lazyOnload" />
 ```
 
-There are three different loading strategies that can be used:
+有三种不同的加载策略可供使用：
 
-- `beforeInteractive`: Load before the page is interactive
-- `afterInteractive`: (**default**) Load immediately after the page becomes interactive
-- `lazyOnload`: Load during idle time
-- `worker`: (experimental) Load in a web worker
+- `beforeInteractive`：在页面可交互之前加载
+- `afterInteractive`：（**默认**）在页面可交互后立即加载
+- `lazyOnload `：在空闲时间内加载
+- `worker`：（实验性的）在一个 Web Worker 中加载
 
 #### beforeInteractive
 
-Scripts that load with the `beforeInteractive` strategy are injected into the initial HTML from the server and run before self-bundled JavaScript is executed. This strategy should be used for any critical scripts that need to be fetched and executed before any page becomes interactive. This strategy only works inside **\_document.js** and is designed to load scripts that are needed by the entire site (i.e. the script will load when any page in the application has been loaded server-side).
+使用 `beforeInteractive` 策略加载的脚本会被注入到服务器的初始 HTML 中，并在自捆绑的 JavaScript 执行之前运行。这个策略应该用于任何需要在页面可交互之前获取和执行的关键脚本。这个策略只在 **`_document.js`** 内起作用，旨在加载整个网站需要的脚本（也就是说，这个脚本将会在应用程序的任何页面被服务端加载时加载）。
 
-The reason `beforeInteractive` was designed to work only inside `\_document.js` is to support streaming and Suspense functionality. Outside of the `_document`, it's not possible to guarantee the timing or ordering of `beforeInteractive` scripts.
+`beforeInteractive` 只能在 `_document.js` 内工作的原因是为了支持流（Streaming）和 Suspense 功能。在 `_document` 之外，不可能保证 `beforeInteractive` 脚本的时间或顺序。
 
 ```jsx
 // In _document.js
@@ -99,16 +95,16 @@ export default function Document() {
 }
 ```
 
-> **Note**: Scripts with `beforeInteractive` will always be injected inside the `head` of the HTML document regardless of where it's placed in `_document.js`.
+> **注意**：带有 `beforeInteractive` 的脚本总是被注入到 HTML 文档的  `head` 内，无论它被放在 `_document.js` 的什么位置。
 
-Examples of scripts that should be loaded as soon as possible with this strategy include:
+采用这种策略应尽快加载的脚本的例子包括：
 
-- Bot detectors
-- Cookie consent managers
+- 机器检测器
+- Cookie 同意管理器
 
 #### afterInteractive
 
-Scripts that use the `afterInteractive` strategy are injected client-side and will run after Next.js hydrates the page. This strategy should be used for scripts that do not need to load as soon as possible and can be fetched and executed immediately after the page is interactive.
+使用 `afterInteractive` 策略的脚本将被注入客户端，并在 Next.js 为页面注水后运行。这个策略应该用于那些不需要尽快加载的脚本，可以在页面可交互后立即获取并执行。
 
 ```jsx
 <Script
@@ -125,31 +121,31 @@ Scripts that use the `afterInteractive` strategy are injected client-side and wi
 />
 ```
 
-Examples of scripts that are good candidates to load immediately after the page becomes interactive include:
+在页面变得可交互后立即加载的良好的脚本例子包括：
 
-- Tag managers
-- Analytics
+- 标签管理器
+- 分析
 
 #### lazyOnload
 
-Scripts that use the `lazyOnload` strategy are loaded late after all resources have been fetched and during idle time. This strategy should be used for background or low priority scripts that do not need to load before or immediately after a page becomes interactive.
+使用 `lazyOnload` 策略的脚本在所有资源被获取后，在空闲时间内被延迟加载。这个策略应该用于后台或低优先级的脚本，这些脚本不需要在页面变得可交互之前或之后立即加载。
 
 ```jsx
 <Script src="https://connect.facebook.net/en_US/sdk.js" strategy="lazyOnload" />
 ```
 
-Examples of scripts that do not need to load immediately and can be lazy-loaded include:
+不需要立即加载，可以懒加载的脚本的例子包括：
 
-- Chat support plugins
-- Social media widgets
+- 聊天支持插件
+- 社交媒体小工具
 
-### Off-loading Scripts To A Web Worker (experimental)
+### 将脚本放在 Web Worker 中加载
 
-> **Note: The `worker` strategy is not yet stable and can cause unexpected issues in your application. Use with caution.**
+> **注意：`worker` 策略还不稳定，可能会在你的应用程序中引起意外的问题，请慎重使用。**
 
-Scripts that use the `worker` strategy are relocated and executed in a web worker with [Partytown](https://partytown.builder.io/). This can improve the performance of your site by dedicating the main thread to the rest of your application code.
+使用 `worker` 策略的脚本被重定位并在具有 [Partytown](https://partytown.builder.io/) 的 Web Worker 中执行。这可以通过将主线程专用于你的应用程序代码的其余部分来提高你的网站的性能。
 
-This strategy is still experimental and can only be used if the `nextScriptWorkers` flag is enabled in `next.config.js`:
+这个策略仍然是实验性的，只有在 `next.config.js` 中启用 `nextScriptWorkers` 标志时才能使用：
 
 ```js
 module.exports = {
@@ -159,7 +155,7 @@ module.exports = {
 }
 ```
 
-Then, run `next` (normally `npm run dev` or `yarn dev`) and Next.js will guide you through the installation of the required packages to finish the setup:
+然后，运行 `next`（通常是 `npm run dev` 或 `yarn dev`），Next.js 将指导你安装所需的软件包，完成设置：
 
 ```bash
 npm run dev
@@ -173,19 +169,19 @@ npm run dev
 # ...
 ```
 
-Once setup is complete, defining `strategy="worker"` will automatically instantiate Partytown in your application and off-load the script to a web worker.
+一旦设置完成，`strategy="worker"` 定义将自动在你的应用程序中实例化 Partytown，并将脚本加载到一个 Web Worker。
 
 ```jsx
 <Script src="https://example.com/analytics.js" strategy="worker" />
 ```
 
-There are a number of trade-offs that need to be considered when loading a third-party script in a web worker. Please see Partytown's [Trade-Offs](https://partytown.builder.io/trade-offs) documentation for more information.
+在 Web Worker 中加载第三方脚本时，需要权衡一些因素。请参阅 Partytown 的 [Trade-Offs](https://partytown.builder.io/trade-offs) 文档以了解更多信息。
 
-#### Configuration
+#### 配置
 
-Although the `worker` strategy does not require any additional configuration to work, Partytown supports the use of a config object to modify some of its settings, including enabling `debug` mode and forwarding events and triggers.
+尽管 `worker` 策略不需要任何额外的配置来工作，但 Partytown 支持使用配置对象来修改它的一些设置，包括启用 `debug` 模式及转发事件和触发器。
 
-If you would like to add additional configuration options, you can include it within the `<Head />` component used in a [custom `_document.js`](/docs/advanced-features/custom-document):
+如果你想添加额外的配置选项，你可以在 [自定义 `_document.js`](/docs/advanced-features/custom-document) 中使用的 `<Head />` 组件中包含它：
 
 ```jsx
 import { Html, Head, Main, NextScript } from 'next/document'
@@ -215,18 +211,18 @@ export default function Document() {
 }
 ```
 
-In order to modify Partytown's configuration, the following conditions must be met:
+为了修改 Partytown 的配置，必须满足以下条件：
 
-1. The `data-partytown-config` attribute must be used in order to overwrite the default configuration used by Next.js
-2. Unless you decide to save Partytown's library files in a separate directory, the `lib: "/_next/static/~partytown/"` property and value must be included in the configuration object in order to let Partytown know where Next.js stores the necessary static files.
+1. 必须使用 `data-partytown-config` 属性，以覆盖 Next.js 使用的默认配置
+2. 除非你决定将 Partytown 的库文件保存在一个单独的目录中，否则 `lib: "/_next/static/~partytown/"` 属性和值必须包含在配置对象中，以便让 Partytown 知道 Next.js 存储必要静态文件的位置
 
-> **Note**: If you are using an [asset prefix](/docs/api-reference/next-config-js/cdn-support-with-asset-prefix) and would like to modify Partytown's default configuration, you must include it as part of the `lib` path.
+> **注意**：如果你使用[资源前缀](/docs/api-reference/next-config-js/cdn-support-with-asset-prefix)并想修改 Partytown 的默认配置，你必须把它作为 `lib` 路径的一部分。
 
-Take a look at Partytown's [configuration options](https://partytown.builder.io/configuration) to see the full list of other properties that can be added.
+查看 Partytown 的[配置选项](https://partytown.builder.io/configuration)，了解可以添加的其他属性的完整列表。
 
-### Inline Scripts
+### 行内脚本（Script）
 
-Inline scripts, or scripts not loaded from an external file, are also supported by the Script component. They can be written by placing the JavaScript within curly braces:
+脚本组件也支持内联脚本，或者不是从外部文件加载的脚本。它们可以通过将 JavaScript 放在大括号内来编写：
 
 ```jsx
 <Script id="show-banner" strategy="lazyOnload">
@@ -234,7 +230,7 @@ Inline scripts, or scripts not loaded from an external file, are also supported 
 </Script>
 ```
 
-Or by using the `dangerouslySetInnerHTML` property:
+或者通过使用 `dangerouslySetInnerHTML` 属性：
 
 ```jsx
 <Script
@@ -245,13 +241,13 @@ Or by using the `dangerouslySetInnerHTML` property:
 />
 ```
 
-The `id` property is required for **inline scripts** in order for Next.js to track and optimize the script.
+为了让 Next.js 跟踪和优化脚本，**内联脚本**需要 `id` 属性。
 
-### Executing Code After Loading (`onLoad`)
+### 加载后执行代码（`onLoad`）
 
-> **Note: `onLoad` and `onError` cannot be used with the `beforeInteractive` loading strategy.**
+> **注意：`onLoad` 和 `onError` 不能与 `beforeInteractive` 加载策略一起使用。**
 
-Some third-party scripts require users to run JavaScript code after the script has finished loading in order to instantiate content or call a function. If you are loading a script with either `afterInteractive` or `lazyOnload` as a loading strategy, you can execute code after it has loaded using the `onLoad` property:
+一些第三方脚本要求用户在脚本加载完毕后运行 JavaScript 代码，以便实例化内容或调用一个函数。如果你使用 `afterInteractive` 或 `lazyOnload` 作为加载策略来加载脚本，你可以使用 `onLoad` 属性在加载后执行代码：
 
 ```jsx
 import { useState } from 'react'
@@ -274,7 +270,7 @@ export default function Home() {
 }
 ```
 
-Sometimes it is helpful to catch when a script fails to load. These errors can be handled with the `onError` property:
+有时，当一个脚本加载失败时，捕获它是很有帮助的。这些错误可以通过 `onError` 属性来处理：
 
 ```jsx
 import Script from 'next/script'
@@ -294,9 +290,9 @@ export default function Home() {
 }
 ```
 
-### Additional Attributes
+### 额外的属性
 
-There are many DOM attributes that can be assigned to a `<script>` element that are not used by the Script component, like [`nonce`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) or [custom data attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*). Including any additional attributes will automatically forward it to the final, optimized `<script>` element that is outputted to the page.
+有许多 DOM 属性可以分配给 `<script>` 元素，这些属性不被脚本组件使用，如 [`nonce`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) 或 [自定义数据属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)。包括任何额外的属性将自动转发到最终的、优化的 `<script>` 元素，并输出到页面。
 
 ```jsx
 import Script from 'next/script'

@@ -1,7 +1,3 @@
----
-description: Browser support and which JavaScript features are supported by Next.js.
----
-
 # Supported Browsers and Features
 
 Next.js supports **IE11 and all modern browsers** (Edge, Firefox, Chrome, Safari, Opera, et al) with no required configuration.
