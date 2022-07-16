@@ -72,7 +72,7 @@ export async function getServerSideProps() {
 export default Page
 ```
 
-## 服务端渲染 （SSR）缓存
+## 服务端渲染缓存
 
 你可以在 `getServerSideProps` 中使用缓存标头（`Cache-Control`）来缓存动态的响应。例如，使用 [`stale-while-revalidate`](https://web.dev/stale-while-revalidate/)。
 

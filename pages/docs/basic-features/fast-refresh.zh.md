@@ -35,7 +35,7 @@
 
 - 类组件（class components）不保留本地状态（只有函数组件和 Hooks 保留状态）
 - 你正在编辑的文件除了 React 组件外，可能还有_其他_导出
-- 有时，一个文件会导出调用高阶组件的结果，比如 `HOC（WrappedComponent）`。如果返回的组件是一个类组件，其状态将被重置
+- 有时，一个文件会导出调用高阶组件的结果，比如 `HOC（WrappedComponent）`，如果返回的组件是一个类组件，其状态将被重置
 - 像 `export default () => <div />;` 这样的匿名箭头函数会导致快速刷新无法保留本地组件状态。对于大型代码库，你可以使用我们的 [`name-default-component` codemod](https://nextjs.org/docs/advanced-features/codemods#name-default-component)
 
 随着你的代码库中更多的内容转移到函数组件和 Hooks，你的应用程序的状态在更多的情况下会被保留下来。

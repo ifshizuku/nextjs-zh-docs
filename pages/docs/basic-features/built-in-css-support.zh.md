@@ -89,7 +89,7 @@ function ExampleDialog(props) {
 
 ## 添加组件级 CSS
 
-Next.js 支持使用 `[名称].module.css` 文件命名的 [CSS模块](https://github.com/css-modules/css-modules)。
+Next.js 支持使用 `[名称].module.css` 文件命名的 [CSS 模块](https://github.com/css-modules/css-modules)。
 
 CSS 模块通过自动创建一个独特的类名来对 CSS 进行局部范围划分。这使得你可以在不同的文件中使用相同的 CSS 类名，而不必担心冲突问题。
 
@@ -211,7 +211,7 @@ export default function MyApp({ Component, pageProps }) {
   </ul>
 </details>
 
-可以使用任何现有的CSS-in-JS解决方案。最简单的是内联样式：
+可以使用任何现有的 CSS-in-JS 解决方案。最简单的是内联样式：
 
 ```jsx
 function HiThere() {

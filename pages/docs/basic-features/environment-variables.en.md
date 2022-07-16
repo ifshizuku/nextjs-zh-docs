@@ -1,7 +1,3 @@
----
-description: Learn to add and access environment variables in your Next.js application.
----
-
 # Environment Variables
 
 > This document is for Next.js versions 9.4 and up. If you’re using an older version of Next.js, upgrade or refer to [Environment Variables in next.config.js](/docs/api-reference/next-config-js/environment-variables).
@@ -9,7 +5,7 @@ description: Learn to add and access environment variables in your Next.js appli
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/environment-variables">Environment Variables</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/environment-variables">Environment Variables</a></li>
   </ul>
 </details>
 
@@ -46,31 +42,28 @@ export async function getStaticProps() {
 }
 ```
 
-> **Note**: In order to keep server-only secrets safe, environment variables are evaluated at build time, so only environment variables _actually_ used will be included. This means that `process.env` is not a standard JavaScript object, so you’re not able to
-> use [object destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
-> Environment variables must be referenced as e.g. `process.env.PUBLISHABLE_KEY`, _not_ `const { PUBLISHABLE_KEY } = process.env`.
+> **Note**: In order to keep server-only secrets safe, environment variables are evaluated at build time, so only environment variables _actually_ used will be included. This means that `process.env` is not a standard JavaScript object, so you’re not able to use [object destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Environment variables must be referenced as e.g. `process.env.PUBLISHABLE_KEY`, _not_ `const { PUBLISHABLE_KEY } = process.env`.
 
-> **Note**: Next.js will automatically expand variables (`$VAR`) inside of your `.env*` files.
-> This allows you to reference other secrets, like so:
->
+> **Note**: Next.js will automatically expand variables (`$VAR`) inside of your `.env*` files. This allows you to reference other secrets, like so:
+> 
 > ```bash
 > # .env
 > HOSTNAME=localhost
 > PORT=8080
 > HOST=http://$HOSTNAME:$PORT
 > ```
->
+> 
 > If you are trying to use a variable with a `$` in the actual value, it needs to be escaped like so: `\$`.
->
+> 
 > For example:
->
+> 
 > ```bash
 > # .env
 > A=abc
->
+> 
 > # becomes "preabc"
 > WRONG=pre$A
->
+> 
 > # becomes "pre$A"
 > CORRECT=pre\$A
 > ```
@@ -167,10 +160,10 @@ export default async () => {
 Environment variables are looked up in the following places, in order, stopping once the variable is found.
 
 1. `process.env`
-1. `.env.$(NODE_ENV).local`
-1. `.env.local` (Not checked when `NODE_ENV` is `test`.)
-1. `.env.$(NODE_ENV)`
-1. `.env`
+2. `.env.$(NODE_ENV).local`
+3. `.env.local` (Not checked when `NODE_ENV` is `test`.)
+4. `.env.$(NODE_ENV)`
+5. `.env`
 
 For example, if `NODE_ENV` is `development` and you define a variable in both `.env.development.local` and `.env`, the value in `.env.development.local` will be used.
 

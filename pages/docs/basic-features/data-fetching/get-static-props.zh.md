@@ -136,7 +136,7 @@ export async function getStaticProps() {
 
 ## 预览模式
 
-你可以暂时绕过静态生成，使用[**预览模式**](/docs/advanced-features/preview-mode)在**请求时间**而不是构建时间渲染页面。例如，你可能正在使用一个无头 CMS（Headless CMS），并希望在发布前预览草稿。
+你可以暂时绕过静态生成，使用[**预览模式**](/docs/advanced-features/preview-mode)在**请求时**而不是构建时渲染页面。例如，你可能正在使用一个无头 CMS（Headless CMS），并希望在发布前预览草稿。
 
 ## 相关
 

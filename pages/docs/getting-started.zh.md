@@ -15,7 +15,7 @@
 
 ## 自动配置（安装）
 
-我们建议使用 `create-next-app` 来创建一个新的 Next.js 应用程序，它将为你自动设置好目前需要的一切。创建一个项目，执行：
+我们建议使用 `create-next-app` 来创建一个新的 Next.js 应用程序，它将为你自动设置目前需要的一切。创建一个项目，执行：
 
 ```bash
 npx create-next-app@latest
@@ -41,7 +41,7 @@ pnpm create next-app --typescript
 - 访问 `http://localhost:3000` 查看你的应用程序
 - 编辑 `pages/index.js` 并在浏览器中看到更新的结果
 
-了解 `create-next-app` 的更多信息，你可以查看 [`create-next-app` 文档](/docs/api-reference/create-next-app)。
+了解 `create-next-app` 的更多信息，你可以查看 [`create-next-app` 文档](/docs/api-reference/create-next-app)
 
 ## 手动设置（安装）
 
@@ -66,7 +66,7 @@ pnpm add next react react-dom
 }
 ```
 
-这些命令代表了开发一个应用程序的不同阶段：
+这些命令代表了应用程序开发的不同阶段：
 
 - `dev` - 运行 [`next dev`](/docs/api-reference/cli#development) 启动 Next.js 开发模式
 - `build` - 运行 [`next build`](/docs/api-reference/cli#build) 构建生产环境应用程序

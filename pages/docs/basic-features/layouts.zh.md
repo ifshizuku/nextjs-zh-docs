@@ -90,7 +90,7 @@ export default function MyApp({ Component, pageProps }) {
 
 这种布局模式实现了状态的持久性，因为 React 组件树在页面转换之间被维护。有了组件树，React 可以了解哪些元素发生了变化，以保留状态。
 
-> **注意**：这个过程被称为[ 协调 ](https://zh-hans.reactjs.org/docs/reconciliation.html)，这使 React 了解哪些元素发生了变化
+> **注意**：这个过程被称为[协调](https://zh-hans.reactjs.org/docs/reconciliation.html)，这使 React 了解哪些元素发生了变化
 
 ### 使用 TypeScript
 
@@ -174,4 +174,4 @@ export default function Layout({ children }) {
 关于下一步该做什么的更多信息，我们推荐以下章节：
 
 - [**页面**](/docs/basic-features/pages)
-- [**自定义 `App`** / 了解 Next.js 如何初始化页面](/docs/advanced-features/custom-app)
+- [**自定义 `App`** / 了解 Next.js 初始化页面](/docs/advanced-features/custom-app)

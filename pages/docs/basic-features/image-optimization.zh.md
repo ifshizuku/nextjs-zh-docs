@@ -89,7 +89,7 @@ export default function Home() {
 }
 ```
 
-> 了解更多关于 `next/image` 中的[图像尺寸](#image-sizing)。
+> 了解关于 `next/image` 中的[图像尺寸](#image-sizing)
 
 ### 域名
 
@@ -97,7 +97,7 @@ export default function Home() {
 
 为了保护你的应用程序免受恶意用户的侵害，你必须定义一个你打算允许远程访问的远程主机名列表。
 
-> 了解更多[域名](/docs/api-reference/next/image#domains)配置。
+> 了解更多[域名](/docs/api-reference/next/image#domains)配置
 
 ### 加载器
 
@@ -111,7 +111,7 @@ Next.js 应用程序的默认加载器使用内置的图像优化 API，它可�
 
 ### 优先加载
 
-你应该为每个页面的[最大的内容绘画（LCP）元素](https://web.dev/lcp)的图像添加 `priority` 属性。这样做可以让 Next.js 优先加载这个图片（例如通过预加载标签或优先级提示），使 LCP 性能的有效提升。
+你应该为每个页面的[最大内容绘画（LCP）元素](https://web.dev/lcp)的图像添加 `priority` 属性。这样做可以让 Next.js 优先加载这个图片（例如通过预加载标签或优先级提示），使 LCP 性能的有效提升。
 
 LCP 元素通常是在页面视口中可见的最大的图像或文本块。当你运行 `next dev` 时，如果 LCP 元素是一个没有 `priority` 属性的 `<Image>`，你会看到一个控制台（console）警告（warning）。
 
@@ -205,7 +205,7 @@ export default function Home() {
 
 ## 配置
 
-`next/image` 组件和 Next.js 图像优化 API 可以在 [`next.config.js`文件](/docs/api-reference/next-config-js/introduction)中进行配置。这些配置允许你[启用远程图像](/docs/api-reference/next/image#domains)、[定义自定义图像断点](/docs/api-reference/next/image#device-sizes)、[改变缓存行为](/docs/api-reference/next/image#caching-behavior)等。
+`next/image` 组件和 Next.js 图像优化 API 可以在 [`next.config.js` 文件](/docs/api-reference/next-config-js/introduction)中进行配置。这些配置允许你[启用远程图像](/docs/api-reference/next/image#domains)、[定义自定义图像断点](/docs/api-reference/next/image#device-sizes)、[改变缓存行为](/docs/api-reference/next/image#caching-behavior)等。
 
 [**阅读完整的配置文档以了解更多信息**](/docs/api-reference/next/image#configuration-options)
 

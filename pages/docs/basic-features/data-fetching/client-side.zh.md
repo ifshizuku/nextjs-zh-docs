@@ -39,11 +39,11 @@ function Profile() {
 
 ## 使用 SWR 进行客户端数据获取
 
-Next.js 背后的团队创建了一个 React Hook 库，用于数据的获取，称为 [**SWR**]()。如果你在客户端获取数据，我们强烈建议使用它。它可以处理缓存、重新验证、焦点跟踪、间隔时间的重新获取等等。
+Next.js 背后的团队创建了一个 React Hook 库，用于数据的获取，称为 [**SWR**](https://swr.vercel.app/)。如果你在客户端获取数据，我们强烈建议使用它。它可以处理缓存、重新验证、焦点跟踪、间隔时间的重新获取等等。
 
 使用与上面相同的例子，我们现在可以使用 SWR 来获取个人资料数据了。SWR 将自动为我们缓存数据，并在数据变质时重新验证。
 
-有关使用 SWR 的更多信息，请查看 [SWR 文档](https://swr.vercel.app/docs/getting-started)。
+有关 SWR 的使用，请查看 [SWR 文档](https://swr.vercel.app/docs/getting-started)。
 
 ```jsx
 import useSWR from 'swr'
