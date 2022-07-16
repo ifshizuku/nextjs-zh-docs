@@ -1,12 +1,8 @@
----
-description: Next.js allows you to serve static files, like images, in the public directory. You can learn how it works here.
----
+# 静态文件服务
 
-# Static File Serving
+Next.js 可以提供根目录下名为 `public` 的文件夹下静态文件，如图片的服务。 `public` 中的文件可以被你的代码从根URL（`/`）引用。
 
-Next.js can serve static files, like images, under a folder called `public` in the root directory. Files inside `public` can then be referenced by your code starting from the base URL (`/`).
-
-For example, if you add an image to `public/me.png`, the following code will access the image:
+例如，如果你在 `public/me.png` 中添加一个图片，下面的代码将访问该图片：
 
 ```jsx
 import Image from 'next/image'
@@ -18,14 +14,14 @@ function Avatar() {
 export default Avatar
 ```
 
-> Note: `next/image` requires Next.js 10 or later.
+> 注意：`next/image` 需要 Next.js 10 或更高版本。
 
-This folder is also useful for `robots.txt`, `favicon.ico`, Google Site Verification, and any other static files (including `.html`)!
+这个文件夹对 `robots.txt`、`favicon.ico`、Google Site Verification 和任何其他静态文件（包括 `.html` ）也是很有用的！
 
-> **Note**: Don't name the `public` directory anything else. The name cannot be changed and is the only directory used to serve static assets.
+> **注意**：不要给 `public` 目录起任何其他名字。这个名字不能被改变，它是唯一用于提供静态资源的目录。
 
-> **Note**: Be sure to not have a static file with the same name as a file in the `pages/` directory, as this will result in an error.
->
-> Read more: [Conflicting Public File Page](https://nextjs.org/docs/messages/conflicting-public-file-page)
+> **注意**：确保没有一个静态文件与 `pages/` 目录中的文件同名，因为这将导致一个错误。
+> 
+> 了解更多[公共文件与页面冲突](https://nextjs.org/docs/messages/conflicting-public-file-page)
 
-> **Note**: Only assets that are in the `public` directory at [build time](/docs/api-reference/cli#build) will be served by Next.js. Files added at runtime won't be available. We recommend using a third party service like [AWS S3](https://aws.amazon.com/s3/) for persistent file storage.
+> **注意**：只有[构建时](/docs/api-reference/cli#build)在 `public` 目录下的资源才能被 Next.js 提供。在运行时添加的文件将无法使用。我们建议使用第三方服务，如 [AWS S3](https://aws.amazon.com/s3/)（国内可以使用[阿里云 OSS](https://www.aliyun.com/product/oss)、[腾讯云 COS](https://cloud.tencent.com/product/cos) 等）进行持久化文件存储。

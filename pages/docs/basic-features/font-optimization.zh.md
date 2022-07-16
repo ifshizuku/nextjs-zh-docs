@@ -1,12 +1,8 @@
----
-description: Next.js supports built-in web font optimization to inline font CSS. Learn more here.
----
+# 字体优化
 
-# Font Optimization
+自 **10.2** 以后，Next.js 带有内建的 Web 字体优化。
 
-Since version **10.2**, Next.js has built-in web font optimization.
-
-By default, Next.js will automatically inline font CSS at build time, eliminating an extra round trip to fetch font declarations. This results in improvements to [First Contentful Paint (FCP)](https://web.dev/fcp/) and [Largest Contentful Paint (LCP)](https://vercel.com/blog/core-web-vitals#largest-contentful-paint). For example:
+默认情况下，Next.js 会在构建时自动内联字体 CSS，省去了获取字体声明的额外往返过程。这改进了[首次内容绘制（FCP）](https://web.dev/fcp/)和[最大内容的绘制（LCP）](https://web.dev/lcp/)的性能。例如：
 
 ```js
 // Before
@@ -22,9 +18,9 @@ By default, Next.js will automatically inline font CSS at build time, eliminatin
 </style>
 ```
 
-## Usage
+## 用法
 
-To add a web font to your Next.js application, add the font to a [Custom `Document`](/docs/advanced-features/custom-document).
+要在你的 Next.js 应用程序中添加 Web 字体，向 [自定义 `Document`](/docs/advanced-features/custom-document) 中添加需要的字体：
 
 ```js
 // pages/_document.js
@@ -53,17 +49,17 @@ class MyDocument extends Document {
 export default MyDocument
 ```
 
-Note that we don't recommend adding fonts with `next/head`, as this only applies the font to the particular page and won't work with a streaming architecture.
+请注意，我们不建议用 `next/head` 来添加字体，因为这只适用于特定页面的字体，不会在流架构下工作。
 
-Automatic Webfont Optimization currently supports Google Fonts and Typekit with support for other font providers coming soon. We're also planning to add control over [loading strategies](https://github.com/vercel/next.js/issues/21555) and `font-display` values.
+自动网络字体优化目前支持谷歌字体和 Typekit，对其他字体供应商的支持即将到来。我们还计划增加对[加载策略](https://github.com/vercel/next.js/issues/21555)和 `font-display` 值的控制。
 
-See [Google Font Display](https://nextjs.org/docs/messages/google-font-display) for more information.
+查看[谷歌字体显示](https://nextjs.org/docs/messages/google-font-display)了解更多。
 
-> **Note**: Font Optimization does not currently support self-hosted fonts.
+> **注意**：字体优化目前不支持自托管的字体
 
-## Disabling Optimization
+## 关闭优化
 
-If you do not want Next.js to optimize your fonts, you can opt-out.
+如果你不希望Next.js优化你的字体，你可以选择关闭：
 
 ```js
 // next.config.js
@@ -73,8 +69,8 @@ module.exports = {
 }
 ```
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Custom Document: Learn how to augment your application's html and body tags.](/docs/advanced-features/custom-document)
+- [**自定义 `Document`** / 了解如何增强你的应用程序的 `html` 和 `body` 标签。 ](/docs/advanced-features/custom-document)

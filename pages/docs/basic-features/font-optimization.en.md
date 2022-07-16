@@ -1,7 +1,3 @@
----
-description: Next.js supports built-in web font optimization to inline font CSS. Learn more here.
----
-
 # Font Optimization
 
 Since version **10.2**, Next.js has built-in web font optimization.
