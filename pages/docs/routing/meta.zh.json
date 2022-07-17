@@ -1,6 +1,6 @@
 {
     "introduction": "简介",
     "dynamic-routes": "动态路由",
-    "imperatively": "不得已的方式",
+    "imperatively": "手动导航（useRouter）",
     "shallow-routing": "浅层路由"
 }

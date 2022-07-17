@@ -1,13 +1,9 @@
----
-description: Client-side navigations are also possible using the Next.js Router instead of the Link component. Learn more here.
----
-
 # Imperatively
 
 <details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/using-router">Using Router</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/using-router">Using Router</a></li>
   </ul>
 </details>
 

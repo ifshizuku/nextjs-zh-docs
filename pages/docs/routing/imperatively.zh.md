@@ -1,19 +1,15 @@
----
-description: Client-side navigations are also possible using the Next.js Router instead of the Link component. Learn more here.
----
-
-# Imperatively
+# 手动导航（useRouter）
 
 <details>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/using-router">Using Router</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/using-router">Using Router</a></li>
   </ul>
 </details>
 
-[`next/link`](/docs/api-reference/next/link) should be able to cover most of your routing needs, but you can also do client-side navigations without it, take a look at the [documentation for `next/router`](/docs/api-reference/next/router).
+[`next/link`](/docs/api-reference/next/link) 应该能够涵盖你需要的大部分路由，但你也可以不使用它来实现客户端的导航，查看 [`next/router`](/docs/api-reference/next/router) 的文档了解更多。
 
-The following example shows how to do basic page navigations with [`useRouter`](/docs/api-reference/next/router#useRouter):
+以下例子展示了如何使用 [`useRouter`](/docs/api-reference/next/router#useRouter) 实现基本的页面导航：
 
 ```jsx
 import { useRouter } from 'next/router'

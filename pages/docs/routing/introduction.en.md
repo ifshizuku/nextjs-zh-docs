@@ -1,7 +1,3 @@
----
-description: Next.js has a built-in, opinionated, and file-system based Router. You can learn how it works here.
----
-
 # Routing
 
 Next.js has a file-system based router built on the [concept of pages](/docs/basic-features/pages).
@@ -139,7 +135,7 @@ Now, instead of using interpolation to create the path, we use a URL object in `
 <details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/dynamic-routing">Dynamic Routing</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/dynamic-routing">Dynamic Routing</a></li>
   </ul>
 </details>
 

@@ -31,8 +31,8 @@ Next.js 允许你使用最新的 JavaScript 功能，开箱即用。除了 [ES6 
 - [Async / await](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function)（ES2017）
 - [对象占位 / 展开属性](https://github.com/tc39/proposal-object-rest-spread)（ES2018）
 - [动态 `import()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)（ES2020）
-- [ 可选链操作符 ](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining)（ES2020）
-- [ 空值合并运算符 ](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)（ES2020）
+- [可选链操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining)（ES2020）
+- [空值合并运算符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)（ES2020）
 - [类](https://github.com/tc39/proposal-class-fields) 和 [静态属性](https://github.com/tc39/proposal-static-class-features)（阶段 3 提议的一部分）
 - 更多！
 
