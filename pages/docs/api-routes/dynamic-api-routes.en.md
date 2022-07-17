@@ -1,13 +1,9 @@
----
-description: You can add the dynamic routes used for pages to API Routes too. Learn how it works here.
----
-
 # Dynamic API Routes
 
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
   </ul>
 </details>
 

@@ -1,7 +1,3 @@
----
-description: Edge API Routes enable you to build high performance APIs directly inside your Next.js application.
----
-
 # Edge API Routes (Beta)
 
 Edge API Routes enable you to build high performance APIs with Next.js. Using the [Edge Runtime](/docs/api-reference/edge-runtime), they are often faster than Node.js-based API Routes. This performance improvement does come with [constraints](/docs/api-reference/edge-runtime#unsupported-apis), like not having access to native Node.js APIs. Instead, Edge API Routes are built on standard Web APIs.

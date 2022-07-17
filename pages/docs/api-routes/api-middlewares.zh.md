@@ -1,26 +1,22 @@
----
-description: API Routes provide built-in middlewares that parse the incoming request. Learn more about them here.
----
-
-# API Middlewares
+# API 中间件
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-middleware">API Routes with middleware</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors">API Routes with CORS</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-middleware">API Routes with middleware</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors">API Routes with CORS</a></li>
   </ul>
 </details>
 
-API routes provide built in middlewares which parse the incoming request (`req`). Those middlewares are:
+API路由提供了内置的中间件，用于解析传入的请求（`req`），包含：
 
-- `req.cookies` - An object containing the cookies sent by the request. Defaults to `{}`
-- `req.query` - An object containing the [query string](https://en.wikipedia.org/wiki/Query_string). Defaults to `{}`
-- `req.body` - An object containing the body parsed by `content-type`, or `null` if no body was sent
+- `req.cookies` - 一个包含请求发送的 cookies 的对象。默认为 `{}`
+- `req.query` - 一个包含[查询字符串](https://en.wikipedia.org/wiki/Query_string)的对象。默认为 `{}`
+- `req.body` - 一个包含由 `content-type` 解析的正文（body）的对象，如果没有发送正文，则为 `null`
 
-## Custom config
+## 自定义配置
 
-Every API route can export a `config` object to change the default configs, which are the following:
+每个 API 路由都可以导出一个 `config` 对象来改变默认配置，如下所示：
 
 ```js
 export const config = {
@@ -32,11 +28,11 @@ export const config = {
 }
 ```
 
-The `api` object includes all configs available for API routes.
+`api` 对象包括所有可用于 API 路由的配置。
 
-`bodyParser` is automatically enabled. If you want to consume the body as a `Stream` or with [`raw-body`](https://www.npmjs.com/package/raw-body), you can set this to `false`.
+`bodyParser` 被自动启用。如果你想以 `流（Stream）` 的形式或以 [`raw-body'`](https://www.npmjs.com/package/raw-body) 的形式使用主体（body），你可以将其设置为 `false`。
 
-One use case for disabling the automatic `bodyParsing` is to allow you to verify the raw body of a **webhook** request, for example [from GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/securing-your-webhooks#validating-payloads-from-github).
+禁用自动 `bodyParsing` 的一个用例是验证 **Webhook** 请求的原始主体，例如 [来自 GitHub](https://docs.github.com/en/developers/webhooks-and-events/webhooks/securing-your-webhooks#validating-payloads-from-github)。
 
 ```js
 export const config = {
@@ -46,7 +42,7 @@ export const config = {
 }
 ```
 
-`bodyParser.sizeLimit` is the maximum size allowed for the parsed body, in any format supported by [bytes](https://github.com/visionmedia/bytes.js), like so:
+`bodyParser.sizeLimit` 是被解析的主体允许的最大大小，通过 [bytes 库](https://github.com/visionmedia/bytes.js) 支持使用任何格式，如下所示：
 
 ```js
 export const config = {
@@ -58,7 +54,7 @@ export const config = {
 }
 ```
 
-`externalResolver` is an explicit flag that tells the server that this route is being handled by an external resolver like _express_ or _connect_. Enabling this option disables warnings for unresolved requests.
+`externalResolver` 是一个很明确的标识，它告诉服务器这个路由是由外部解析器处理的，比如 *express* 或 *connect*。启用这个选项可以禁止对未处理的请求发出警告。
 
 ```js
 export const config = {
@@ -68,9 +64,9 @@ export const config = {
 }
 ```
 
-`responseLimit` is automatically enabled, warning when an API routes' response body is over 4MB.
+`responseLimit` 被自动启用，当 API 路由的响应超过 4MB 时发出警告。
 
-If you are not using Next.js in a serverless environment, and understand the performance implications of not using a CDN or dedicated media host, you can set this limit to `false`.
+如果你不是在无服务器环境中使用 Next.js，并且了解不使用 CDN 或专用媒体主机对性能的影响，你可以将此限制设置为`false`。
 
 ```js
 export const config = {
@@ -80,8 +76,8 @@ export const config = {
 }
 ```
 
-`responseLimit` can also take the number of bytes or any string format supported by `bytes`, for example `1000`, `'500kb'` or `'3mb'`.
-This value will be the maximum response size before a warning is displayed. Default is 4MB. (see above)
+`responseLimit` 也可以取字节数或 `bytes 库` 支持的任何字符串格式，例如 `1000`、`500kb` 或 `3mb`。
+这个值将是显示警告的阈值响应大小，默认是 4MB。
 
 ```js
 export const config = {
@@ -91,13 +87,13 @@ export const config = {
 }
 ```
 
-## Connect/Express middleware support
+## Connect 或 Express 中间件支持
 
-You can also use [Connect](https://github.com/senchalabs/connect) compatible middleware.
+你可以使用 [Connect](https://github.com/senchalabs/connect) 兼容的中间件。
 
-For example, [configuring CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for your API endpoint can be done leveraging the [cors](https://www.npmjs.com/package/cors) package.
+例如，可以使用 [cors](https://www.npmjs.com/package/cors) 包为你的 API 端点[配置 CORS 策略](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)。
 
-First, install `cors`:
+首先，安装 `cors`：
 
 ```bash
 npm i cors
@@ -105,7 +101,7 @@ npm i cors
 yarn add cors
 ```
 
-Now, let's add `cors` to the API route:
+现在，让我们向 API 路由添加 `cors`： 
 
 ```js
 import Cors from 'cors'
@@ -140,11 +136,11 @@ async function handler(req, res) {
 export default handler
 ```
 
-> Go to the [API Routes with CORS](https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors) example to see the finished app.
+> 查看 [API Routes with CORS](https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors) 示例以获取完成的应用程序。
 
-## Extending the `req`/`res` objects with TypeScript
+## 使用 TypeScript 拓展 `req`/`res` 对象
 
-For better type-safety, it is not recommended to extend the `req` and `res` objects. Instead, use functions to work with them:
+为了更好地保证类型安全，不建议直接扩展 `req` 和 `res` 对象。相反，使用函数来处理它们：
 
 ```ts
 // utils/cookies.ts
@@ -187,7 +183,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 export default handler
 ```
 
-If you can't avoid these objects from being extended, you have to create your own type to include the extra properties:
+如果你不能避免这些对象被扩展，你必须创建你自己的类型来包括额外的属性：
 
 ```ts
 // pages/api/foo.ts
@@ -207,4 +203,4 @@ const handler = (req: NextApiRequestWithFoo, res: NextApiResponse) => {
 export default withFoo(handler)
 ```
 
-Keep in mind this is not safe since the code will still compile even if you remove `withFoo()` from the export.
+这并不安全，因为即使你把 `withFoo()` 从导出中删除，代码仍然会被编译。

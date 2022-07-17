@@ -34,7 +34,7 @@
 快速刷新试图保留你正在编辑的组件中的本地 React 状态，但只有在安全的情况下才能这样做。这里有几个原因，你可能会看到每次编辑文件时都会重置本地状态：
 
 - 类组件（class components）不保留本地状态（只有函数组件和 Hooks 保留状态）
-- 你正在编辑的文件除了 React 组件外，可能还有_其他_导出
+- 你正在编辑的文件除了 React 组件外，可能还有**其他**导出
 - 有时，一个文件会导出调用高阶组件的结果，比如 `HOC（WrappedComponent）`，如果返回的组件是一个类组件，其状态将被重置
 - 像 `export default () => <div />;` 这样的匿名箭头函数会导致快速刷新无法保留本地组件状态。对于大型代码库，你可以使用我们的 [`name-default-component` codemod](https://nextjs.org/docs/advanced-features/codemods#name-default-component)
 

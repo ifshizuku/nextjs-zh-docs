@@ -1,16 +1,12 @@
----
-description: Edge API Routes enable you to build high performance APIs directly inside your Next.js application.
----
+# 边缘 API 路由（Beta）
 
-# Edge API Routes (Beta)
+边缘 API 路由使你能够使用 Next.js 构建高性能的 API，通过使用[边缘运行时](/docs/api-reference/edge-runtime)，它们通常比基于 Node.js 的 API 路由更快。这种性能的提高确实伴随着[限制](/docs/api-reference/edge-runtime#unsupported-apis)，比如不能访问本地 Node.js APIs，毕竟边缘 API 路由是建立在标准的 Web APIs 之上。
 
-Edge API Routes enable you to build high performance APIs with Next.js. Using the [Edge Runtime](/docs/api-reference/edge-runtime), they are often faster than Node.js-based API Routes. This performance improvement does come with [constraints](/docs/api-reference/edge-runtime#unsupported-apis), like not having access to native Node.js APIs. Instead, Edge API Routes are built on standard Web APIs.
+`pages/api` 文件夹内的任何文件都会被映射到 `/api/*`，并将被视为一个 API 端点，而不是一个页面。它们只是服务器端的包，不会增加你的客户端包的大小。
 
-Any file inside the folder `pages/api` is mapped to `/api/*` and will be treated as an API endpoint instead of a page. They are server-side only bundles and won't increase your client-side bundle size.
+## 示例
 
-## Examples
-
-### Basic
+### 基本
 
 ```typescript
 export const config = {
@@ -20,7 +16,7 @@ export const config = {
 export default (req) => new Response('Hello world!')
 ```
 
-### JSON Response
+### JSON 响应
 
 ```typescript
 import type { NextRequest } from 'next/server'
@@ -44,7 +40,7 @@ export default async function handler(req: NextRequest) {
 }
 ```
 
-### Cache-Control
+### 缓存控制（Cache-Control）
 
 ```typescript
 import type { NextRequest } from 'next/server'
@@ -69,7 +65,7 @@ export default async function handler(req: NextRequest) {
 }
 ```
 
-### Query Parameters
+### 查询参数
 
 ```typescript
 import type { NextRequest } from 'next/server'
@@ -85,7 +81,7 @@ export default async function handler(req: NextRequest) {
 }
 ```
 
-### Forwarding Headers
+### 标头（Headers）转发
 
 ```typescript
 import { type NextRequest } from 'next/server'
@@ -106,10 +102,10 @@ export default async function handler(req: NextRequest) {
 }
 ```
 
-## Differences between API Routes
+## 与 API 路由的不同点
 
-Edge API Routes use the [Edge Runtime](/docs/api-reference/edge-runtime), whereas API Routes use the [Node.js runtime](/docs/advanced-features/react-18/switchable-runtime).
+边缘 API 路由使用[边缘运行时](/docs/api-reference/edge-runtime)，而 API 路由使用 [Node.js 运行时](/docs/advanced-features/react-18/switchable-runtime)。
 
-Edge API Routes can [stream responses](/docs/api-reference/edge-runtime#web-stream-apis) from the server and run _after_ cached files (e.g. HTML, CSS, JavaScript) have been accessed. Server-side streaming can help improve performance with faster [Time To First Byte (TTFB)](https://web.dev/ttfb/).
+边缘 API 路由可以从服务器进行[流响应（stream responses ）](/docs/api-reference/edge-runtime#web-stream-apis)，并在缓存文件（如 HTML、CSS、JavaScript）被访问后运行。 服务端流（streaming）可以通过更快的[第一字节时间（TTFB）](https://web.dev/ttfb/)帮助提高性能。
 
-View the [supported APIs](/docs/api-reference/edge-runtime) and [unsupported APIs](/docs/api-reference/edge-runtime#unsupported-apis) for the Edge Runtime.
+查看边缘运行时 [支持的 APIs](/docs/api-reference/edge-runtime) 和 [不支持的 APIs](/docs/api-reference/edge-runtime#unsupported-apis)。

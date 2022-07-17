@@ -1,19 +1,15 @@
----
-description: You can add the dynamic routes used for pages to API Routes too. Learn how it works here.
----
-
-# Dynamic API Routes
+# 动态 API 路由
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
   </ul>
 </details>
 
-API routes support [dynamic routes](/docs/routing/dynamic-routes), and follow the same file naming rules used for `pages`.
+API 路由支持[动态路由](/docs/routing/dynamic-routes)，与 `页面（pages）` 使用一样的命名规则。
 
-For example, the API route `pages/api/post/[pid].js` has the following code:
+例如，API 路由 `pages/api/post/[pid].js` 包含如下代码：
 
 ```js
 export default function handler(req, res) {
@@ -22,47 +18,47 @@ export default function handler(req, res) {
 }
 ```
 
-Now, a request to `/api/post/abc` will respond with the text: `Post: abc`.
+现在，对 `/api/post/abc` 的请求将以文本形式响应：`Post: abc`。
 
-### Index routes and Dynamic API routes
+### 索引路由与动态 API 路由
 
-A very common RESTful pattern is to set up routes like this:
+一个非常常见的 RESTful 路由设置模式如下：
 
-- `GET api/posts` - gets a list of posts, probably paginated
-- `GET api/posts/12345` - gets post id 12345
+- `GET api/posts` - 得到一个文章的列表，可能是分页的
+- `GET api/posts/12345` - 获取 ID 为 12345 的文章
 
-We can model this in two ways:
+我们可以通过两种方式来建立模型：
 
-- Option 1:
+- 方式 1：
   - `/api/posts.js`
   - `/api/posts/[postId].js`
-- Option 2:
+- 方式 2：
   - `/api/posts/index.js`
   - `/api/posts/[postId].js`
 
-Both are equivalent. A third option of only using `/api/posts/[postId].js` is not valid because Dynamic Routes (including Catch-all routes - see below) do not have an `undefined` state and `GET api/posts` will not match `/api/posts/[postId].js` under any circumstances.
+两者都是等同的。第三种只使用 `/api/posts/[postId].js` 的方案是无效的，因为动态路由（包括泛路由）没有 `undefined` 状态，`GET api/posts` 在任何情况下都不会匹配 `/api/posts/[postId].js`。
 
-### Catch all API routes
+### 泛 API 路由
 
-API Routes can be extended to catch all paths by adding three dots (`...`) inside the brackets. For example:
+API 路由可以通过在括号内添加三个点（`...`）来扩展到所有路径。例如：
 
-- `pages/api/post/[...slug].js` matches `/api/post/a`, but also `/api/post/a/b`, `/api/post/a/b/c` and so on.
+- `pages/api/post/[...slug].js` 将不仅会匹配 `/api/post/a` 还会匹配人 `/api/post/a/b`、`/api/post/a/b/c` 等。
 
-> **Note**: You can use names other than `slug`, such as: `[...param]`
+> **注意**：你可以使用 `slug` 以外的名称，例如 `[...param]`。
 
-Matched parameters will be sent as a query parameter (`slug` in the example) to the page, and it will always be an array, so, the path `/api/post/a` will have the following `query` object:
+匹配的参数将作为查询参数（例子中的 `slug`）发送到页面，它总是一个数组，因此，路径 `/api/post/a` 将包含以下 `query` 对象：
 
 ```json
 { "slug": ["a"] }
 ```
 
-And in the case of `/api/post/a/b`, and any other matching path, new parameters will be added to the array, like so:
+而在 `/api/post/a/b` 的情况下，以及其他任何匹配的路径下，新的参数将被添加到数组中。如：
 
 ```json
 { "slug": ["a", "b"] }
 ```
 
-An API route for `pages/api/post/[...slug].js` could look like this:
+`pages/api/post/[...slug].js` 的 API 路由可以是这样的：
 
 ```js
 export default function handler(req, res) {
@@ -71,17 +67,17 @@ export default function handler(req, res) {
 }
 ```
 
-Now, a request to `/api/post/a/b/c` will respond with the text: `Post: a, b, c`.
+现在，对 `/api/post/a/b/c` 的请求将以文本形式响应：`Post：a, b, c`。
 
-### Optional catch all API routes
+### 选择性泛 API 路由
 
-Catch all routes can be made optional by including the parameter in double brackets (`[[...slug]]`).
+泛路由可以通过在双中括号中加入参数（`[[...slug]]`）来实现选择性。
 
-For example, `pages/api/post/[[...slug]].js` will match `/api/post`, `/api/post/a`, `/api/post/a/b`, and so on.
+例如，`pages/api/post/[[...lug]].js` 将匹配 `/api/post`、`/api/post/a`、`/api/post/a/b`，以此类推。
 
-The main difference between catch all and optional catch all routes is that with optional, the route without the parameter is also matched (`/api/post` in the example above).
+泛路由和选择性泛路由的主要区别是，对于选择性泛路由，没有参数的路由也会被匹配（上面的例子中是 `/api/post`）。
 
-The `query` objects are as follows:
+`query` 对象如下：
 
 ```json
 { } // GET `/api/post` (empty object)
@@ -89,15 +85,15 @@ The `query` objects are as follows:
 { "slug": ["a", "b"] } // `GET /api/post/a/b` (multi-element array)
 ```
 
-## Caveats
+## 注意事项
 
-- Predefined API routes take precedence over dynamic API routes, and dynamic API routes over catch all API routes. Take a look at the following examples:
-  - `pages/api/post/create.js` - Will match `/api/post/create`
-  - `pages/api/post/[pid].js` - Will match `/api/post/1`, `/api/post/abc`, etc. But not `/api/post/create`
-  - `pages/api/post/[...slug].js` - Will match `/api/post/1/2`, `/api/post/a/b/c`, etc. But not `/api/post/create`, `/api/post/abc`
+- 预先定义的 API 路由优先于动态 API 路由，动态 API 路由优先于泛 API 路由。如下所示：
+  - `pages/api/post/create.js` - 将匹配 `/api/post/create`
+  - `pages/api/post/[pid].js` - 将匹配 `/api/post/1`、`/api/post/abc` 等，但不包括 `/api/post/create`
+  - `pages/api/post/[...slug].js` - 将匹配 `/api/post/1/2`、`/api/post/a/b/c` 等，但不包括 `/api/post/create` 和 `/api/post/abc`
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Dynamic Routes: Learn more about the built-in dynamic routes.](/docs/routing/dynamic-routes)
+- [**动态路由**](/docs/routing/dynamic-routes)

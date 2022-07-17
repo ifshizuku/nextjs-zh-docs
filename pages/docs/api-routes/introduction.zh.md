@@ -1,25 +1,21 @@
----
-description: Next.js supports API Routes, which allow you to build your API without leaving your Next.js app. Learn how it works here.
----
-
-# API Routes
+# API 路由
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-middleware">API Routes with middleware</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-graphql">API Routes with GraphQL</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-rest">API Routes with REST</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors">API Routes with CORS</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes">Basic API Routes</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-middleware">API Routes with middleware</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-graphql">API Routes with GraphQL</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-rest">API Routes with REST</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors">API Routes with CORS</a></li>
   </ul>
 </details>
 
-API routes provide a solution to build your **API** with Next.js.
+API 路由提供了使用 Next.js 构建 **API** 的解决方案。
 
-Any file inside the folder `pages/api` is mapped to `/api/*` and will be treated as an API endpoint instead of a `page`. They are server-side only bundles and won't increase your client-side bundle size.
+`pages/api` 文件夹内的任何文件都将被映射到 `/api/*`，并将被视为一个 API 端点，而不是 `页面（page）`。它们只是服务端的包，不会增加你的客户端包的大小。
 
-For example, the following API route `pages/api/user.js` returns a `json` response with a status code of `200`:
+例如，下面的 API 路由 `pages/api/user.js` 返回一个 `json` 响应，状态码为`200`：
 
 ```js
 export default function handler(req, res) {
@@ -27,14 +23,14 @@ export default function handler(req, res) {
 }
 ```
 
-> **Note**: API Routes will be affected by [`pageExtensions` configuration](/docs/api-reference/next-config-js/custom-page-extensions) in `next.config.js`.
+> **注意**：API Routes 将会受到 `next.config.js` 中 [`pageExtensions` 配置](/docs/api-reference/next-config-js/custom-page-extensions) 的影响。
 
-For an API route to work, you need to export a function as default (a.k.a **request handler**), which then receives the following parameters:
+为了使 API 路由工作，你需要将一个函数作为默认导出（又称**请求处理程序**），然后接收以下参数：
 
-- `req`: An instance of [http.IncomingMessage](https://nodejs.org/api/http.html#class-httpincomingmessage), plus some [pre-built middlewares](/docs/api-routes/api-middlewares)
-- `res`: An instance of [http.ServerResponse](https://nodejs.org/api/http.html#class-httpserverresponse), plus some [helper functions](/docs/api-routes/response-helpers)
+- `req`：一个 [http.IncomingMessage](https://nodejs.org/api/http.html#class-httpincomingmessage) 实例，以及一些 [预构建的中间件](/docs/api-routes/api-middlewares)
+- `res`：一个 [http.ServerResponse](https://nodejs.org/api/http.html#class-httpserverresponse) 实例，以及一些 [帮助（helper）函数](/docs/api-routes/response-helpers)
 
-To handle different HTTP methods in an API route, you can use `req.method` in your request handler, like so:
+要在一个 API 路由中处理不同的 HTTP 方法，你可以在你的请求处理程序中使用 `req.method`，例如：
 
 ```js
 export default function handler(req, res) {
@@ -46,24 +42,24 @@ export default function handler(req, res) {
 }
 ```
 
-To fetch API endpoints, take a look into any of the examples at the start of this section.
+要获取 API 端点，请查看本节开头任何一个例子。
 
-## Use Cases
+## 使用情况
 
-For new projects, you can build your entire API with API Routes. If you have an existing API, you do not need to forward calls to the API through an API Route. Some other use cases for API Routes are:
+对于新项目，你可以用 API 路由构建你的整个 API。如果你有一个现有的 API，你不需要通过 API 路由转发对 API 的调用。API 路由的一些其他使用情况是：
 
-- Masking the URL of an external service (e.g. `/api/secret` instead of `https://company.com/secret-url`)
-- Using [Environment Variables](/docs/basic-features/environment-variables) on the server to securely access external services.
+- 掩盖外部服务的 URL（例如，`/api/secret` 而不是 `https://company.com/secret-url`）
+- 在服务器上使用[环境变量](/docs/basic-features/environment-variables)安全地访问外部服务
 
-## Caveats
+## 注意事项
 
-- API Routes [do not specify CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), meaning they are **same-origin only** by default. You can customize such behavior by wrapping the request handler with the [CORS middleware](/docs/api-routes/api-middlewares#connectexpress-middleware-support).
-- API Routes can't be used with [`next export`](/docs/advanced-features/static-html-export)
+- API路由[不指定 CORS 标头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS)，意味着它们默认是**仅同源**的。你可以通过使用 [CORS 中间件](/docs/api-routes/api-middlewares#connectexpress-middleware-support) 包装请求处理程序来自定义这个行为。
+- API 路由不能在 [`next export`](/docs/advanced-features/static-html-export) 中使用。
 
-## Related
+## 相关
 
-For more information on what to do next, we recommend the following sections:
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [API Middlewares: Learn about the built-in middlewares for the request.](/docs/api-routes/api-middlewares)
-- [Response Helpers: Learn about the built-in methods for the response.](/docs/api-routes/response-helpers)
-- [TypeScript: Add TypeScript to your API Routes.](/docs/basic-features/typescript#api-routes)
+- [**API 中间件** / 了解适用于请求的内建中间件](/docs/api-routes/api-middlewares)
+- [**响应辅助（Helpers）** / 了解内建的响应方式](/docs/api-routes/response-helpers)
+- [**TypeScript** / 在 API 路由中使用 TypeScript](/docs/basic-features/typescript#api-routes)

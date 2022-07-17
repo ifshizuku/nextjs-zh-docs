@@ -1,24 +1,20 @@
----
-description: API Routes include a set of Express.js-like methods for the response to help you creating new API endpoints. Learn how it works here.
----
+# 响应辅助（Helpers）
 
-# Response Helpers
+[服务端响应对象](https://nodejs.org/api/http.html#http_class_http_serverresponse)（通常缩写为 `res`）包含了一组形似 Express.js 的辅助（Helper）方法来提升开发者体验并提升创建新 API 端点的速度。
 
-The [Server Response object](https://nodejs.org/api/http.html#http_class_http_serverresponse), (often abbreviated as `res`) includes a set of Express.js-like helper methods to improve the developer experience and increase the speed of creating new API endpoints.
+包含的辅助（Helpers）如下：
 
-The included helpers are:
+- `res.status(code)` - 一个设置状态码（status code）的函数，`code` 必须是一个合规的 [HTTP状态码](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+- `res.json(body)` - 发送一个 JSON 响应，`body` 必须是一个 [可序列化的对象](https://developer.mozilla.org/zh-CN/docs/Glossary/Serialization)
+- `res.send(body)` - 发送一个 HTTP 响应。`body` 可以是 `string`、`object` 或者是一个 `Buffer`
+- `res.redirect([status,] path)` - 重定向到一个指定的路径或 URL， `status` 必须是一个合规的 [HTTP状态码](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)。如果没有指定，`status` 默认为 `307` 临时重定向
+- `res.revalidate(urlPath)` - 使用 `getStaticProps` [按需重新验证一个页面](/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation)， `urlPath` 必须是一个 `string`
 
-- `res.status(code)` - A function to set the status code. `code` must be a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-- `res.json(body)` - Sends a JSON response. `body` must be a [serializable object](https://developer.mozilla.org/en-US/docs/Glossary/Serialization)
-- `res.send(body)` - Sends the HTTP response. `body` can be a `string`, an `object` or a `Buffer`
-- `res.redirect([status,] path)` - Redirects to a specified path or URL. `status` must be a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). If not specified, `status` defaults to "307" "Temporary redirect".
-- `res.revalidate(urlPath)` - [Revalidate a page on demand](/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation) using `getStaticProps`. `urlPath` must be a `string`.
+## 设置响应状态码
 
-## Setting the status code of a response
+在向客户端发送响应时，你可以设置响应的状态码。
 
-When sending a response back to the client, you can set the status code of the response.
-
-The following example sets the status code of the response to `200` (`OK`) and returns a `message` property with the value of `Hello from Next.js!` as a JSON response:
+下面的例子将响应的状态码设置为 `200`（`OK`），并返回一个 `message` 属性，其值为 `Hello from Next.js!`，作为一个 JSON 响应：
 
 ```js
 export default function handler(req, res) {
@@ -26,12 +22,11 @@ export default function handler(req, res) {
 }
 ```
 
-## Sending a JSON response
+## 发送 JSON 响应
 
-When sending a response back to the client you can send a JSON response, this must be a [serializable object](https://developer.mozilla.org/en-US/docs/Glossary/Serialization).
-In a real world application you might want to let the client know the status of the request depending on the result of the requested endpoint.
+当向客户端发送响应时，你可以发送一个 JSON 响应，这必须是一个[可序列化的对象](https://developer.mozilla.org/zh-CN/docs/Glossary/Serialization)。在现实世界的应用中，你可能想让客户端知道请求的状态，这取决于所请求的端点的结果。
 
-The following example sends a JSON response with the status code `200` (`OK`) and the result of the async operation. It's contained in a try catch block to handle any errors that may occur, with the appropriate status code and error message caught and sent back to the client:
+下面的例子发送了一个 JSON 响应，状态代码为 `200`（`OK`），包含一个异步操作的结果。它包含在一个 `try catch` 块中，以处理任何可能发生的错误，适当的状态代码和错误信息被捕获并发回给客户端。
 
 ```js
 export default async function handler(req, res) {
@@ -44,11 +39,11 @@ export default async function handler(req, res) {
 }
 ```
 
-## Sending a HTTP response
+## 发送 HTTP 响应
 
-Sending an HTTP response works the same way as when sending a JSON response. The only difference is that the response body can be a `string`, an `object` or a `Buffer`.
+发送 HTTP 响应的方式与发送 JSON 响应相同。唯一不同的是，响应体可以是一个  `string`、`object` 或一个 `Buffer`。
 
-The following example sends a HTTP response with the status code `200` (`OK`) and the result of the async operation.
+下面的例子发送了一个 HTTP 响应，状态码为 `200`（`OK`），包含一个异步操作的结果：
 
 ```js
 export default async function handler(req, res) {
@@ -61,11 +56,11 @@ export default async function handler(req, res) {
 }
 ```
 
-## Redirects to a specified path or URL
+## 重定向到指定的路径或 URL
 
-Taking a form as an example, you may want to redirect your client to a specified path or URL once they have submitted the form.
+以一个表单为例，你可能想在客户端提交表单后将其重定向到一个指定的路径或 URL。
 
-The following example redirects the client to the `/` path if the form is successfully submitted:
+下面的例子是在表单成功提交后将客户端重定向到 `/`：
 
 ```js
 export default async function handler(req, res) {
@@ -79,9 +74,9 @@ export default async function handler(req, res) {
 }
 ```
 
-## Adding TypeScript types
+## 添加 TypeScript 类型
 
-You can make your response handlers more type-safe by importing the `NextApiRequest` and `NextApiResponse` types from `next`, in addition to those, you can also type your response data:
+你可以通过从 `next` 中导入 `NextApiRequest` 和 `NextApiResponse` 类型，使你的响应处理程序类型安全，除了这些，你还可以对你的响应数据进行类型化：
 
 ```ts
 import type { NextApiRequest, NextApiResponse } from 'next'
@@ -98,9 +93,9 @@ export default function handler(
 }
 ```
 
-To view more examples using types, check out the [TypeScript documentation](/docs/basic-features/typescript#api-routes).
+获取更多类型的用例，查看 [TypeScript 文档](/docs/basic-features/typescript#api-routes)。
 
-If you prefer to view your examples within a real projects structure you can checkout our examples repository:
+如果你喜欢在一个真实的项目结构中查看例子，你可以查看我们的示例：
 
 - [Basic API Routes](https://github.com/vercel/next.js/tree/canary/examples/api-routes)
 - [API Routes with REST](https://github.com/vercel/next.js/tree/canary/examples/api-routes-rest)
