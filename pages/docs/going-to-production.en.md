@@ -1,7 +1,3 @@
----
-description: Before taking your Next.js application to production, here are some recommendations to ensure the best user experience.
----
-
 # Going to Production
 
 Before taking your Next.js application to production, here are some recommendations to ensure the best user experience.
@@ -29,7 +25,7 @@ Before taking your Next.js application to production, here are some recommendati
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/ssr-caching">ssr-caching</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/ssr-caching">ssr-caching</a></li>
   </ul>
 </details>
 
@@ -81,7 +77,7 @@ By default, `Cache-Control` headers will be set differently depending on how you
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-dynamic-import">with-dynamic-import</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-dynamic-import">with-dynamic-import</a></li>
   </ul>
 </details>
 
@@ -99,7 +95,7 @@ Each file inside your `pages/` directory will automatically be code split into i
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/Logflare/next-pino-logflare-logging-example">with-logging</a></li>
+<li><a href="https://github.com/Logflare/next-pino-logflare-logging-example">with-logging</a></li>
   </ul>
 </details>
 
@@ -115,7 +111,9 @@ If you want a structured logging package, we recommend [Pino](https://www.npmjs.
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-sentry">with-sentry</a></li>
+```
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-sentry">with-sentry</a></li>
+```
   </ul>
 </details>
 

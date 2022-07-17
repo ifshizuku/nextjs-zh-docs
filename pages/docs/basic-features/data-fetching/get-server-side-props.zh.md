@@ -100,7 +100,7 @@ export async function getServerSideProps({ req, res }) {
 
 ## getServerSideProps 错误页渲染
 
-如果 `getServerSideProps` 里抛出一个错误，它将渲染 `pages/500.js` 文件。查看 [500 Page](/docs/advanced-features/custom-error-page#500-page) 的文档，了解如何创建它的信息。在开发（development）过程中，这个文件将不会被使用，而会显示开发提示层。
+如果 `getServerSideProps` 里抛出一个错误，它将渲染 `pages/500.js` 文件。查看 [500 错误页](/docs/advanced-features/custom-error-page#500-page) 的文档，了解如何创建它的信息。在开发（development）过程中，这个文件将不会被使用，而会显示开发提示层。
 
 ## 相关
 
