@@ -1,7 +1,3 @@
----
-description: Dynamically import JavaScript modules and React Components and split your code into manageable chunks.
----
-
 # Dynamic Import
 
 <details open>

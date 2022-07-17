@@ -1,23 +1,21 @@
----
-description: Dynamically import JavaScript modules and React Components and split your code into manageable chunks.
----
-
-# Dynamic Import
+# 动态导入
 
 <details open>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
     <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-dynamic-import">Dynamic Import</a></li>
   </ul>
 </details>
 
-Next.js supports lazy loading external libraries with `import()` and React components with `next/dynamic`. Deferred loading helps improve the initial loading performance by decreasing the amount of JavaScript necessary to render the page. Components or libraries are only imported and included in the JavaScript bundle when they're used.
+Next.js 支持使用 `import()` 延迟加载外部库，使用 `next/dynamic` 延迟加载 React 组件。
 
-`next/dynamic` is an extension of [`React.lazy`](https://reactjs.org/docs/code-splitting.html#reactlazy). When used in combination with [`Suspense`](https://reactjs.org/docs/react-api.html#reactsuspense), components can delay hydration until the Suspense boundary is resolved.
+延迟加载通过减少渲染页面所需 JavaScript 的量来帮助提高初始加载性能。组件或库只有在使用时才会被导入并包含在 JavaScript 包中。
 
-## Example
+`next/dynamic` 是 [`React.lazy`](https://reactjs.org/docs/code-splitting.html#reactlazy) 的扩展。当与 [`Suspense`](https://reactjs.org/docs/react-api.html#reactsuspense) 一起使用时，组件可以延迟水合，直到 Suspense 边界得到解决。
 
-By using `next/dynamic`, the header component will not be included in the page's initial JavaScript bundle. The page will render the Suspense `fallback` first, followed by the `Header` component when the `Suspense` boundary is resolved.
+## 示例
+
+通过使用 `next/dynamic`，`Header` 组件将不会包含在页面的初始 JavaScript 包中。在解决 `Suspense` 边界时，页面将首先呈现 Suspense 的 `fallback`，然后是 `Header` 组件。
 
 ```jsx
 import dynamic from 'next/dynamic'
@@ -35,10 +33,9 @@ export default function Home() {
   )
 }
 ```
+> **注意**：在 `import('path/to/component')` 中，必须显式写入路径。它不能是模板字符串，也不能是变量。此外，`import()` 必须位于 Next.js 的 `dynamic()` 调用内，能够将 webpack 模块 ID 与特定的 `dynamic()` 调用相匹配，并在呈现之前预加载它们。`dynamic()` 不能在 React 渲染中使用，因为它需要在模块的顶层进行标记，以便预加载工作，类似于 `React.lazy`
 
-> **Note**: In `import('path/to/component')`, the path must be explicitly written. It can't be a template string nor a variable. Furthermore the `import()` has to be inside the `dynamic()` call for Next.js to be able to match webpack bundles / module ids to the specific `dynamic()` call and preload them before rendering. `dynamic()` can't be used inside of React rendering as it needs to be marked in the top level of the module for preloading to work, similar to `React.lazy`.
-
-If you are not using React 18, you can use the `loading` attribute in place of the Suspense `fallback`.
+如果你没有使用 React 18，你可以使用 `loading` 属性来代替 Suspense `fallback`。
 
 ```jsx
 const DynamicHeader = dynamic(() => import('../components/header'), {
@@ -46,9 +43,9 @@ const DynamicHeader = dynamic(() => import('../components/header'), {
 })
 ```
 
-## With named exports
+## 使用带有命名的导出
 
-To dynamically import a named export, you can return it from the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) returned by [`import()`](https://github.com/tc39/proposal-dynamic-import#example):
+要动态导入带有命名的导出，可以从 `import()` 返回的 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 中返回它：
 
 ```jsx
 // components/hello.js
@@ -64,9 +61,9 @@ const DynamicComponent = dynamic(() =>
 )
 ```
 
-## With no SSR
+## 不使用 SSR
 
-To dynamically load a component on the client side, you can use the `ssr` option to disable server-rendering. This is useful if an external dependency or component relies on browser APIs like `window`.
+要在客户端动态加载组件，可以使用 `ssr` 选项禁用服务端渲染。如果外部依赖项或组件依赖于浏览器 API（如 `window` ），这将非常有用。
 
 ```jsx
 import dynamic from 'next/dynamic'
@@ -76,9 +73,9 @@ const DynamicHeader = dynamic(() => import('../components/header'), {
 })
 ```
 
-## With external libraries
+## 使用外部库
 
-This example uses the external library `fuse.js` for fuzzy search. The module is only loaded in the browser after the user types in the search input.
+本例使用外部库 `fuse.js` 用于模糊搜索，该模块仅在用户输入搜索后加载到浏览器中。
 
 ```jsx
 import { useState } from 'react'
@@ -95,7 +92,7 @@ export default function Page() {
         placeholder="Search"
         onChange={async (e) => {
           const { value } = e.currentTarget
-          // Dynamically load fuse.js
+          // 动态加载 fuse.js
           const Fuse = (await import('fuse.js')).default
           const fuse = new Fuse(names)
 
