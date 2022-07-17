@@ -1,23 +1,23 @@
 ---
-description: Export your Next.js app to static HTML, and run it standalone without the need of a Node.js server.
+description: 将 Next.js 应用导出为静态 HTML，并独立运行，无需 Node.js 服务器。
 ---
 
-# Static HTML Export
+# 静态 HTML 导出
 
 <details>
-  <summary><b>Examples</b></summary>
+  <summary><b>示例</b></summary>
   <ul>
     <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-static-export">Static Export</a></li>
   </ul>
 </details>
 
-`next export` allows you to export your Next.js application to static HTML, which can be run standalone without the need of a Node.js server. It is recommended to only use `next export` if you don't need any of the [unsupported features](#unsupported-features) requiring a server.
+`next export` 允许您将 Next.js 应用程序导出为静态 HTML，该 HTML 可以独立运行，无需 Node.js 服务器。建议仅在不需要 [不受支持的功能](#unsupported-features) 时才使用 `next export`。
 
-If you're looking to build a hybrid site where only _some_ pages are prerendered to static HTML, Next.js already does that automatically. Learn more about [Automatic Static Optimization](/docs/advanced-features/automatic-static-optimization) and [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration).
+如果您希望构建一个混合站点，其中只有一些页面预渲染为静态HTML，那么 Next.js 已经自动做到了。了解有关 [自动静态优化](/docs/advanced-features/automatic-static-optimization) 和 [增量静态再生](/docs/basic-features/data-fetching/incremental-static-regeneration) 的更多信息。
 
 ## `next export`
 
-Update your build script in `package.json` to use `next export`:
+在 `package.json` 中修改 build 脚本：
 
 ```json
 "scripts": {
@@ -25,48 +25,53 @@ Update your build script in `package.json` to use `next export`:
 }
 ```
 
-Running `npm run build` will generate an `out` directory.
+运行 `npm run build` 将生成一个 `out` 目录。
 
-`next export` builds an HTML version of your app. During `next build`, [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) and [`getStaticPaths`](/docs/basic-features/data-fetching/get-static-paths) will generate an HTML file for each page in your `pages` directory (or more for [dynamic routes](/docs/routing/dynamic-routes)). Then, `next export` will copy the already exported files into the correct directory. `getInitialProps` will generate the HTML files during `next export` instead of `next build`.
+`next export` 会构建应用的 HTML 版本。在 `next build` 期间，[`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) 和 [`getStaticPaths`](/docs/basic-features/data-fetching/get-static-paths) 将为 `pages` 目录中的每个页面生成一个HTML文件（对于 [动态路由](/docs/routing/dynamic-routes) 生成更多）。然后，`next export` 会将已导出的文件复制到正确的目录中。`getInitialProps` 将在 `next export` 期间生成HTML文件，而不是 `next build`。
 
-For more advanced scenarios, you can define a parameter called [`exportPathMap`](/docs/api-reference/next-config-js/exportPathMap) in your [`next.config.js`](/docs/api-reference/next-config-js/introduction) file to configure exactly which pages will be generated.
+对于更高级的方案，您可以在 [`next.config.js`](/docs/api-reference/next-config-js/introduction) 文件中定义一个名为 [`exportPathMap`](/docs/api-reference/next-config-js/exportPathMap) 的参数，以准确配置将生成哪些页面。
 
-## Supported Features
+## 支持的功能
 
-The majority of core Next.js features needed to build a static site are supported, including:
+支持构建静态站点所需的大多数核心 Next.js 功能，包括：
 
-- [Dynamic Routes when using `getStaticPaths`](/docs/routing/dynamic-routes)
-- Prefetching with `next/link`
-- Preloading JavaScript
-- [Dynamic Imports](/docs/advanced-features/dynamic-import)
-- Any styling options (e.g. CSS Modules, styled-jsx)
-- [Client-side data fetching](/docs/basic-features/data-fetching/client-side)
+- [ 使用 `getStaticPaths` 时的动态路由](/docs/routing/dynamic-routes)
+- 使用 `next/link` 预取
+- 预加载 JavaScript
+- [动态导入](/docs/advanced-features/dynamic-import)
+- 任何样式选项 (例如： CSS Modules, styled-jsx)
+- [客户端数据提取](/docs/basic-features/data-fetching/client-side)
 - [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props)
 - [`getStaticPaths`](/docs/basic-features/data-fetching/get-static-paths)
-- [Image Optimization](/docs/basic-features/image-optimization) using a [custom loader](/docs/basic-features/image-optimization#loader)
+- 使用 [自定义 loader](/docs/basic-features/image-optimization#loader) 来 [优化图像](/docs/basic-features/image-optimization)
 
-## Unsupported Features
+## 不支持的功能
 
-Features that require a Node.js server, or dynamic logic that cannot be computed during the build process, are not supported:
+不支持需要 Node.js 服务器或在生成过程中无法计算的动态逻辑的功能：
 
-- [Image Optimization](/docs/basic-features/image-optimization) (default loader)
-- [Internationalized Routing](/docs/advanced-features/i18n-routing)
-- [API Routes](/docs/api-routes/introduction)
-- [Rewrites](/docs/api-reference/next-config-js/rewrites)
-- [Redirects](/docs/api-reference/next-config-js/redirects)
+- [图像优化](/docs/basic-features/image-optimization) (默认 loader)
+- [国际化路由](/docs/advanced-features/i18n-routing)
+- [API 路由](/docs/api-routes/introduction)
+- [覆写](/docs/api-reference/next-config-js/rewrites)
+- [重定向](/docs/api-reference/next-config-js/redirects)
 - [Headers](/docs/api-reference/next-config-js/headers)
-- [Middleware](/docs/middleware)
-- [Incremental Static Regeneration](/docs/basic-features/data-fetching/incremental-static-regeneration)
+- [中间件](/docs/middleware)
+- [增量静态再生](/docs/basic-features/data-fetching/incremental-static-regeneration)
 - [`fallback: true`](/docs/api-reference/data-fetching/get-static-paths#fallback-true)
 - [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props)
 
 ### `getInitialProps`
 
-It's possible to use the [`getInitialProps`](/docs/api-reference/data-fetching/get-initial-props) API instead of `getStaticProps`, but it comes with a few caveats:
+可以使用 [`getInitialProps`](/docs/api-reference/data-fetching/get-initial-props) 而不是 `getStaticProps`，但它附带了一些注意事项：
 
-- `getInitialProps` cannot be used alongside `getStaticProps` or `getStaticPaths` on any given page. If you have dynamic routes, instead of using `getStaticPaths` you'll need to configure the [`exportPathMap`](/docs/api-reference/next-config-js/exportPathMap) parameter in your [`next.config.js`](/docs/api-reference/next-config-js/introduction) file to let the exporter know which HTML files it should output.
-- When `getInitialProps` is called during export, the `req` and `res` fields of its [`context`](/docs/api-reference/data-fetching/get-initial-props#context-object) parameter will be empty objects, since during export there is no server running.
+- 在任何给定的页面上，`getInitialProps` 不能与 `getStaticProps` 或 `getStaticPaths` 一起使用。如果你有动态路由，而不是使用`getStaticPaths` ，你需要在你的[`next.config.js`](/docs/api-reference/next-config-js/introduction) 文件中配置 [`exportPathMap`](/docs/api-reference/next-config-js/exportPathMap) 参数，让导出者知道它应该输出哪些HTML文件。
+
+- 当在导出过程中调用 `getInitialProps` 时，其 [`context`](/docs/api-reference/data-fetching/get-initial-props#context-object) 参数的 `req` 和 `res` 字段将是空对象，因为在导出过程中没有服务器在运行。
+
 - `getInitialProps` **will be called on every client-side navigation**, if you'd like to only fetch data at build-time, switch to `getStaticProps`.
-- `getInitialProps` should fetch from an API and cannot use Node.js-specific libraries or the file system like `getStaticProps` can.
 
-We recommend migrating towards `getStaticProps` over `getInitialProps` whenever possible.
+- `getInitialProps` **将在每次客户端导航**上调用，如果您只想在构建时获取数据，请切换到 `getStaticProps`。
+
+- `getInitialProps` 应该从API获取，不能使用 Node.js 特定的库或文件系统， `getStaticProps`可以。
+
+我们建议尽可能迁移到 `getStaticProps`，而不是 `getInitialProps`。
