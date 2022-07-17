@@ -1,49 +1,54 @@
 ---
-description: Next.js automatically optimizes your app to be static HTML whenever possible. Learn how it works here.
+description: Next.js 会尽可能自动将你的应用优化为静态 HTML。在此处了解其工作原理。
 ---
 
-# Automatic Static Optimization
+# 自动静态优化
 
-Next.js automatically determines that a page is static (can be prerendered) if it has no blocking data requirements. This determination is made by the absence of `getServerSideProps` and `getInitialProps` in the page.
+页面中如果没有 `getServerSideProps` 和 `getInitialProps` ，Next.js 将认为页面是静态的（可以预渲染）。
 
-This feature allows Next.js to emit hybrid applications that contain **both server-rendered and statically generated pages**.
+此功能允许 Next.js 生成包含 **服务端渲染** 和 **静态生成** 的混合应用程序。
 
-> Statically generated pages are still reactive: Next.js will hydrate your application client-side to give it full interactivity.
+> 静态生成的页面仍然是反应性的：Next.js 将水合你的客户端应用程序，使其具有完全的交互性
 
-One of the main benefits of this feature is that optimized pages require no server-side computation, and can be instantly streamed to the end-user from multiple CDN locations. The result is an _ultra fast_ loading experience for your users.
+此功能的主要优点之一是，优化的页面不需要服务器端计算，并且可以从多个CDN传输给用户。
 
-## How it works
+最终为用户提供 _超快的加载体验_。
 
-If `getServerSideProps` or `getInitialProps` is present in a page, Next.js will switch to render the page on-demand, per-request (meaning [Server-Side Rendering](/docs/basic-features/pages#server-side-rendering)).
+## 它是如何运作的
 
-If the above is not the case, Next.js will **statically optimize** your page automatically by prerendering the page to static HTML.
+如果页面中存在 `getServerSideProps` 或 `getInitialProps`，则 Next.js 将切换到 按需渲染，按请求渲染（即：[服务端渲染](/docs/basic-features/pages#server-side-rendering)）。
 
-During prerendering, the router's `query` object will be empty since we do not have `query` information to provide during this phase. After hydration, Next.js will trigger an update to your application to provide the route parameters in the `query` object.
+如果不是上述情况，Next.js 将通过将页面预渲染为静态 HTML 来自动**静态优化**您的页面。
 
-The cases where the query will be updated after hydration triggering another render are:
+在预渲染期间，路由器的 `query` 对象将为空，因为我们在此阶段没有要提供的 `query` 信息。水合后，Next.js 将触发对应用程序的更新，在`query`对象中提供路由参数。
 
-- The page is a [dynamic-route](/docs/routing/dynamic-routes).
-- The page has query values in the URL.
-- [Rewrites](/docs/api-reference/next-config-js/rewrites) are configured in your `next.config.js` since these can have parameters that may need to be parsed and provided in the `query`.
+在水合作用触发另一个渲染后，query 将更新的情况如下：
 
-To be able to distinguish if the query is fully updated and ready for use, you can leverage the `isReady` field on [`next/router`](/docs/api-reference/next/router#router-object).
+- 该页面是 [动态路由](/docs/routing/dynamic-routes).
+- 网页在网址中具有 query 值.
+- [Rewrites](/docs/api-reference/next-config-js/rewrites) 在你的 `next.config.js` 中配置，因为它们可能需要在`query`中解析和提供的参数。
 
-> **Note:** Parameters added with [dynamic routes](/docs/routing/dynamic-routes) to a page that's using [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) will always be available inside the `query` object.
+为了能够区分 query 是否已完全更新并可供使用，您可以利用[`next/router`](/docs/api-reference/next/router#router-object)上的`isReady`字段。
 
-`next build` will emit `.html` files for statically optimized pages. For example, the result for the page `pages/about.js` would be:
+>**注意:** 通过 [动态路由](/docs/routing/dynamic-routes) 添加到使用 [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) 的页面，参数在 `query` 对象中始终可用。
+
+`next build` 将生成静态优化页面的 `.html` 文件。
+
+例如，页面 `pages/about.js` 的结果将是：
 
 ```bash
 .next/server/pages/about.html
 ```
-
-And if you add `getServerSideProps` to the page, it will then be JavaScript, like so:
+如果你将 `getServerSideProps` 添加到页面中，它将是 JavaScript，如下所示：
 
 ```bash
 .next/server/pages/about.js
 ```
 
-## Caveats
+## 警告
 
-- If you have a [custom `App`](/docs/advanced-features/custom-app) with `getInitialProps` then this optimization will be turned off in pages without [Static Generation](/docs/basic-features/data-fetching/get-static-props).
-- If you have a [custom `Document`](/docs/advanced-features/custom-document) with `getInitialProps` be sure you check if `ctx.req` is defined before assuming the page is server-side rendered. `ctx.req` will be `undefined` for pages that are prerendered.
-- Avoid using the `asPath` value on [`next/router`](/docs/api-reference/next/router#router-object) in the rendering tree until the router's `isReady` field is `true`. Statically optimized pages only know `asPath` on the client and not the server, so using it as a prop may lead to mismatch errors. The [`active-class-name` example](https://github.com/vercel/next.js/tree/canary/examples/active-class-name) demonstrates one way to use `asPath` as a prop.
+- 如果你有一个带有 `getInitialProps` 的 [自定义`App`](/docs/advanced-features/custom-app)，那么这个优化将在没有 [静态生成](/docs/basic-features/data-fetching/get-static-props) 的页面中关闭。
+
+- 如果你有一个带有`getInitialProps` 的 [自定义`Document`](/docs/advanced-features/custom-document)，请务必检查假设页面是服务器端渲染之前是否定义了`ctx.req`，对于预渲染的页面 `ctx.req` 将是 `undefined`
+
+- 在渲染树中的[`next/router`](/docs/api-reference/next/router#router-object) 上避免使用`asPath`值，直到路由器的`isReady`字段为`true`。静态优化的页面只知道客户端上的路径，而不知道服务器上的路径，因此将其用作 prop 可能会导致不匹配错误。[`active-class-name` 示例](https://github.com/vercel/next.js/tree/canary/examples/active-class-name) 演示了将`asPath`用作 prop 的一种方法。
