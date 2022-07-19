@@ -12,7 +12,7 @@
     "custom-server": "Custom Server",
     "custom-app": "Custom `App`",
     "custom-document": "Custom `Document`",
-    "custom-error-page": "Custom ErrorPage",
+    "custom-error-page": "Custom Error Page",
     "src-directory": "`src` Directory",
     "ci-build-caching": "CI Build Caching",
     "multi-zones": "Multi Zones",

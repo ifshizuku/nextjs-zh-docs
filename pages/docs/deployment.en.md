@@ -1,7 +1,3 @@
----
-description: Learn how to deploy your Next.js app to production, either managed or self-hosted.
----
-
 # Deployment
 
 Congratulations, you are ready to deploy your Next.js application to production. This document will show how to deploy either managed or self-hosted using the [Next.js Build API](#nextjs-build-api).
