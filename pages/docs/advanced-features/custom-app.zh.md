@@ -1,4 +1,4 @@
-# 自定义 `App`
+# 自定义 App
 
 Next.js 使用 `App` 组件来初始化页面。您可以覆盖它并控制页面初始化。这可以让你做一些了不起的事情，例如：
 
@@ -40,15 +40,15 @@ export default MyApp
 - 如果你的应用正在运行，并且你添加了自定义的 `App`，则需要重新启动开发服务器。只有当 `pages/_app.js` 以前不存在时才需要。
 - 在 `App` 中添加自定义的 [`getInitialProps`](/docs/api-reference/data-fetching/get-initial-props) 将在没有 [静态生成](/docs/basic-features/data-fetching/get-static-props) 的页面中禁用 [自动静态优化](/docs/advanced-features/automatic-static-optimization)。
 - 当你在自定义 App 中添加 `getInitialProps` 时，你必须导入 `import App from "next/app"`，在 `getInitialProps` 中调用 `App.getInitialProps(appContext)`，并将返回的对象合并到返回值中。
-- `App` 当前不支持 Next.js 的 [数据获取](/docs/basic-features/data-fetching/overview) 方法， 如 [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) 或 [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props)
+- `App` 当前不支持 Next.js 的 [数据获取](/docs/basic-features/data-fetching/overview) 方法， 如 [`getStaticProps`](/docs/basic-features/data-fetching/get-static-props) 或 [`getServerSideProps`](/docs/basic-features/data-fetching/get-server-side-props)。
 
 ### TypeScript
 
-如果您使用的是 TypeScript，请查看我们的 [ TypeScript 文档](/docs/basic-features/typescript#custom-app).
+如果您使用的是 TypeScript，请查看我们的 [TypeScript 文档](/docs/basic-features/typescript#custom-app)。
 
 ## 相关
 
 关于下一步该做什么的更多信息，我们建议阅读以下章节：
 
-- [自动静态优化: Next.js 会尽可能自动将你的应用优化为静态 HTML。在此处了解其工作原理。](/docs/advanced-features/automatic-static-optimization)
-- [自定义错误页面: 了解有关内置错误页面的详细信息.](/docs/advanced-features/custom-error-page)
+- [**自动静态优化** / Next.js 会尽可能自动将你的应用优化为静态 HTML，在此处了解其工作原理](/docs/advanced-features/automatic-static-optimization)
+- [**自定义错误页面** / 了解有关内置错误页面的详细信息](/docs/advanced-features/custom-error-page)

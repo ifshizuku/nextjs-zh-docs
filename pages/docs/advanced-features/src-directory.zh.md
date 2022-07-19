@@ -1,4 +1,4 @@
-# `src` 目录
+# src 目录
 
 页面也可以添加到 `src/pages` 下，作为根 `pages` 目录的替代方法。
 
@@ -11,6 +11,6 @@
 
 ## 相关
 
-关于下一步该做什么的更多信息，我们建议阅读以下章节：
+关于下一步该做什么的更多信息，我们推荐以下章节：
 
-- [Pages：详细了解在 Next.js 中什么是页面](/docs/basic-features/pages)
+- [**页面** / 了解更多关于 Next.js 中页面的信息](/docs/basic-features/pages)
