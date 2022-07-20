@@ -1,7 +1,3 @@
----
-description: Learn about authentication patterns in Next.js apps and explore a few examples.
----
-
 # Authentication
 
 Authentication verifies who a user is, while authorization controls what a user can access. Next.js supports multiple authentication patterns, each designed for different use cases. This page will go through each case so that you can choose based on your constraints.
@@ -111,8 +107,8 @@ Now that we've discussed authentication patterns, let's look at specific provide
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-iron-session">with-iron-session</a></li>
-    <li><a href="https://github.com/nextauthjs/next-auth-example">next-auth-example</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-iron-session">with-iron-session</a></li>
+<li><a href="https://github.com/nextauthjs/next-auth-example">next-auth-example</a></li>
   </ul>
 </details>
 
@@ -133,15 +129,15 @@ To see examples with other authentication providers, check out the [examples fol
 <details open>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/auth0">Auth0</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-clerk">Clerk</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-firebase-authentication">Firebase</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-magic">Magic</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-nhost-auth-realtime-graphql">Nhost</a></li>
-    <li><a href="https://github.com/vercel/examples/tree/main/solutions/auth-with-ory">Ory</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-supabase-auth-realtime-db">Supabase</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-supertokens">Supertokens</a></li>
-    <li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-userbase">Userbase</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/auth0">Auth0</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-clerk">Clerk</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-firebase-authentication">Firebase</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-magic">Magic</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-nhost-auth-realtime-graphql">Nhost</a></li>
+<li><a href="https://github.com/vercel/examples/tree/main/solutions/auth-with-ory">Ory</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-supabase-auth-realtime-db">Supabase</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-supertokens">Supertokens</a></li>
+<li><a href="https://github.com/vercel/next.js/tree/canary/examples/with-userbase">Userbase</a></li>
   </ul>
 </details>
 
