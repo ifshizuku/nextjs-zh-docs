@@ -1,7 +1,3 @@
----
-description: learn more about the configuration file used by Next.js to handle your application.
----
-
 # next.config.js
 
 For custom advanced configuration of Next.js, you can create a `next.config.js` or `next.config.mjs` file in the root of your project directory (next to `package.json`).

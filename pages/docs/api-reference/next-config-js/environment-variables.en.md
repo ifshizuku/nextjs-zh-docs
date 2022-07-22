@@ -1,7 +1,3 @@
----
-description: Learn to add and access environment variables in your Next.js application at build time.
----
-
 # Environment Variables
 
 > Since the release of [Next.js 9.4](https://nextjs.org/blog/next-9-4) we now have a more intuitive and ergonomic experience for [adding environment variables](/docs/basic-features/environment-variables). Give it a try!

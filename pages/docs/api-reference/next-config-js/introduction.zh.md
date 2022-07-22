@@ -1,14 +1,10 @@
----
-description: learn more about the configuration file used by Next.js to handle your application.
----
-
 # next.config.js
 
-For custom advanced configuration of Next.js, you can create a `next.config.js` or `next.config.mjs` file in the root of your project directory (next to `package.json`).
+对于 Next.js 的自定义高级配置，您可以在项目目录的根目录（在 `package.json` 旁边）创建一个 `next.config.js` 或 `next.config.mjs` 文件。
 
-`next.config.js` is a regular Node.js module, not a JSON file. It gets used by the Next.js server and build phases, and it's not included in the browser build.
+`next.config.js` 是一个常规的 Node.js 模块，而不是 JSON 文件。它被 Next.js 服务器和构建阶段使用，它不包含在浏览器构建中。
 
-Take a look at the following `next.config.js` example:
+查看下面的 `next.config.js` 示例：
 
 ```js
 /**
@@ -21,7 +17,7 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-If you need [ECMAScript modules](https://nodejs.org/api/esm.html), you can use `next.config.mjs`:
+如果你需要 [ECMAScript 模块](https://nodejs.org/api/esm.html) ，你可以使用 `next.config.mjs`：
 
 ```js
 /**
@@ -34,7 +30,7 @@ const nextConfig = {
 export default nextConfig
 ```
 
-You can also use a function:
+你还可以使用一个函数：
 
 ```js
 module.exports = (phase, { defaultConfig }) => {
@@ -48,7 +44,7 @@ module.exports = (phase, { defaultConfig }) => {
 }
 ```
 
-Since Next.js 12.1.0, you can use an async function:
+从 Next.js 12.1.0 开始，你可以使用异步函数：
 
 ```js
 module.exports = async (phase, { defaultConfig }) => {
@@ -62,7 +58,7 @@ module.exports = async (phase, { defaultConfig }) => {
 }
 ```
 
-`phase` is the current context in which the configuration is loaded. You can see the [available phases](https://github.com/vercel/next.js/blob/canary/packages/next/shared/lib/constants.ts#L1-L5). Phases can be imported from `next/constants`:
+`phase` 是当前加载配置的上下文。你可以查看 [可用阶段](https://github.com/vercel/next.js/blob/canary/packages/next/shared/lib/constants.ts#L1-L5) 了解更多。阶段可以从 `next/constants` 导入：
 
 ```js
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
@@ -80,8 +76,8 @@ module.exports = (phase, { defaultConfig }) => {
 }
 ```
 
-The commented lines are the place where you can put the configs allowed by `next.config.js`, which are [defined in this file](https://github.com/vercel/next.js/blob/canary/packages/next/server/config-shared.ts#L137).
+注释行是你可以添加 `next.config.js` 允许的配置的地方，它在 [此文件](https://github.com/vercel/next.js/blob/canary/packages/next/server/config-shared.ts#L137) 中被定义。
 
-However, none of the configs are required, and it's not necessary to understand what each config does. Instead, search for the features you need to enable or modify in this section and they will show you what to do.
+然而，运行 Next.js 不需要任何配置，也没有必要了解每个配置的作用。相反，请在本节中搜索您需要启用或修改的功能，它们会告诉你该怎么做。
 
-> Avoid using new JavaScript features not available in your target Node.js version. `next.config.js` will not be parsed by Webpack, Babel or TypeScript.
+> 避免使用目标 Node.js 版本中不可用的新 JavaScript 功能。 `next.config.js` 不会被 Webpack、Babel 或 TypeScript 解析。

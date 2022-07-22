@@ -1,14 +1,10 @@
----
-description: Learn more about setting a base path in Next.js
----
-
 # Base Path
 
 <details>
   <summary><b>Version History</b></summary>
 
 | Version  | Changes          |
-| -------- | ---------------- |
+|----------|------------------|
 | `v9.5.0` | Base Path added. |
 
 </details>

@@ -1,10 +1,6 @@
----
-description: Learn to add and access environment variables in your Next.js application at build time.
----
-
 # Environment Variables
 
-> Since the release of [Next.js 9.4](https://nextjs.org/blog/next-9-4) we now have a more intuitive and ergonomic experience for [adding environment variables](/docs/basic-features/environment-variables). Give it a try!
+> 自 [Next.js 9.4](https://nextjs.org/blog/next-9-4) 发布，我们现在对 [添加环境变量](/docs/basic-features/environment-variables) 有了更直观和符合人体工程学的体验。尝试一下！
 
 <details>
   <summary><b>Examples</b></summary>
@@ -13,7 +9,7 @@ description: Learn to add and access environment variables in your Next.js appli
   </ul>
 </details>
 
-To add environment variables to the JavaScript bundle, open `next.config.js` and add the `env` config:
+要将环境变量添加到 JavaScript 捆绑包，打开 `next.config.js` 并添加 `env` 配置：
 
 ```js
 module.exports = {
@@ -23,7 +19,7 @@ module.exports = {
 }
 ```
 
-Now you can access `process.env.customKey` in your code. For example:
+现在您可以在代码中访问 `process.env.customKey`。例如：
 
 ```jsx
 function Page() {
@@ -33,21 +29,21 @@ function Page() {
 export default Page
 ```
 
-Next.js will replace `process.env.customKey` with `'my-value'` at build time. Trying to destructure `process.env` variables won't work due to the nature of webpack [DefinePlugin](https://webpack.js.org/plugins/define-plugin/).
+Next.js 将在构建时将 `process.env.customKey` 替换为 `'my-value'`。由于 Webpack [插件定义](https://webpack.js.org/plugins/define-plugin/) 的性质，尝试解构 `process.env` 变量将不起作用。
 
-For example, the following line:
+例如，如下行：
 
 ```jsx
 return <h1>The value of customKey is: {process.env.customKey}</h1>
 ```
 
-Will end up being:
+最终将是：
 
 ```jsx
 return <h1>The value of customKey is: {'my-value'}</h1>
 ```
 
-## Related
+## 相关
 
-- [Introduction to next.config.js: Learn more about the configuration file used by Next.js.](/docs/api-reference/next-config-js/introduction)
-- [Environment Variables: Learn more about the new support for environment variables.](/docs/basic-features/environment-variables)
+- [**next.config.js 介绍** / 了解更多关于 Next.js 使用的配置文件](/docs/api-reference/next-config-js/introduction)
+- [**环境变量** / 了解有关对环境变量的新支持的更多信息](/docs/basic-features/environment-variables)
